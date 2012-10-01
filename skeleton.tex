@@ -14,7 +14,7 @@
 
 \begin{document} 
 
-\title{\bf The evolution of information representation in biological networks}
+\title{\bf Intrinsic information representation in biological systems}
 
 \author{Cameron Ray Smith$^{1}$, Aviv Bergman$^{1,2,3}$}
 
@@ -22,12 +22,60 @@
 
 \date{\today}
 \begin{abstract}
-Abstract text
+One of the most important aspects of advancing theory in biology is the development of a constructed language that can be explicitly and precisely defined and supports communication among scientists, between scientists and computers, and even within individual scientists themselves. Such a language should itself be evolvable and support flexible abstractions that enable the unification and compression of redundant concepts. It would be helpful if this language could be formally specified prior to or in concert with the development of a computational implementation that may support complementary organization of semi-autonomously linked and computable data. We propose the adaptation of a language originally developed in a mathematical context that apparently meets these criteria. We argue for the particular choice we suggest, not from a mathematical perspective but, by providing an example of the way in which this language enables precise qualitative reasoning and flexible methods of abstraction with respect to integrated biological information. Enabling lossless compression and representation of synthetic knowledge about biological systems, in addition to raw biological data, is necessary for understanding in the context of limited cognitive and other computational resources.
 \end{abstract}
 
 \maketitle
 
 \tableofcontents
+
+\section{Introduction}
+The development of a formal language for modeling biological systems was suggested by Woodger in collaboration with Waddington and Tarski as early as 1937 \cite{Woodger1937,Woodger1951,Woodger1952}. At that time it was perhaps difficult to understand how such a language could be put to use. Today we have tools that could enable the use of such a language: namely 1) computational machines to deal with the details of repeated transformations within the language and 2) large accessible repositories of data. Though we have access to necessary infrastructure, we lack the type of language suggested by Woodger and others throughout the course of the 20th century as we have continued to rely on natural language heuristics to communicate and reason about biological systems.
+
+Category theory \cite{Lane1985,Lane1998,MacLane1992,Lawvere1997,Lawvere2003,Awodey2006} is a language that has been suggested since Woodger to provide a framework for representing and reasoning about biological systems \cite{GOGUEN1979,Ehresmann2007,Louie2009}. What is immediately useful about this language from the perspective of biology is that it presents as primitive the notion of transformation or interaction between objects. In fact, from this point of view, the defining characteristic of any entity (e.g. a protein, cell, organism, or population) is structural: the set of relationships between it and other entities under consideration. Intrinsic properties are taken into account implicitly in this framework since the possible set of relationships between any object and any other is constrained by the nature of its intrinsic properties. 
+
+What is less obvious at first meeting is the way in which category theory, especially with regard to its interface with logic and geometry \cite{MacLane1992,Jacobs1998}, enables the precise definition of what might be viewed as a precise framework for so-called \emph{emergent properties} of systems of interacting objects. This expression is general enough that it can be equally well applied to the consideration of relationships between any levels of biological organization and may be generalizable to arbitrary physical contexts. This unity deriving from the judicious definition of underlying categorical concepts along the way is precisely the type of abstraction that we argue is necessary to enable compression without loss of biological information and thus the synthesis of existing biological knowledge.
+
+Here we define the concepts from category theory necessary to understand the way in which interacting objects at one level of organization (e.g. molecules) can produce phenomena that would themselves be identifiable as derived objects (e.g. cells) that justify the very conceptualization of a \emph{level of organization} in the first instance. Here we focus exclusively on defining the boundary conditions relating levels (e.g. molecules and cells or cells and multicellular organisms) of organization, which are necessary to understand in the course of defining a dynamical system that could model the \emph{evolution} of such levels of organization. What results is a refinement of the concept of levels of organization examples of which are used so far only heuristically as guides to pre-existing intuition.
+
+\section{Biological information}
+\subsection{Biological system-environment duality}
+Distinction between biological systems or some components thereof and the environments within which they are embedded is implied in models of such systems. This distinction is useful in many contexts, but the boundary between a biological system and its environment is dependent upon the level of resolution of the \emph{model and modeler} independent of its relationship to properties of the biological system itself \cite{Fontana1996}. In this light, it is desirable to develop a model of biological systems that supports variation of this boundary without requiring any reconfiguration of the model. Constructing a framework for such models requires the determination, unification, and incorporation of abstract features of biological systems that are invariant across levels of organization from molecules to cells, organisms, populations, communities, ecosystems and more fine-grained levels of resolution that likely lie between these broadly and imprecisely defined perspectives one can take with regard to representing biological systems.
+
+
+\subsection{Encoding and decoding of biological information at system-environment boundaries}
+The use of categorical adjunctions to model information representation in biological systems has been previously proposed \cite{GOGUEN1979,Ellerman2007,Ellerman2008}.
+
+
+\subsection{Intrinsic measurement processes of biological systems}
+
+\subsection{Topological features of biological information}
+
+\subsection{Variable filtration of biological information}
+
+\subsection{Deconstructing and synthesizing biological information}
+
+\subsection{Enabling conditions of hierarchical transformations}
+
+
+\section{Biological evolution}
+\subsection{Niche construction and multilevel selection}
+Selection is part of any evolutionary process. Niche construction, which is complementary to selection, has been introduced more recently \cite{Odling-Smee2003,Krakauer2009}. An organism experiences a situation similar to that represented in diagram \ref{eq:intrep}. 
+
+\input{fig/intrep} 
+
+The molecular interaction network that underlies an arbitrary type of organism is represented by a category $\mathcal{D}$ and the environment is represented by a category $\mathcal{C}$. Due to the dependence of selection on the environment, those organisms capable of survival are those that most closely approximate a natural transformation $\eta:F \circ G \Rightarrow H$. Why might this be the case?
+
+To answer this question requires consideration of the necessity of the category $\mathcal{J}$ in this conceptual framework. From the perspective of any organism, we can roughly think of $\mathcal{D}$ as ''internal'' and $\mathcal{C}$ as ''external'' in a sense that can be likened but not yet clearly identified with ''known'' and ''unknown'' respectively. The selection process can be thought of as requiring the organism to establish a representation of properties of $\mathcal{C}$ so as to enable its existence to remain complementary, and thus stable, relative to its environment. The molecular network underlying the various biochemical functions of the organism has no direct access to the processes that determine the causal structure of the environment. In this case we consider the organism to have direct access only to the structure contained in $\mathcal{D}$, but nevertheless being implicitly assigned, as a result of its relationship to the environment, the seemingly impossible task of establishing the structure of $\mathcal{C}$. If $\mathcal{C}$ were internalized by the organism then relationships between $\mathcal{D}$ and $\mathcal{C}$ that preserve structure, specifically the functors labelled $H:\mathcal{D} \rightarrow \mathcal{C}$, could also be directly internalized. Since $\mathcal{C}$ is external to $\mathcal{D}$, the organism must find another way of determining the relationship between its internal structure and that which is external, even if local.
+
+One way to address this apparently paradoxical situation is to consider the relationship between endofunctors on $\mathcal{D}$ and those like $H$. In the case of \ref{eq:intrep}, $\mathcal{J}$ is considered to be a subcategory of $\mathcal{D}$ that contains all the domains (in the sense of complete partial orders) of $\mathcal{D}$. This scenario allows functors $F:\mathcal{J} \rightarrow \mathcal{D}$ to index diagrams in $\mathcal{D}$.
+
+See \cite{Okasha2006} for information on multilevel selection.
+
+\subsection{The structure of molecular networks}
+\subsubsection{Endo-genetics, genetics, epi-genetics, and $n$-epi-genetics}
+\subsection{Hierarchical organization and evolution}
+See \cite{Gould1994}, \cite{Arnold1982}.
 
 \section{Hierarchy in logic}
 
@@ -44,30 +92,11 @@ See \cite{Crole1994a}.
 \subsection{Information theory}
 See \cite{Ellerman2008} and \cite{Cover2006}.
 
-\subsection{Signaling games}
-See \cite{Huttegger2007}.
-
 \subsection{Domain theory}
 See \cite{Abramsky}, \cite{Abramsky1995}.
 
-\section{Biological information}
-\subsection{Niche construction and multilevel selection}
-The concept of selection is foundational to evolutionary theory. More recently, a concept referred to as niche construction that we consider to be complementary to selection, in a sense to be made precise, has been introduced \cite{Odling-Smee2003,Krakauer2009}. An organism experiences a situation similar to that represented in diagram \ref{eq:intrep}. 
-
-\input{fig/intrep} 
-
-The molecular interaction network that underlies an arbitrary type of organism is represented by a category $\mathcal{D}$ and the environment is represented by a category $\mathcal{C}$. Due to the dependence of selection on the environment, those organisms capable of survival are those that most closely approximate a natural transformation $\eta:F \circ G \Rightarrow H$. Why might this be the case?
-
-To answer this question requires consideration of the necessity of the category $\mathcal{J}$ in this conceptual framework. From the perspective of any organism, we can roughly think of $\mathcal{D}$ as ''internal'' and $\mathcal{C}$ as ''external'' in a sense that can be likened but not yet clearly identified with ''known'' and ''unknown'' respectively. The selection process can be thought of as requiring the organism to establish a representation of properties of $\mathcal{C}$ so as to enable its existence to remain complementary, and thus stable, relative to its environment. The molecular network underlying the various biochemical functions of the organism has no direct access to the processes that determine the causal structure of the environment. In this case we consider the organism to have direct access only to the structure contained in $\mathcal{D}$, but nevertheless being implicitly assigned, as a result of its relationship to the environment, the seemingly impossible task of establishing the structure of $\mathcal{C}$. If $\mathcal{C}$ were internalized by the organism then relationships between $\mathcal{D}$ and $\mathcal{C}$ that preserve structure, specifically the functors labelled $H:\mathcal{D} \rightarrow \mathcal{C}$, could also be directly internalized. Since $\mathcal{C}$ is external to $\mathcal{D}$, the organism must find another way of determining the relationship between its internal structure and that which is external, even if local.
-
-One way to address this apparently paradoxical situation is to consider the relationship between endofunctors on $\mathcal{D}$ and those like $H$. In the case of \ref{eq:intrep}, $\mathcal{J}$ is considered to be a subcategory of $\mathcal{D}$ that contains all the domains (in the sense of complete partial orders) of $\mathcal{D}$. This scenario allows functors $F:\mathcal{J} \rightarrow \mathcal{D}$ to index diagrams in $\mathcal{D}$.
-
-See \cite{Okasha2006} for information on multilevel selection.
-
-\subsection{The structure of molecular networks}
-\subsubsection{Endo-genetics, genetics, epi-genetics, and $n$-epi-genetics}
-\subsection{Hierarchical organization and evolution}
-See \cite{Gould1994}, \cite{Arnold1982}.
+\subsection{Game semantics}
+See \cite{Mellies2009}
 
 \section*{Acknowledgements} 
 
