@@ -30,9 +30,9 @@ One of the most important aspects of advancing theory in biology is the developm
 \tableofcontents
 
 \section{Introduction}
-The development of a formal language for modeling biological systems was suggested by Woodger in collaboration with Waddington and Tarski as early as 1937 \cite{Woodger1937,Woodger1951,Woodger1952}. At that time it was perhaps difficult to understand how such a language could be put to use. Today we have tools that could enable the use of such a language: namely 1) computational machines to deal with the details of repeated transformations within the language and 2) large accessible repositories of data. Though we have access to necessary infrastructure, we lack the type of language suggested by Woodger and others throughout the course of the 20th century as we have continued to rely on natural language heuristics to communicate and reason about biological systems.
+The development of a formal language for modeling biological systems was suggested by Woodger in collaboration with the developmental biologist Waddington and the logician Tarski as early as 1937 \cite{Woodger1937,Woodger1951,Woodger1952,Woodger1952a}. At that time it was perhaps difficult to understand how such a language could be put to use. Today we have tools that could enable the use of such a language: namely 1) computational machines to deal with the details of repeated transformations within the language and 2) large accessible repositories of data. Though we have access to necessary infrastructure, we lack the type of language suggested by Woodger and others throughout the course of the 20th century as we have continued to rely on natural language heuristics to communicate and reason about biological systems.
 
-Category theory \cite{Lane1985,Lane1998,MacLane1992,Lawvere1997,Lawvere2003,Awodey2006} is a language that has been suggested since Woodger to provide a framework for representing and reasoning about biological systems \cite{GOGUEN1979,Ehresmann2007,Louie2009}. What is immediately useful about this language from the perspective of biology is that it presents as primitive the notion of transformation or interaction between objects. In fact, from this point of view, the defining characteristic of any entity (e.g. a protein, cell, organism, or population) is structural: the set of relationships between it and other entities under consideration. Intrinsic properties are taken into account implicitly in this framework since the possible set of relationships between any object and any other is constrained by the nature of its intrinsic properties. 
+Category theory \cite{Lane1985,Lane1998,MacLane1992,Lawvere1997,Lawvere2003,Awodey2006} is a language that has been suggested since Woodger to provide a framework for representing and reasoning about biological systems \cite{GOGUEN1979,Ehresmann2007,Louie2009}. What is immediately useful about this language from the perspective of biology is that it presents as primitive the notion of transformation or interaction between objects. In fact, from this point of view, a defining characteristic of any entity (e.g. a protein, cell, organism, or population) is structural: the set of relationships between it and other entities under consideration. Intrinsic properties are taken into account implicitly in this framework since the possible set of relationships between any object and any other is constrained by the nature of its intrinsic properties. 
 
 What is less obvious at first meeting is the way in which category theory, especially with regard to its interface with logic and geometry \cite{MacLane1992,Jacobs1998}, enables the precise definition of what might be viewed as a precise framework for so-called \emph{emergent properties} of systems of interacting objects. This expression is general enough that it can be equally well applied to the consideration of relationships between any levels of biological organization and may be generalizable to arbitrary physical contexts. This unity deriving from the judicious definition of underlying categorical concepts along the way is precisely the type of abstraction that we argue is necessary to enable compression without loss of biological information and thus the synthesis of existing biological knowledge.
 
@@ -43,9 +43,162 @@ Here we define the concepts from category theory necessary to understand the way
 Distinction between biological systems or some components thereof and the environments within which they are embedded is implied in models of such systems. This distinction is useful in many contexts, but the boundary between a biological system and its environment is dependent upon the level of resolution of the \emph{model and modeler} independent of its relationship to properties of the biological system itself \cite{Fontana1996}. In this light, it is desirable to develop a model of biological systems that supports variation of this boundary without requiring any reconfiguration of the model. Constructing a framework for such models requires the determination, unification, and incorporation of abstract features of biological systems that are invariant across levels of organization from molecules to cells, organisms, populations, communities, ecosystems and more fine-grained levels of resolution that likely lie between these broadly and imprecisely defined perspectives one can take with regard to representing biological systems.
 
 
-\subsection{Encoding and decoding of biological information at system-environment boundaries}
-The use of categorical adjunctions to model information representation in biological systems has been previously proposed \cite{GOGUEN1979,Ellerman2007,Ellerman2008}.
+\subsection{Transformation of biological information at system-environment boundaries}
+The use of categorical adjunctions to model information representation in biological systems has been discussed in some detail \cite{GOGUEN1979,Ellerman2007,Ellerman2008}, but these efforts have yet to be incorporated into more detailed theories. We begin here by developing the prerequisite definitions to explain why the transformation of biological information is naturally represented as a pair of adjoint functors in the context of category theory.
 
+\begin{definition}
+\label{definition-category}
+A {\it category} $\mathcal{C}$ is:
+\begin{enumerate}
+\item A set of objects $\Ob(\mathcal{C})$.
+\item For each pair $x, y \in \Ob(\mathcal{C})$ a set of morphisms
+$\Mor_\mathcal{C}(x, y)$.
+\item For each triple $x, y, z\in \Ob(\mathcal{C})$ a composition
+map $ \Mor_\mathcal{C}(y, z) \times \Mor_\mathcal{C}(x, y)
+\to \Mor_\mathcal{C}(x, z) $, denoted $(\phi, \psi) \mapsto
+\phi \circ \psi$.
+\end{enumerate}
+Such that these constraints are satisfied:
+\begin{enumerate}
+\item For every element $x\in \Ob(\mathcal{C})$ there exists a
+morphism $\text{id}_x\in \Mor_\mathcal{C}(x, x)$ such that
+$\text{id}_x \circ \phi = \phi$ and $\psi \circ \text{id}_x = \psi $.
+\item Composition is associative, i.e., $(\phi \circ \psi) \circ \chi =
+\phi \circ ( \psi \circ \chi)$.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}
+\label{definition-functor}
+A {\it functor} $F : \mathcal{A} \to \mathcal{B}$
+between two categories $\mathcal{A}, \mathcal{B}$ is:
+\begin{enumerate}
+\item A map $F : \Ob(\mathcal{A}) \to \Ob(\mathcal{B})$.
+\item For every $x, y \in \Ob(\mathcal{A})$ a map
+$F : \Mor_\mathcal{A}(x, y) \to \Mor_\mathcal{B}(F(x), F(y))$,
+denoted $\phi \mapsto F(\phi)$.
+\end{enumerate}
+These data should be compatible with composition and identity morphisms
+in the following manner: $F(\phi \circ \psi) =
+F(\phi) \circ F(\psi)$ for a composable pair $(\phi, \psi)$ of
+morphisms of $\mathcal{A}$ and $F(\text{id}_x) = \text{id}_{F(x)}$.
+\end{definition}
+
+\begin{definition}
+\label{definition-transformation-functors}
+Let $F, G : \mathcal{A} \to \mathcal{B}$ be functors.
+A {\it natural transformation}, or a {\it morphism of functors}
+$t : F \to G$, is a collection $\{t_x\}_{x\in \Ob(\mathcal{A})}$
+such that
+\begin{enumerate}
+\item $t_x : F(x) \to G(x)$ is a morphism in the category $\mathcal{B}$, and
+\item for every morphism $\phi : x \to y$ of $\mathcal{A}$ the following
+diagram is commutative
+$$
+\xymatrix{
+F(x) \ar[r]^{t_x} \ar[d]_{F(\phi)} & G(x) \ar[d]^{G(\phi)} \\
+F(y) \ar[r]^{t_y} & G(y) }
+$$
+\end{enumerate}
+\end{definition}
+
+We can define a category having functors as objects and natural transformations as morphisms, which is called a functor category, by recognizing that every functor $F$ comes with the {\it identity} transformation $\text{id}_F : F \to F$. In addition, given a morphism of
+functors $t : F \to G$ and a morphism of functors $s : E \to F$
+then the {\it composition} $t \circ s$ is defined by the rule
+$$
+(t \circ s)_x = t_x \circ s_x : E(x) \to G(x)
+$$
+for $x \in \Ob(\mathcal{A})$.
+This is a morphism of functors
+from $E$ to $G$.
+Thus, given categories
+$\mathcal{A}$ and $\mathcal{B}$ we obtain the category of functors between $\mathcal{A}$ and
+$\mathcal{B}$.
+
+\begin{definition}
+\label{definition-equivalence-categories}
+An {\it equivalence of categories}
+$F : \mathcal{A} \to \mathcal{B}$ is a functor such that there
+exists a functor $G : \mathcal{B} \to \mathcal{A}$ such that
+the compositions $F \circ G$ and $G \circ F$ are isomorphic to the
+identity functors $\text{id}_\mathcal{B}$,
+respectively $\text{id}_\mathcal{A}$.
+In this case we say that $G$ is a {\it quasi-inverse} to $F$.
+\end{definition}
+
+\begin{definition}
+\label{definition-adjoint}
+Let $\mathcal{C}$, $\mathcal{D}$ be categories.
+Let $u : \mathcal{C} \to \mathcal{D}$ and
+$v : \mathcal{D} \to \mathcal{C}$ be functors.
+We say that $u$ is a {\it left adjoint} of $v$, or that
+$v$ is a {\it right adjoint} to $u$ if there are bijections
+$$
+\Mor_\mathcal{D}(u(X), Y)
+\longrightarrow
+\Mor_\mathcal{C}(X, v(Y))
+$$
+functorial in $X \in \Ob(\mathcal{C})$, and
+$Y \in \Ob(\mathcal{D})$.
+\end{definition}
+
+\begin{definition}
+\label{definition-opposite}
+Given a category $\mathcal{C}$ the {\it opposite category}
+$\mathcal{C}^{opp}$ is the category with the same objects
+as $\mathcal{C}$ but all morphisms reversed.
+\end{definition}
+
+\begin{definition}
+\label{definition-contravariant}
+Let $\mathcal{C}$, $\mathcal{S}$ be categories.
+A {\it contravariant} functor $F$
+from $\mathcal{C}$ to $\mathcal{S}$
+is a functor $\mathcal{C}^{opp}\to \mathcal{S}$.
+\end{definition}
+
+\begin{definition}
+\label{definition-presheaf}
+Let $\mathcal{C}$ be a category.
+\begin{enumerate}
+\item A {\it presheaf of sets on $\mathcal{C}$}
+or simply a {\it presheaf} is a contravariant functor
+$F$ from $\mathcal{C}$ to $\textit{Sets}$.
+\item The category of presheaves is denoted $\textit{PSh}(\mathcal{C})$.
+\end{enumerate}
+\end{definition}
+
+\begin{example}
+\label{example-hom-functor}
+Functor of points.
+For any $U\in \Ob(\mathcal{C})$ there is a contravariant
+functor
+$$
+\begin{matrix}
+h_U & : & \mathcal{C}
+&
+\longrightarrow
+&
+\textit{Sets} \\
+&&
+X
+&
+\longmapsto
+&
+\Mor_\mathcal{C}(X, U)
+\end{matrix}
+$$
+which takes an object $X$ to the set
+$\Mor_\mathcal{C}(X, U)$. In other words $h_U$ is a presheaf.
+Given a morphism $f : X\to Y$ the corresponding map
+$h_U(f) :  \Mor_\mathcal{C}(Y, U)\to \Mor_\mathcal{C}(X, U)$
+takes $\phi$ to $\phi\circ f$. We will always denote
+this presheaf $h_U : \mathcal{C}^{opp} \to \textit{Sets}$.
+It is called the {\it representable presheaf} associated to $U$
+If $\mathcal{C}$ is the category of schemes this functor is
+sometimes referred to as the
+\emph{functor of points} of $U$.
+\end{example}
 
 \subsection{Intrinsic measurement processes of biological systems}
 
