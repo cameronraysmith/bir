@@ -27,7 +27,7 @@
 
 \date{\today}
 \begin{abstract}
-One of the most important aspects of advancing theory in biology is the development of a constructed language that can be explicitly and precisely defined and supports communication among scientists, between scientists and computers, and even within individual scientists themselves. Such a language should itself be evolvable and support flexible abstractions that enable the unification and compression of redundant concepts. It would be helpful if this language could be formally specified prior to or in concert with the development of a computational implementation that may support complementary organization of semi-autonomously linked and computable data. We propose the adaptation of a language originally developed in a mathematical context that apparently meets these criteria. We argue for the particular choice we suggest, not from a mathematical perspective but, by providing an example of the way in which this language enables precise qualitative reasoning and flexible methods of abstraction with respect to integrated biological information. Enabling lossless compression and representation of synthetic knowledge about biological systems, in addition to raw biological data, is necessary for understanding in the context of limited cognitive and other computational resources.
+One of the most important aspects of advancing theory and understanding in biology is the development of a constructed language that can be explicitly and precisely defined and supports communication among scientists, between scientists and computers, and even within individual scientists themselves. Such a language should itself be evolvable and support flexible abstractions that enable the unification and compression of redundant information. It would be useful for such a language to be formally specified prior to or in concert with the development of a computational implementation that may support complementary organization of semi-autonomously linked and computable data. We propose the adaptation of a language originally developed in a mathematical context that apparently meets these criteria. We argue for the particular choice we suggest, not from a mathematical perspective but, by providing an example of the way in which this language enables precise qualitative reasoning and flexible methods of abstraction with respect to integrating biological information in a manner that would, ideally, be analogous to the way in which information is integrated by biological systems themselves. Enabling lossless compression and representation of synthetic knowledge about biological systems, in addition to raw biological data, is necessary for understanding in the context of limited cognitive and other computational resources.
 \end{abstract}
 
 \maketitle
@@ -35,13 +35,15 @@ One of the most important aspects of advancing theory in biology is the developm
 \tableofcontents
 
 \section{Introduction}
-The development of a formal language for modeling biological systems was suggested by Woodger in collaboration with the developmental biologist Waddington and the logician Tarski as early as 1937 \cite{Woodger1937,Woodger1951,Woodger1952,Woodger1952a}. At that time it was perhaps difficult to understand how such a language could be put to use. Today we have tools that could enable the use of such a language: namely 1) computational machines to deal with the details of repeated transformations within the language and 2) large accessible repositories of data. Though we have access to necessary infrastructure, we lack the type of language suggested by Woodger and others throughout the course of the 20th century as we have continued to rely on natural language heuristics to communicate and reason about biological systems.
+The development of a formal language for modeling biological systems was suggested by Joseph Woodger in collaboration with the developmental biologist Conrad Waddington and the logician Alfred Tarski as early as 1937 \cite{Woodger1937,Woodger1951,Woodger1952,Woodger1952a}. At that time it was perhaps difficult to understand how such a language could be put to use. Today we have tools that could enable the use of such a language: namely 1) computational machines to automate the details of routine transformations within the language and 2) large, accessible, growing repositories of biological data. Though we have access to necessary infrastructure, we lack such a language suggested by Woodger and others throughout the course of the 20th century as we have continued to rely on natural language heuristics to communicate and reason about biological systems.
 
 Category theory \cite{Lane1985,Lane1998,MacLane1992,Lawvere1997,Lawvere2003,Awodey2006} is a language that has been suggested since Woodger to provide a framework for representing and reasoning about biological systems \cite{GOGUEN1979,Ehresmann2007,Louie2009}. What is immediately useful about this language from the perspective of biology is that it presents as primitive the notion of transformation or interaction between objects. In fact, from this point of view, a defining characteristic of any entity (e.g. a protein, cell, organism, or population) is structural: the set of relationships between it and other entities under consideration. Intrinsic properties are taken into account implicitly in this framework since the possible set of relationships between any object and any other is constrained by the nature of its intrinsic properties. 
 
-What is less obvious at first meeting is the way in which category theory, especially with regard to its interface with logic and geometry \cite{MacLane1992,Jacobs1998}, enables the precise definition of what might be viewed as a precise framework for so-called \emph{emergent properties} of systems of interacting objects. This expression is general enough that it can be equally well applied to the consideration of relationships between any levels of biological organization and may be generalizable to arbitrary physical contexts. This unity deriving from the judicious definition of underlying categorical concepts along the way is precisely the type of abstraction that we argue is necessary to enable compression without loss of biological information and thus synthesis of existing biological knowledge.
+What is less obvious at first meeting is the way in which category theory, especially with regard to its interface with logic and geometry \cite{MacLane1992,Jacobs1998}, enables the precise definition of what might be viewed as a framework for explaining the nature and development of so-called \emph{emergent properties} of systems of interacting processes. This expression is general enough that it can be equally well applied to the consideration of relationships between any levels of biological organization and may be generalizable to arbitrary physical contexts. This unity deriving from the judicious definition of underlying categorical concepts along the way is precisely the type of abstraction that we argue is necessary to enable compression without loss of biological information and thus synthesis of existing biological knowledge.
 
-Here we define the concepts from category theory necessary to understand the way in which interacting objects at one level of organization (e.g. molecules) can produce phenomena that would themselves be identifiable as derived objects (e.g. cells) that justify the very conceptualization of a \emph{level of organization} in the first instance. Here we focus exclusively on defining the boundary conditions relating levels (e.g. molecules and cells or cells and multicellular organisms) of organization, which are necessary to understand in the course of defining a dynamical system that could model the \emph{evolution} of such levels of organization. What results is a refinement of the concept of levels of organization examples of which are used so far only heuristically as guides to pre-existing intuition.
+Here we define the concepts from category theory necessary to understand the way in which interacting objects at one level of organization (e.g. molecules) can produce phenomena that would themselves be identifiable as derived objects (e.g. cells) that justify the very conceptualization of a \emph{level of organization} in the first instance. Here we focus exclusively on defining the boundary conditions relating levels (e.g. molecules and cells or cells and multicellular organisms) of organization, which are necessary to understand in the course of defining a dynamical system that could model the \emph{evolution} of such. What results is a refinement of the concept of the levels of organization that are ubiquitously employed in biology and examples of which are used so far only heuristically as guides to pre-existing intuition. Understanding how to integrate information regarding biological processes across such levels of organization is fundamental to the understanding of complex phenotypes and the associated set of contingencies necessary to account for in methods that may be targeted at controlling or otherwise manipulating them.
+
+[ Note that biological systems are concretely represented as graphs of some kind and all the letters representing categories can be specialized to categories of graphs of some kind ]
 
 \section{Biological information}
 \subsection{Biological system-environment duality}
@@ -157,8 +159,8 @@ $v : \mathcal{D} \to \mathcal{C}$ be functors.
 We say that $u$ is a {\it left adjoint} of $v$ or that
 $v$ is a {\it right adjoint} to $u$, written $u \dashv v$, if there are bijections
 $$
-\Mor_\mathcal{D}(u(X), Y)
-\longrightarrow
+\phi_{X,Y}:\Mor_\mathcal{D}(u(X), Y)
+\simeq
 \Mor_\mathcal{C}(X, v(Y))
 $$
 functorial in $X \in \Ob(\mathcal{C})$, and
@@ -166,6 +168,8 @@ $Y \in \Ob(\mathcal{D})$.
 \iftoggle{thmsty}{
 \end{definition}
 }
+
+Morphisms that are associated with each other according to the bijections of an adjunction are called {\it adjoint transposes} of one another. If $g:u(X) \rightarrow Y$, $g \in \Mor(\cD)$ then $g^*: X \rightarrow v(Y)$, $g^* \in \Mor(\cC)$ is given by $\phi_{X,Y}(g) = g^*$. Similarly for $f: X \rightarrow v(Y)$, $f \in \Mor(\cC)$ with $f^*:u(X) \rightarrow Y$, $f^* \in \Mor(\cD)$ is given by $\phi_{X,Y}^{-1}(f) = f^*$. We see then that $g^* = f$ and $f^* = g$.
 
 \iftoggle{thmsty}{
 \begin{definition}
@@ -204,8 +208,6 @@ $F$ from $\mathcal{C}$ to $\textit{Sets}$. When $F$ is a covariant functor $F : 
 \iftoggle{thmsty}{
 \end{definition}
 }
-
-The preceding definitions are standard category theoretic constructions. Ellerman has proposed an interpretation of adjoint functors, that demonstrates their relevance to the concept of information encoding and decoding in the context of biological systems \cite{Ellerman2005}.
 
 \iftoggle{thmsty}{
 \begin{definition}
@@ -325,7 +327,7 @@ Given categories $\mathcal{C}_1$, $\mathcal{C}_2$, and $\mathcal{D}$. A {\it bif
 }{}
 The {\it hom-functor} is a bifunctor defined on the product of a category $\mathcal{C}$ with its self-dual category $\mathcal{C}^{opp}$, which takes values in the category $\textit{Sets}$. Thus for a category $C$ its hom-functor is 
 $$
-hom_{\mathcal{C}}(-,-): \mathcal{C}^{opp} \times \mathcal{C} \rightarrow \textit{Sets}.
+hom(-,-): \mathcal{C}^{opp} \times \mathcal{C} \rightarrow \textit{Sets}.
 $$
 The hom-functor maps
 \begin{enumerate}
@@ -348,15 +350,88 @@ where $f:d \rightarrow c \in \Mor(\mathcal{C})$ and $g:c' \rightarrow d' \in \Mo
 \begin{definition}
 \label{definition-representable-functor}
 }{}
-For a hom-functor $hom_{\mathcal{C}}(-,-): \mathcal{C}^{opp} \times \mathcal{C} \rightarrow \textit{Sets}$ for $c \in \Ob(\mathcal{C})$ a covariant and contravariant functor can be derived by specializing the hom-functor to morphisms out of or into the object $c$ as
+For a hom-functor $hom(-,-): \mathcal{C}^{opp} \times \mathcal{C} \rightarrow \textit{Sets}$ for $c \in \Ob(\mathcal{C})$ a covariant and contravariant functor can be derived by specializing the hom-functor to morphisms out of or into the object $c$ as
 \begin{eqnarray*}
-h^c \equiv hom_{\mathcal{C}}(c,-) &:& \mathcal{C} \rightarrow \textit{Sets},\\
-h_c \equiv hom_{\mathcal{C}^{opp}}(-,c) &:& \mathcal{C}^{opp} \rightarrow \textit{Sets}.
+h^c \equiv hom(-,c) &:& \mathcal{C}^{opp} \rightarrow \textit{Sets}\\
+h_c \equiv hom(c,-) &:& \mathcal{C} \rightarrow \textit{Sets}.
 \end{eqnarray*}
 Functors that are isomorphic to $h^c$ or $h_c$ are referred to as {\it corepresentable or representable functors} respectively and $c$ is their {\it representing object}. Note that $h_c \in \Ob(\textit{PSh}(\mathcal{C}))$.
 \iftoggle{thmsty}{
 \end{definition}
 }
+
+The preceding definitions are standard category theoretic constructions. Ellerman has proposed an interpretation of adjoint functors, that demonstrates their relevance to the concept of information encoding and decoding (or sending and receiving) in the context of biological systems \cite{Ellerman2005}.
+
+\iftoggle{thmsty}{
+\begin{definition}
+\label{definition-birepresentable}
+}{}
+A bifunctor $bif (-,-): \cC^{opp} \times \cD \rightarrow \textit{Sets}$ is said to be {\it birepresentable} if there exists a pair of functors $F:\cC^{opp} \rightleftarrows \cD:G$ where $c \in \Ob(\cC^{opp})$ and $d \in \Ob(\cD)$ gives
+\begin{eqnarray*}
+b^{d} \equiv bif(-,d) &:& \mathcal{C}^{opp} \rightarrow \textit{Sets},\\
+b_{c} \equiv bif(c,-) &:& \mathcal{D} \rightarrow \textit{Sets}.
+\end{eqnarray*}
+natural in $c$ and $d$ such that $F \dashv G$. The functors $b^{d}$ and $b_{c}$ are defined on
+\begin{enumerate}
+\item objects for all $c_i \in \Ob(\cC^{opp})$ and for all $d_i \in \Ob(\cD)$
+\begin{eqnarray*}
+b^{d} (c_i) &=& \Mor_{\cC^{opp}}(c_i,Gd),\\
+b_{c} (d_i) &=& \Mor_{\cD}(Fc,d_i).
+\end{eqnarray*}
+
+\item morphisms for all $f_{ij}:c_j \rightarrow c_i \in \Mor(\cC^{opp})$ and for all $g_{ij}:d_i \rightarrow d_j \in \Mor(\cD)$ as
+\begin{eqnarray*}
+b^{d} (f_{ij}) &:& \Mor_{\cC^{opp}}(c_i,Gd) \rightarrow \Mor_{\cC^{opp}}(c_j,Gd),\\
+b_{c} (g_{ij}) &:& \Mor_{\cD}(Fc,d_i) \rightarrow \Mor_{\cD}(Fc,d_j).
+\end{eqnarray*}
+\end{enumerate}
+\iftoggle{thmsty}{
+\end{definition}
+}
+
+$F \dashv G$ is thus equivalent to the statement $\phi_{-,-}:b_{(-)} \cong b^{(-)}$. In this framework, information encoding/decoding is an asymmetric process that can only be accomplished without loss of information in one direction: objects of $\cD$ can be encoded into objects of $\cC$ and decoded into objects of $\cD$ but, in general, proceeding in the opposite order may result in loss of information. This asymmetry is clarified by consideration of the unit and counit morphisms of the adjunction.
+
+\iftoggle{thmsty}{
+\begin{definition}
+\label{definition-unit}
+}{}
+Consider the identity morphism $1_{Fc} \in \Mor_{\cD}(Fc,Fc)$. The adjoint transpose of $1_{Fc}$ is the {\it unit} morphism at $c$
+$$
+\phi_{c,Fc}(1_{Fc})=1_{Fc}^*=\eta_c: c \rightarrow GFc
+$$
+where $\eta_c \in \Mor_{\cC^{opp}}(c,GFc)$, which, when taken to hold quantifying over all $c \in \Ob(\cC^{opp})$ (i.e. to be natural in $c$), gives the natural transformation
+$$
+\eta : 1_{\cC^{opp}} \rightarrow GF
+$$
+\iftoggle{thmsty}{
+\end{definition}
+}
+
+\iftoggle{thmsty}{
+\begin{definition}
+\label{definition-counit}
+}{}
+Consider the identity morphism $1_{Gd} \in \Mor_{\cC^{opp}}(Gd,Gd)$. The adjoint transpose of $1_{Gd}$ is the {\it counit} morphism at $d$
+$$
+\phi_{Gd,d}^{-1}(1_{Gd})=1_{Gd}^*=\epsilon_d: FGd \rightarrow d
+$$
+where $\epsilon_d \in \Mor_{\cD}(d,FGd)$, which, when natural in $d$, gives the natural transformation
+$$
+\epsilon: FG \rightarrow 1_{\cD}
+$$
+\iftoggle{thmsty}{
+\end{definition}
+}
+
+The composite encoding functor 
+$$
+b_{(-)} \circ G(-): \cD \rightarrow \cC^{opp} \rightarrow \textit{Sets}
+$$
+that specifies a set of morphisms in $\cD$ from the perspective of $\cC^{opp}$ is represented by the pair $(F,\eta)$. Likewise, the composite decoding functor 
+$$
+b^{(-)} \circ F(-): \cC^{opp} \rightarrow \cD \rightarrow \textit{Sets}
+$$
+that specifies a set of morphisms in $\cC^{opp}$ from the perspective of $\cD$ is represented by the pair $(G,\epsilon)$.
 
 \subsection{Intrinsic measurement processes of biological systems}
 
