@@ -1,7 +1,7 @@
 %-----------------------------------------------%
 %             filename: skeleton.tex
 %-----------------------------------------------%
-\documentclass[aps,twocolumn]{revtex4}
+\documentclass[aps,twocolumn]{revtex4-1}
 \usepackage{graphicx}
 \usepackage{ifpdf}
 \ifpdf
@@ -16,6 +16,16 @@
 \newtoggle{thmsty}
 \toggletrue{thmsty}
 %\togglefalse{thmsty}
+
+% see http://goo.gl/7jLZ9
+\makeatletter
+\newlength \figwidth
+\if@twocolumn
+  \setlength \figwidth {0.8\columnwidth}
+\else
+  \setlength \figwidth {0.5\textwidth}
+\fi
+\makeatother
 
 \begin{document} 
 
@@ -51,7 +61,7 @@ Distinction between biological systems or some components thereof and the enviro
 
 
 \subsection{Transformation of biological information at system-environment boundaries}
-The use of categorical adjunctions to model information representation in biological systems has been suggested \cite{GOGUEN1979,Ellerman2007,Ellerman2008}, but these efforts have yet to be incorporated into more detailed theories. We begin here by developing the prerequisite definitions to explain why the transformation of biological information is naturally represented as a pair of adjoint functors in the context of category theory.
+The use of categorical adjunctions to model intrinsic information representation in biological systems has been suggested \cite{GOGUEN1979,Ellerman2007,Ellerman2008}, but these efforts have yet to be incorporated into more detailed theories. We begin here by developing the prerequisite definitions to explain why the transformation of biological information is naturally represented as a pair of adjoint functors in the context of category theory.
 
 \iftoggle{thmsty}{
 \begin{definition}
@@ -431,7 +441,14 @@ that specifies a set of morphisms in $\cD$ from the perspective of $\cC^{opp}$ i
 $$
 b^{(-)} \circ F(-): \cC^{opp} \rightarrow \cD \rightarrow \textit{Sets}
 $$
-that specifies a set of morphisms in $\cC^{opp}$ from the perspective of $\cD$ is represented by the pair $(G,\epsilon)$.
+that specifies a set of morphisms in $\cC^{opp}$ from the perspective of $\cD$ is represented by the pair $(G,\epsilon)$. Figure \ref{fig:adjunction} summarizes features of the information encoding-decoding adjunction between $F$ and $G$.
+
+\begin{figure}
+\caption{$F \dashv G$}
+\label{fig:adjunction}
+\noindent\includegraphics[width=\figwidth]{fig/adjunction.pdf}
+\end{figure}
+
 
 \subsection{Intrinsic measurement processes of biological systems}
 
