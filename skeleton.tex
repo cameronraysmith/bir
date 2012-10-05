@@ -373,9 +373,15 @@ h_c \equiv hom(c,-) &:& \mathcal{C} \rightarrow \textit{Sets}.
 Functors that are isomorphic to $h^c$ or $h_c$ are referred to as {\it corepresentable or representable functors} respectively and $c$ is their {\it representing object}. Note that $h^c \in \Ob(\textit{PSh}(\mathcal{C}))$.
 \iftoggle{thmsty}{
 \end{definition}
-}
+}{}
 
-The preceding definitions are standard category theoretic constructions. Ellerman has proposed an interpretation of adjoint functors, that demonstrates their relevance to the concept of information encoding and decoding (or sending and receiving) in the context of biological systems \cite{Ellerman2005}.
+\begin{figure}
+\noindent\includegraphics[width=0.7\columnwidth]{fig/hom.pdf}
+\caption{The presheaf represented by $c' \in \Ob(\cC)$ is $h^{c'} : \cC^{opp} \rightarrow \textit{Sets}$. It sends objects to the set of morphisms in which they are the domain object with codomain $c'$ and morphisms $f:d \rightarrow c \in \Mor{\cC}$ to set functions $h^{c'} \circ f: \Mor_{\cC}(c,c') \rightarrow \Mor_{\cC}(d,c')$ via pre-composition.}
+\label{fig:hom}
+\end{figure}
+
+The action of $h^c$ on objects and morphisms is summarized in figure \ref{fig:hom}. The preceding definitions are standard category theoretic constructions. Ellerman has proposed an interpretation of adjoint functors, that demonstrates their relevance to the concept of information encoding and decoding (or sending and receiving) in the context of biological systems \cite{Ellerman2005}.
 
 \iftoggle{thmsty}{
 \begin{definition}
@@ -457,23 +463,39 @@ that specifies a set of morphisms in $\cC^{opp}$ from the perspective of $\cD$ i
 The asymmetry of the adjunction can be dispensed with if the unit and counit natural transformations are in fact natural isomorphisms $\eta: 1_{\cC^{opp}} \cong GF$ and $\epsilon: FG \cong 1_{\cD}$. In any limit in which this is the case the adjunction $F \dashv G$ gives an equivalence of categories $\cC^{opp} = \cD$ and the information encoding-decoding process becomes bidirectionally exact.
 
 \subsection{Intrinsic measurement processes of biological systems}
+The perspective taken here seeks to abstract from the fundamental relationship between algebraic structures and geometric state spaces that enables translation between them in certain cases \cite{Nestruev2002}. The significance of this perspective is in its capacity to address an important issue that arises in the process of constructing models of biological systems. It is conventional to assume that the geometry of the state space in dynamical models of biological systems is invariantly Euclidean leading to the specification of models of biological systems as a system of ordinary differential equations or the flow of a vector field on a Euclidean manifold, colloquially written as something similar to
+$$
+\frac{d \vec{x}}{dt} = V(\vec{x}),
+$$ 
+where $\vec{x}$ is a vector of state variables upon which $V$ is a function specifying a vector field that, for each variable, may be a function of all specified state variables. This framework requires generalization to approach accurate representation of biological systems, which are evolvable. Presumably, the geometry of the state space is not fixed {\it a priori} and is itself constructed as part of the intrinsic dynamics intuitively associated to current understanding of biological systems \cite{Fontana1994,Fontana1996}. In this light, we need to explicitly consider the process by which a state space is intrinsically constructed in the context of developing a theoretical framework for constructing models of biological systems. This can be accomplished within an {\it intrinsic operational framework} that begins with an abstract accounting of measurements that biological entities may perform upon one another leading to the view of morphisms in a category as specifying a measurement process in which the structure of a biological entity is measured in terms of the structure of another \cite{Rosen1978}.
+ 
 At any level of organization, for example in the case of protein-protein interactions \cite{Johnson2010a, Heo2011}, there are interactions that do not provide stable channels for information flow or may poison otherwise stable channels resulting in the appearance of fundamental randomness at the population level. At another extreme, interactions that do support information flow at the population level are robust correlations that may in turn impinge as a selective filter for a particular type of information flow in another connected, but potentially distal, interaction. The space spanning these relative extremes is embodied in structure preserving transformations between objects in a category where the domain object is viewed as an observable and the codomain object is viewed as representing the result of an intrinsic measurement. Of course, these objects may themselves be represented by categories or some higher-order algebraic structure in which the notion of structure preservation implies important subtleties, but the interpretation of a process in which observables take values according to measurements is invariant.
 From this perspective, what is necessary to characterize any biological entity is precisely a mechanism for determining the set of interactions in which it participates from the point of view of any other entity with which it interacts. This simple principle has a precise formulation in category theory in terms of {\it Yoneda's lemma}.
 
 \iftoggle{thmsty}{
 \begin{definition}
-\label{definition-yoneda}
+\label{lemma-yoneda}
 }{}
-Given a category $\cC$, for $c,c' \in \Ob(\cC)$ and $h_{c},h_{c'} \in \Ob(\textit{Sets}^{\cC})$, the {\it covariant Yoneda lemma} states that the set of natural transformations between copresheaves $Nat_{\textit{Sets}^{\cC}}(h_{c'},h_c)$ is isomorphic to $h_{c}(c')=Mor_{\cC}(c,c')$:
+Given a category $\cC$, for $c,c' \in \Ob(\cC)$ and $h_{c},h_{c'} \in \Ob(\textit{Sets}^{\cC})$, the {\it covariant Yoneda lemma} states that the set of natural transformations between copresheaves $Nat_{\textit{Sets}^{\cC}}(h_{c'},h_c)$ is isomorphic to $h_{c}(c')=Mor_{\cC}(c,c')$ and natural in $c$ and $c'$:
 $$
 Nat_{\textit{Sets}^{\cC}}(h_{c'},h_c) \cong Mor_{\cC}(c,c')
+$$
+Dually, for $h^{c},h^{c'} \in \Ob(\textit{Sets}^{\cC^{opp}})$ the {\it contravariant Yoneda lemma} states that the set of natural transformations between presheaves $Nat_{\textit{Sets}^{\cC^{opp}}}(h^{c},h^{c'})$ is isomorphic to $h^{c'}(c)=Mor_{\cC^{opp}}(c,c')$ and natural in $c$ and $c'$:
+$$
+Nat_{\textit{Sets}^{\cC^{opp}}}(h^{c},h^{c'}) \cong Mor_{\cC^{opp}}(c,c')
 $$
 \iftoggle{thmsty}{
 \end{definition}
 }
 
+The covariant form of Yoneda's lemma in the reverse direction from morphisms to natural transformations implies that if we have an intrinsic measurement procedure $f:c \rightarrow c' \in Mor(\cC)$  where an observable $c$ takes values in $c'$ as the result of an interaction between $c$ and $c'$ then we have an associated natural transformation between the functors represented by $c'$ and $c$, $\xi^{c'}_{c} : h_{c'} \Rightarrow h_c$. 
+This relationship has two important meanings. The first is that all of the information implicit in a particular biological entity can be expressed in terms of the set of intrinsic measurement procedures to which it is subjected in interactions with all other biological entities, which is formalized in terms of the functor that it represents $h_c \equiv hom(c,-)$, being a variable set of morphisms parametrized by all other biological entities within the category of such. The second is that if two biological entities interact with all others in equivalent ways, then this will be identified according to the Yoneda lemma by the existence of a natural isomorphism between the functors represented by each.
+
+Depending upon the specific nature of the category modelling biological entities, the functor $h_c$ can be endowed with a geometric interpretation. For example, the evaluation of $h_c$ from the perspective of any $c' \in \Ob(\cC)$ can be taken to represent the set of states within a geometric space that represent $c$ in terms of $c'$ under all possible measurement procedures acting on $c$. Dually, evaluation of the functor $h^c$ from the perspective of any $c' \in \Ob(\cC)$ can be taken to determine all the points specifying measurement values in terms of $c$ which together determine the structure of the state space represented by $c$. In cases where the objects of such a category have sufficient structure, the intuitive security provided by the association between geometry and visualizability is illusory because the only known methods of interrogation of such complicated objects are algebraic. The geometric semantics are nevertheless helpful in the context of explaining the modelling framework.
 
 \subsection{Topological features of biological information representation}
+
+
 
 \subsection{Variable filtration of biological information}
 
@@ -481,138 +503,23 @@ $$
 
 \subsection{Enabling conditions of hierarchical transformations}
 
-
-\section{Biological evolution}
-\subsection{Niche construction and multilevel selection}
-Selection is part of any evolutionary process. Niche construction, which is implicit in selection, has been introduced more recently as an explicit concept worthy of study \cite{Odling-Smee2003,Krakauer2009}. An organism experiences a situation similar to that represented in diagram \ref{eq:intrep}. 
-
-\input{fig/intrep} 
-
-The molecular interaction network that underlies an arbitrary type of organism is represented by a category $\mathcal{D}$ and the environment is represented by a category $\mathcal{C}$. Due to the dependence of selection on the environment, those organisms capable of survival are those that most closely approximate a natural transformation $\eta:F \circ G \Rightarrow H$. Why might this be the case?
-
-To answer this question requires consideration of the necessity of the category $\mathcal{J}$ in this conceptual framework. From the perspective of any organism, we can roughly think of $\mathcal{D}$ as ''internal'' and $\mathcal{C}$ as ''external'' in a sense that can be likened but not yet clearly identified with ''known'' and ''unknown'' respectively. The selection process can be thought of as requiring the organism to establish a representation of properties of $\mathcal{C}$ so as to enable its existence to remain complementary, and thus stable, relative to its environment. The molecular network underlying the various biochemical functions of the organism has no direct access to the processes that determine the causal structure of the environment. In this case we consider the organism to have direct access only to the structure contained in $\mathcal{D}$, but nevertheless being implicitly assigned, as a result of its relationship to the environment, the seemingly impossible task of establishing the structure of $\mathcal{C}$. If $\mathcal{C}$ were internalized by the organism then relationships between $\mathcal{D}$ and $\mathcal{C}$ that preserve structure, specifically the functors labelled $H:\mathcal{D} \rightarrow \mathcal{C}$, could also be directly internalized. Since $\mathcal{C}$ is external to $\mathcal{D}$, the organism must find another way of determining the relationship between its internal structure and that which is external, even if local.
-
-One way to address this apparently paradoxical situation is to consider the relationship between endofunctors on $\mathcal{D}$ and those like $H$. In the case of \ref{eq:intrep}, $\mathcal{J}$ is considered to be a subcategory of $\mathcal{D}$ that contains all the domains (in the sense of complete partial orders) of $\mathcal{D}$. This scenario allows functors $F:\mathcal{J} \rightarrow \mathcal{D}$ to index diagrams in $\mathcal{D}$.
-
-See \cite{Okasha2006} for information on multilevel selection.
-
-\subsection{The structure of molecular networks}
-\subsubsection{Endo-genetics, genetics, epi-genetics, and $n$-epi-genetics}
-\subsection{Hierarchical organization and evolution}
-See \cite{Gould1994}, \cite{Arnold1982}.
-
-\section{Hierarchy in logic}
-
-\subsection{Russell's paradox}
-A theorem due to Cantor states that given a set $X$ and a map of sets $f$ it is impossible to find a mapping $$ f: X \rightarrow 2^X $$ where $2^X$ represents the set of all subsets of $X$ also referred to as the powerset of $X$.
-
-\subsection{A type theoretic resolution}
-
-\subsection{Categorical type theory}
-See \cite{Crole1994a}.
-
-\section{Information representation}
-
-\subsection{Information theory}
-See \cite{Ellerman2008} and \cite{Cover2006}.
-
-\subsection{Domain theory}
-See \cite{Abramsky}, \cite{Abramsky1995}.
-
-\subsection{Game semantics}
-See \cite{Mellies2009}
-
 \section*{Acknowledgements} 
 
-CRS was supported by . 
-AB was supported by .
+a1 was supported by . 
+a2 was supported by .
+a3 was supported by .
+a4 was supported by .
 
 %-----------------------------------------------%
 %                   appendix
 %-----------------------------------------------%
 \appendix
 \section{Category theory for tourists}
-%\begin{figure}
-%\includegraphics[scale=0.2]{fig/createlytest1.pdf}
-%\caption{This is a $\implies$ creately.com diagram}
-%\end{figure}
-%
-%\begin{center}
-%\asyinclude{fig/comdiag.asy}
-%\end{center}
-%
-%\begin{equation}\label{eq:star}
-%\xymatrix{
-%{\mathcal V}  \ar[r]^{S \quad\quad } \ar[d]_{\pi}
-%&  \mathsf{DynSys} \ar[d]^{U}  \\
-% \op{(\et{\Graph})}  \ar[r]^{\quad\mathbb{P} }
-%&  \mathsf{Man} }
-%\end{equation}
-%
-%Two related questions \cite{Gould1994} define a fundamental role for statistical
-%physics in systems biology: (1). How do biomolecular systems achieve
-%reliable ``device-level'' behavior when they consist of highly
-%
-%\begin{equation*}
-%\xy
-%(-18, 10)*+{\PP\lv T} ="1"; 
-%(18, 10)*+{\PP\rt T} ="2";
-%(-18,-10)*+{\PP\lv T'}="3";
-%(18,-10)*+{\PP \rt T'}="4";
-%{\ar@{->}^X "1";"2"};
-%{\ar@{->}^{\PP(\sigma|_{\lv T})} "3";"1"};
-%{\ar@{=}_{\PP(\sigma|_{\rt T}) = id } "4";"2"};
-%{\ar@{-->}_{\Ctrl(\sigma)X} "3";"4"};
-%\endxy
-%\end{equation*}
-%
-%\begin{center}
-%\begin{tikzpicture}[shorten >=1pt,->]
-%  \tikzstyle{vertex}=[circle,fill=black!25,minimum size=17pt,inner sep=0pt]
-%
-%  \foreach \name/\x in {s/1, 2/2, 3/3, 4/4, 15/11, 
-%                        16/12, 17/13, 18/14, 19/15, t/16}
-%    \node[vertex] (G-\name) at (\x,0) {$\name$};
-%
-%  \foreach \name/\angle/\text in {P-1/234/5, P-2/162/6, 
-%                                  P-3/90/7, P-4/18/8, P-5/-54/9}
-%    \node[vertex,xshift=6cm,yshift=.5cm] (\name) at (\angle:1cm) {$\text$};
-%
-%  \foreach \name/\angle/\text in {Q-1/234/10, Q-2/162/11, 
-%                                  Q-3/90/12, Q-4/18/13, Q-5/-54/14}
-%    \node[vertex,xshift=9cm,yshift=.5cm] (\name) at (\angle:1cm) {$\text$};
-%
-%  \foreach \from/\to in {s/2,2/3,3/4,3/4,15/16,16/17,17/18,18/19,19/t}
-%    \draw (G-\from) -- (G-\to);
-%
-%  \foreach \from/\to in {1/2,2/3,3/4,4/5,5/1,1/3,2/4,3/5,4/1,5/2}
-%    { \draw (P-\from) -- (P-\to); \draw (Q-\from) -- (Q-\to); }
-%
-%  \draw (G-3) .. controls +(-30:2cm) and +(-150:1cm) .. (Q-1);
-%  \draw (Q-5) -- (G-15);
-%\end{tikzpicture}
-%\end{center}
-%
-%
-%\usetikzlibrary{matrix,arrows}
-%\begin{equation}
-%\begin{tikzpicture}[description/.style={fill=white,inner sep=2pt}, baseline=(current bounding box.center)]
-%	\matrix (m) [matrix of math nodes, row sep=3em,
-%	column sep=2.5em, text height=1.5ex, text depth=0.25ex]
-%	{ A & & B \\
-%	& C & \\ };
-%	\path[->,font=\scriptsize]
-%	(m-1-1) edge node[auto] {$ \varphi $} (m-1-3)
-%	edge node[description] {$ \Psi $} (m-2-2)
-%	(m-1-3) edge node[auto] {$ \Phi $} (m-2-2);
-%\end{tikzpicture}
-%\end{equation}
+
 
 %------bibliography---%
 \bibliographystyle{unsrt} 
-%\bibliography{ref/HO}
 \bibliography{bib/books,bib/papers}
-%\bibliography{library}
 %---------------------%
 
 \end{document}
