@@ -31,13 +31,13 @@
 
 \title{\bf Intrinsic information representation in biological systems}
 
-\author{Cameron Ray Smith$^{1}$, Aviv Bergman$^{1,2,3}$}
+\author{a1$^{1}$, a2$^{1}$, a3$^{1}$, a4$^{1,2,3}$}
 
 \affiliation{$^1$Department of Systems and Computational Biology,\\ $^2$Dominick P. Purpura Department of Neuroscience, \\ $^3$Department of Pathology, Albert Einstein College of Medicine, 1301 Morris Park Ave, Bronx, NY 10461, USA}
 
 \date{\today}
 \begin{abstract}
-One of the most important aspects of advancing theory and understanding in biology is the development of a constructed language that can be explicitly and precisely defined and supports communication among scientists, between scientists and computers, and even within individual scientists themselves. Such a language should itself be evolvable and support flexible abstractions that enable the unification and compression of redundant information. It would be useful for such a language to be formally specified prior to or in concert with the development of a computational implementation that may support complementary organization of semi-autonomously linked and computable data. We propose the adaptation of a language originally developed in a mathematical context that apparently meets these criteria. We argue for the particular choice we suggest, not from a mathematical perspective but, by providing an example of the way in which this language enables precise qualitative reasoning and flexible methods of abstraction with respect to integrating biological information in a manner that would, ideally, be analogous to the way in which information is integrated by biological systems themselves. Enabling lossless compression and representation of synthetic knowledge about biological systems, in addition to raw biological data, is necessary for understanding in the context of limited cognitive and other computational resources.
+One of the most important aspects of advancing theory in biology is the development of a constructed language that can be explicitly and precisely defined and supports communication among scientists, between scientists and computers, and even within individual scientists themselves. Such a language should itself be evolvable and support flexible abstractions that enable the unification and compression of redundant information. It would be useful for such a language to be formally specified prior to or in concert with the development of a computational implementation that may support complementary organization of semi-autonomously linked and computable data. We propose the adaptation of a language originally developed in a mathematical context that apparently meets these criteria. We argue for the particular choice we suggest, not from a mathematical perspective but, by providing an example of the way in which this language enables precise qualitative reasoning and flexible methods of abstraction with respect to integrating biological information in a manner that would, ideally, be analogous to the way in which information is integrated by biological systems themselves. Enabling lossless compression and representation of synthetic knowledge about biological systems, in addition to raw biological data, is necessary for understanding in the context of limited cognitive and other computational resources.
 \end{abstract}
 
 \maketitle
@@ -57,11 +57,11 @@ Here we define the concepts from category theory necessary to understand the way
 
 \section{Biological information}
 \subsection{Biological system-environment duality}
-Distinction between biological systems or some components thereof and the environments within which they are embedded is implied in models of such systems. This distinction is useful in many contexts, but the boundary between a biological system and its environment is dependent upon the level of resolution of the \emph{model and modeler} independent of its relationship to properties of the biological system itself \cite{Fontana1996}. In this light, it is desirable to develop a model of biological systems that supports variation of this boundary without requiring any reconfiguration of the model. Constructing a framework for such models requires the determination, unification, and incorporation of abstract features of biological systems that are invariant across levels of organization from molecules to cells, organisms, populations, communities, ecosystems and more fine-grained levels of resolution that likely lie between these broadly and imprecisely defined perspectives one can take with regard to representing biological systems.
+Distinction between biological systems or some components thereof and the environments within which they are embedded is implied in models of such systems. This distinction is useful in many contexts, but the boundary between a biological system and its environment is dependent upon the level of resolution of the \emph{model and modeler} independent of its relationship to properties of the biological system itself \cite{Fontana1996}. In this light, it is desirable to develop a model of biological systems that supports variation of this boundary without requiring complete reconfiguration of the model. Constructing a framework for such models requires the determination, unification, and incorporation of abstract features of biological systems that are invariant across levels of organization from molecules to cells, organisms, populations, communities, ecosystems and more fine-grained levels of resolution that likely lie between these broadly and imprecisely defined perspectives one can take with regard to representing biological systems.
 
 
 \subsection{Transformation of biological information at system-environment boundaries}
-The use of categorical adjunctions to model intrinsic information representation in biological systems has been suggested \cite{GOGUEN1979,Ellerman2007,Ellerman2008}, but these efforts have yet to be incorporated into more detailed theories. We begin here by developing the prerequisite definitions to explain why the transformation of biological information is naturally represented as a pair of adjoint functors in the context of category theory.
+The use of categorical adjunctions to model intrinsic information representation in biological systems has been suggested \cite{GOGUEN1979,Ellerman2007,Ellerman2008}, but these efforts have yet to be incorporated into more detailed theories. This may be in part a result of the difficulty in specifying the appropriate level of abstraction at which a precise metaphor can be developed between collections of interacting biological entities and a particular type of mathematical structure. We begin here by developing the prerequisite definitions to explain why the transformation of biological information is naturally represented as a pair of adjoint functors in the context of category theory. A relevant piece of intuition to associate to what follows is that any interaction between biological entities is, minimally, a dyadic relationship wherein contingencies associated to other interactions of each of the participants establishes prerequisite potential value to high fidelity transmission and representation of information regarding the state of other collections of spatio-temporally distant interactions. The participants in such a dyadic interaction are modelled as categories because each may represent an underlying arbitrarily complicated collection of interactions that are necessary for the very existence of the interface implicit to any interaction.
 
 \iftoggle{thmsty}{
 \begin{definition}
@@ -337,8 +337,13 @@ Given categories $\mathcal{C}_1$, $\mathcal{C}_2$, and $\mathcal{D}$. A {\it bif
 }{}
 The {\it hom-functor} is a bifunctor defined on the product of a category $\mathcal{C}$ with its self-dual category $\mathcal{C}^{opp}$, which takes values in the category $\textit{Sets}$. Thus for a category $C$ its hom-functor is 
 $$
-hom(-,-): \mathcal{C}^{opp} \times \mathcal{C} \rightarrow \textit{Sets}.
+hom(-,-): \mathcal{C}^{opp} \times \mathcal{C} \rightarrow \textit{Sets},
 $$
+which can be curried in two ways
+\begin{eqnarray*}
+hom^{(-)} &:& \mathcal{C}^{opp} \rightarrow \textit{Sets}^{\mathcal{C}},\\
+hom_{(-)} &:& \mathcal{C} \rightarrow \textit{Sets}^{\mathcal{C}^{opp}}.
+\end{eqnarray*}
 The hom-functor maps
 \begin{enumerate}
 \item objects $(c,c') \in \mathcal{C}^{opp} \times \mathcal{C}$ to the hom-set $\Mor_{\mathcal{C}} (c,c')$, which is the set of morphisms in $\mathcal{C}$ with domain $c$ and codomain $c'$.
@@ -365,7 +370,7 @@ For a hom-functor $hom(-,-): \mathcal{C}^{opp} \times \mathcal{C} \rightarrow \t
 h^c \equiv hom(-,c) &:& \mathcal{C}^{opp} \rightarrow \textit{Sets}\\
 h_c \equiv hom(c,-) &:& \mathcal{C} \rightarrow \textit{Sets}.
 \end{eqnarray*}
-Functors that are isomorphic to $h^c$ or $h_c$ are referred to as {\it corepresentable or representable functors} respectively and $c$ is their {\it representing object}. Note that $h_c \in \Ob(\textit{PSh}(\mathcal{C}))$.
+Functors that are isomorphic to $h^c$ or $h_c$ are referred to as {\it corepresentable or representable functors} respectively and $c$ is their {\it representing object}. Note that $h^c \in \Ob(\textit{PSh}(\mathcal{C}))$.
 \iftoggle{thmsty}{
 \end{definition}
 }
@@ -409,9 +414,9 @@ Consider the identity morphism $1_{Fc} \in \Mor_{\cD}(Fc,Fc)$. The adjoint trans
 $$
 \phi_{c,Fc}(1_{Fc})=1_{Fc}^*=\eta_c: c \rightarrow GFc
 $$
-where $\eta_c \in \Mor_{\cC^{opp}}(c,GFc)$, which, when taken to hold quantifying over all $c \in \Ob(\cC^{opp})$ (i.e. to be natural in $c$), gives the natural transformation
+where $\eta_c \in \Mor_{\cC^{opp}}(c,GFc)$, which, when taken to be natural in $c \in \Ob(\cC^{opp})$, gives the natural transformation
 $$
-\eta : 1_{\cC^{opp}} \rightarrow GF
+\eta : 1_{\cC^{opp}} \Rightarrow GF
 $$
 \iftoggle{thmsty}{
 \end{definition}
@@ -427,7 +432,7 @@ $$
 $$
 where $\epsilon_d \in \Mor_{\cD}(d,FGd)$, which, when natural in $d$, gives the natural transformation
 $$
-\epsilon: FG \rightarrow 1_{\cD}
+\epsilon: FG \Rightarrow 1_{\cD}
 $$
 \iftoggle{thmsty}{
 \end{definition}
@@ -444,15 +449,31 @@ $$
 that specifies a set of morphisms in $\cC^{opp}$ from the perspective of $\cD$ is represented by the pair $(G,\epsilon)$. Figure \ref{fig:adjunction} summarizes features of the information encoding-decoding adjunction between $F$ and $G$.
 
 \begin{figure}
-\caption{$F \dashv G$}
+\noindent\includegraphics[width=0.9\columnwidth]{fig/adjunction.pdf}
+\caption{The adjoint relationship between functors $F \dashv G$ with unit $\eta$ and counit $\epsilon$ natural transformations. The asymmetry in the encoding-decoding relationship indicates that $FG \cD$ can be translated back into the original terms of $\cD$ whereas $GF \cC^{opp}$ cannot be translated back into the original terms of $\cC^{opp}$.}
 \label{fig:adjunction}
-\noindent\includegraphics[width=\figwidth]{fig/adjunction.pdf}
 \end{figure}
 
+The asymmetry of the adjunction can be dispensed with if the unit and counit natural transformations are in fact natural isomorphisms $\eta: 1_{\cC^{opp}} \cong GF$ and $\epsilon: FG \cong 1_{\cD}$. In any limit in which this is the case the adjunction $F \dashv G$ gives an equivalence of categories $\cC^{opp} = \cD$ and the information encoding-decoding process becomes bidirectionally exact.
 
 \subsection{Intrinsic measurement processes of biological systems}
+At any level of organization, for example in the case of protein-protein interactions \cite{Johnson2010a, Heo2011}, there are interactions that do not provide stable channels for information flow or may poison otherwise stable channels resulting in the appearance of fundamental randomness at the population level. At another extreme, interactions that do support information flow at the population level are robust correlations that may in turn impinge as a selective filter for a particular type of information flow in another connected, but potentially distal, interaction. The space spanning these relative extremes is embodied in structure preserving transformations between objects in a category where the domain object is viewed as an observable and the codomain object is viewed as representing the result of an intrinsic measurement. Of course, these objects may themselves be represented by categories or some higher-order algebraic structure in which the notion of structure preservation implies important subtleties, but the interpretation of a process in which observables take values according to measurements is invariant.
+From this perspective, what is necessary to characterize any biological entity is precisely a mechanism for determining the set of interactions in which it participates from the point of view of any other entity with which it interacts. This simple principle has a precise formulation in category theory in terms of {\it Yoneda's lemma}.
 
-\subsection{Topological features of biological information}
+\iftoggle{thmsty}{
+\begin{definition}
+\label{definition-yoneda}
+}{}
+Given a category $\cC$, for $c,c' \in \Ob(\cC)$ and $h_{c},h_{c'} \in \Ob(\textit{Sets}^{\cC})$, the {\it covariant Yoneda lemma} states that the set of natural transformations between copresheaves $Nat_{\textit{Sets}^{\cC}}(h_{c'},h_c)$ is isomorphic to $h_{c}(c')=Mor_{\cC}(c,c')$:
+$$
+Nat_{\textit{Sets}^{\cC}}(h_{c'},h_c) \cong Mor_{\cC}(c,c')
+$$
+\iftoggle{thmsty}{
+\end{definition}
+}
+
+
+\subsection{Topological features of biological information representation}
 
 \subsection{Variable filtration of biological information}
 
@@ -463,7 +484,7 @@ that specifies a set of morphisms in $\cC^{opp}$ from the perspective of $\cD$ i
 
 \section{Biological evolution}
 \subsection{Niche construction and multilevel selection}
-Selection is part of any evolutionary process. Niche construction, which is complementary to selection, has been introduced more recently \cite{Odling-Smee2003,Krakauer2009}. An organism experiences a situation similar to that represented in diagram \ref{eq:intrep}. 
+Selection is part of any evolutionary process. Niche construction, which is implicit in selection, has been introduced more recently as an explicit concept worthy of study \cite{Odling-Smee2003,Krakauer2009}. An organism experiences a situation similar to that represented in diagram \ref{eq:intrep}. 
 
 \input{fig/intrep} 
 
