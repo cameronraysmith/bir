@@ -14,8 +14,8 @@
 
 % see http://goo.gl/5Fo27
 \newtoggle{thmsty}
-\toggletrue{thmsty}
-%\togglefalse{thmsty}
+%\toggletrue{thmsty}
+\togglefalse{thmsty}
 
 % see http://goo.gl/7jLZ9
 \makeatletter
@@ -501,7 +501,7 @@ From the perspective of intrinsic operationalism described thus far, the compone
 
 The approach outlined above can, in principle, be iterated over multiple local-global transitions where in ascending from bottom to top global objects and the associated measurements they are capable of performing in terms of one another become local objects when the perspective is shifted to the next level of organization. This capacity will be taken advantage of to define a structural condition characterizing the occurrence of a so-called major transition in evolution \cite{MaynardSmith1995,Okasha2006,Calcott2011}. For now, in order to describe the generic relationship between one collection of local entities and another collection of global entities that are composite constructions upon the collection of local entities we first construct a category, $\mathcal{L}_0$ and $\mathcal{L}_1$, for each of the local and global levels of interaction respectively. In general, all the structure in $\mathcal{L}_0$ may be recapitulated in $\mathcal{L}_1$ but not necessarily conversely. In the context of categories of rings the representable functors $h_r$ and $h^r$ where $r \in \Ob(\textit{Rings})$ can be referred to as spectrum functors.
 
-[[[[[[[[[[[[[[[It might be appropriate to develop the connection to von Neumann algebras, which attempt to generalize $C^*$-algebras by considering general rings of operators and were referred to as such by von Neumann. In addition \cite{Heunen2009} has developed the geometric logic of $C^*$-algebras demonstrating how a state space can be constructed from algebras of observables.]]]]]]]]]]]]]]]
+%[[[[[[[[[[[[[[[It might be appropriate to develop the connection to von Neumann algebras, which attempt to generalize $C^*$-algebras by considering general rings of operators and were referred to as such by von Neumann. In addition \cite{Heunen2009} has developed the geometric logic of $C^*$-algebras demonstrating how a state space can be constructed from algebras of observables.]]]]]]]]]]]]]]]
 
 %\subsection{Intrinsic perspectives on biological information representation}
 
@@ -511,6 +511,332 @@ The relationship between local and global biological information representation 
 \noindent\includegraphics[width=0.5\columnwidth]{fig/ascent.pdf}
 \caption{A framework for the construction of a mechanism of local-global translation of biological information. $\mathcal{L}_0$ and $\mathcal{L}_1$ are respectively the categories of relatively local and global biological information structures. The standard presheaf functor $PSh$ is already concrete and constructs the presheaf functor category on $\mathcal{L}_0$. The functors $A$, $R$, and $L$ are initially defined and abstractly and subsequently constructed.}
 \label{fig:ascent}
+\end{figure}
+
+In order to represent the potentially hierarchical form of information representation internal to the local or global categories of interacting biological entities we recount the definition of a very general notion of topology upon both categories that can be specialized to, for example, the case in which objects of either category take on a particular type of algebraic structure such as rings or graphs.
+
+\iftoggle{thmsty}{
+\begin{definition}
+\label{definition-presheaves-injective-surjective}
+}{}
+Let $\mathcal{C}$ be a category, and let $\varphi : \mathcal{F}
+\to \mathcal{G}$ be a map of presheaves of sets.
+\begin{enumerate}
+\item We say that $\varphi$ is {\it injective} if for every object
+$U$ of $\mathcal{C}$ we have $\alpha : \mathcal{F}(U)
+\to \mathcal{G}(U)$ is injective.
+\item We say that $\varphi$ is {\it surjective} if for every object
+$U$ of $\mathcal{C}$ we have $\alpha : \mathcal{F}(U)
+\to \mathcal{G}(U)$ is surjective.
+\end{enumerate}
+\iftoggle{thmsty}{
+\end{definition}
+}
+
+\iftoggle{thmsty}{
+\begin{lemma}
+\label{lemma-mono-epi}
+}{}
+The injective (resp.\ surjective) maps defined above
+are exactly the monomorphisms (resp.\ epimorphisms) of
+$\textit{PSh}(\mathcal{C})$. A map is an isomorphism
+if and only if it is both injective and surjective.
+\iftoggle{thmsty}{
+\end{lemma}
+}{}
+
+\iftoggle{thmsty}{
+\begin{definition}
+\label{definition-sub-presheaf}
+}{}
+We say $\mathcal{F}$ is a {\it subpresheaf} of $\mathcal{G}$
+if for every object $U \in \Ob(\mathcal{C})$ the set
+$\mathcal{F}(U)$ is a subset of $\mathcal{G}(U)$, compatibly
+with the restriction mappings.
+\iftoggle{thmsty}{
+\end{definition}
+}
+
+\noindent
+In other words, the inclusion
+maps $\mathcal{F}(U) \to \mathcal{G}(U)$
+glue together to give an (injective) morphism of
+presheaves $\mathcal{F} \to \mathcal{G}$.
+
+\iftoggle{thmsty}{
+\begin{lemma}
+\label{lemma-image}
+}{}
+Let $\mathcal{C}$ be a category.
+Suppose that $\varphi : \mathcal{F} \to \mathcal{G}$ is a
+morphism of presheaves of sets on $\mathcal{C}$.
+There exists a unique subpresheaf $\mathcal{G}' \subset \mathcal{G}$
+such that $\varphi$ factors as
+$\mathcal{F} \to \mathcal{G}' \to \mathcal{G}$
+and such that the first map is surjective. We
+say that $\mathcal{G}'$ is the {\it image of $\varphi$}.
+\iftoggle{thmsty}{
+\end{lemma}
+}
+
+\iftoggle{thmsty}{
+\begin{definition}
+\label{definition-sieve}
+}{}
+Let $\mathcal{C}$ be a category. Let $U \in \Ob(\mathcal{C})$.
+A {\it sieve $S$ on $U$} is a subpresheaf $S \subset h_U$.
+\iftoggle{thmsty}{
+\end{definition}
+}
+
+\noindent
+In other words, a sieve on $U$ picks out for each object
+$T \in \Ob(\mathcal{C})$ a subset $S(T)$ of the set
+of all morphisms $T \to U$. In fact, the only condition
+on the collection of subsets
+$S(T) \subset h_U(T) = \Mor_\mathcal{C}(T, U)$
+is the following rule
+\begin{equation}
+\label{equation-property-sieve}
+\left.
+\begin{matrix}
+(\alpha : T \to U) \in S(T) \\
+g : T' \to T
+\end{matrix}
+\right\} \Rightarrow
+(\alpha \circ g : T' \to U) \in S(T')
+\end{equation}
+
+\iftoggle{thmsty}{
+\begin{lemma}
+\label{lemma-sieves-set}
+}{}
+Let $\mathcal{C}$ be a category. Let $U \in \Ob(\mathcal{C})$.
+\begin{enumerate}
+\item The collection of sieves on $U$ is a set.
+\item Inclusion defines a partial ordering on this set.
+\item Unions and intersections of sieves are sieves.
+\item
+\label{item-sieve-generated}
+Given a family of morphisms $\{U_i \to U\}_{i\in I}$
+of $\mathcal{C}$ with target $U$
+there exists a unique smallest sieve $S$ on $U$ such that
+each $U_i \to U$ belongs to $S(U_i)$.
+\item The sieve $S = h_U$ is the maximal sieve.
+\item The empty subpresheaf is the minimal sieve.
+\end{enumerate}
+\iftoggle{thmsty}{
+\end{lemma}
+}
+
+\iftoggle{thmsty}{
+\begin{proof}
+}{}
+By our definition of subpresheaf, the collection of
+all subpresheaves of a presheaf $\mathcal{F}$ is a subset of
+$\prod_{U \in \Ob(\mathcal{C})} \mathcal{P}(\mathcal{F}(U))$.
+And this is a set. (Here $\mathcal{P}(A)$ denotes
+the powerset of $A$.) Hence the collection of sieves on $U$
+is a set.
+
+\medskip\noindent
+The partial ordering is defined by: $S \leq S'$ if and only if
+$S(T) \subset S'(T)$ for all $T \to U$. Notation: $S \subset S'$.
+
+\medskip\noindent
+Given a collection of sieves $S_i$, $i \in I$ on $U$ we can
+define $\bigcup S_i$ as the sieve with values
+$(\bigcup S_i)(T) = \bigcup S_i(T)$ for all
+$T \in \Ob(\mathcal{C})$.
+We define the intersection $\bigcap S_i$ in the same way.
+
+\medskip\noindent
+Given $\{U_i \to U\}_{i\in I}$ as in the statement, consider
+the morphisms of presheaves $h_{U_i} \to h_U$. We simply
+define $S$ as the union of the images of these maps of presheaves.
+\iftoggle{thmsty}{
+\end{proof}
+}
+
+\iftoggle{thmsty}{
+\begin{definition}
+\label{definition-sieve-generated}
+}{}
+Let $\mathcal{C}$ be a category.
+Given a family of morphisms $\{f_i : U_i \to U\}_{i\in I}$
+of $\mathcal{C}$ with target $U$ we say the sieve
+$S$ on $U$ is the {\it sieve  on $U$
+generated by the morphisms $f_i$}.
+\iftoggle{thmsty}{
+\end{definition}
+}
+
+
+\iftoggle{thmsty}{
+\begin{definition}
+\label{definition-pullback-sieve}
+}{}
+Let $\mathcal{C}$ be a category.
+Let $f : V \to U$ be a morphism of $\mathcal{C}$.
+Let $S \subset h_U$ be a sieve. We define the
+{\it pullback of $S$ by $f$} to be the sieve
+$S \times_U V$ of $V$ defined by the rule
+$$
+(\alpha : T \to V) \in (S \times_U V)(T)
+\Leftrightarrow
+(f \circ \alpha : T \to U) \in S(T)
+$$
+\iftoggle{thmsty}{
+\end{definition}
+}
+
+$S \times_U V$ can also be referred to as the {\it base change}
+of $S$ by $f : V \to U$.
+
+\iftoggle{thmsty}{
+\begin{lemma}
+\label{lemma-pullback-sieve-section}
+}{}
+Let $\mathcal{C}$ be a category.
+Let $U \in \Ob(\mathcal{C})$.
+Let $S$ be a sieve on $U$.
+If $f : V \to U$ is in $S$, then
+$S \times_U V = h_V$ is maximal.
+\iftoggle{thmsty}{
+\end{lemma}
+}
+
+\iftoggle{thmsty}{
+\begin{definition}
+\label{definition-topology}
+}{}
+Let $\mathcal{C}$ be a category.
+A {\it topology on $\mathcal{C}$} is given by the following
+datum:
+\begin{list}{}{}
+\item For every $U \in \Ob(\mathcal{C})$
+a subset $J(U)$ of the set of all sieves on $U$.
+\end{list}
+These sets $J(U)$ have to satisfy the following
+conditions
+\begin{enumerate}
+\item For every morphism $f : V \to U$ in $\mathcal{C}$, and
+every element $S \in J(U)$ the pullback $S \times_U V$
+is an element of $J(V)$.
+\item If $S$ and $S'$ are sieves on $U \in \Ob(\mathcal{C})$,
+if $S \in J(U)$, and if for all $f \in S(V)$ the pullback
+$S' \times_U V$ belongs to $J(V)$, then $S'$ belongs to $J(U)$.
+\item For every $U \in \Ob(\mathcal{C})$ the
+maximal sieve $S = h_U$ belongs to $J(U)$.
+\end{enumerate}
+\iftoggle{thmsty}{
+\end{definition}
+}
+
+\noindent
+In this case, the sieves belonging to $J(U)$ are called
+the {\it covering sieves}. 
+
+\iftoggle{thmsty}{
+\begin{definition}
+\label{definition-family-morphisms-fixed-target}
+}{}
+Let $\mathcal{C}$ be a category, see
+Conventions, Section \ref{conventions-section-categories}.
+A {\it family of morphisms with fixed target} in $\mathcal{C}$ is
+given by an object $U \in \Ob(\mathcal{C})$, a set $I$ and
+for each $i\in I$ a morphism $U_i \to U$ of $\mathcal{C}$ with target $U$.
+We use the notation $\{U_i \to U\}_{i\in I}$ to indicate this.
+\iftoggle{thmsty}{
+\end{definition}
+}
+
+\noindent This
+notation is meant to suggest an open covering as in topology.
+
+\iftoggle{thmsty}{
+\begin{definition}
+\label{definition-site}
+}{}
+A {\it site}\footnote{This notation differs from that of \cite{SGA4}, as
+explained in the introduction.} is given by a category $\mathcal{C}$ and a set
+$\text{Cov}(\mathcal{C})$ of families of morphisms with fixed target
+$\{U_i \to U\}_{i \in I}$, called {\it coverings of $\mathcal{C}$},
+satisfying the following axioms
+\begin{enumerate}
+\item If $V \to U$ is an isomorphism then $\{V \to U\} \in
+\text{Cov}(\mathcal{C})$.
+\item If $\{U_i \to U\}_{i\in I} \in \text{Cov}(\mathcal{C})$ and for each
+$i$ we have $\{V_{ij} \to U_i\}_{j\in J_i} \in \text{Cov}(\mathcal{C})$, then
+$\{V_{ij} \to U\}_{i \in I, j\in J_i} \in \text{Cov}(\mathcal{C})$.
+\item If $\{U_i \to U\}_{i\in I}\in \text{Cov}(\mathcal{C})$
+and $V \to U$ is a morphism of $\mathcal{C}$ then $U_i \times_U V$
+exists for all $i$ and
+$\{U_i \times_U V \to V \}_{i\in I} \in \text{Cov}(\mathcal{C})$.
+\end{enumerate}
+\iftoggle{thmsty}{
+\end{definition}
+}
+
+We can now define what a sheaf is in two different ways.
+
+\iftoggle{thmsty}{
+\begin{definition}
+\label{definition-sheaf-sets}
+}{}
+Let $\mathcal{C}$ be a site, and let $\mathcal{F}$ be a presheaf of sets
+on $\mathcal{C}$. We say $\mathcal{F}$ is a {\it sheaf} if
+for every covering $\{U_i \to U\}_{i \in I} \in \text{Cov}(\mathcal{C})$
+the diagram
+\begin{equation}
+\label{equation-sheaf-condition}
+\xymatrix{
+\mathcal{F}(U) \ar[r]
+&
+\prod\nolimits_{i\in I}
+\mathcal{F}(U_i)
+\ar@<1ex>[r]^-{\text{pr}_0^*} \ar@<-1ex>[r]_-{\text{pr}_1^*}
+&
+\prod\nolimits_{(i_0, i_1) \in I \times I}
+\mathcal{F}(U_{i_0} \times_U U_{i_1})
+}
+\end{equation}
+represents the first arrow as the equalizer of $\text{pr}_0^*$
+and $\text{pr}_1^*$.
+\iftoggle{thmsty}{
+\end{definition}
+}
+
+\iftoggle{thmsty}{
+\begin{definition}
+\label{definition-sheaf-sets-topology}
+}{}
+Let $\mathcal{C}$ be a category endowed with a
+topology $J$. Let $\mathcal{F}$ be a presheaf of sets
+on $\mathcal{C}$.
+We say that $\mathcal{F}$ is a
+{\it sheaf} on $\mathcal{C}$
+if for every $U \in \Ob(\mathcal{C})$ and for
+every covering sieve $S$ of $U$ the canonical map
+$$
+\Mor_{\textit{PSh}(\mathcal{C})}(h_U, \mathcal{F})
+\longrightarrow
+\Mor_{\textit{PSh}(\mathcal{C})}(S, \mathcal{F})
+$$
+is bijective.
+\iftoggle{thmsty}{
+\end{definition}
+}
+
+\noindent
+The left hand side of the formula equals $\mathcal{F}(U)$ according to Yoneda's lemma. In other words, $\mathcal{F}$ is a sheaf if and only if a section of $\mathcal{F}$
+over $U$ is the same thing as a compatible collection of sections
+$s_{T, \alpha} \in \mathcal{F}(T)$ parametrized by $(\alpha : T \to U) \in S(T)$, and this for every covering sieve $S$ on $U$.
+
+\begin{figure}
+\noindent\includegraphics[width=0.8\columnwidth]{fig/sieveHasseSetPartitions4.pdf}
+\caption{Sieves conceptualized on an algebraic lattice. (A) shows the maximal sieve on the lattice which is equivalent to the sieve on object 14. (B) shows the sieve on object 4, (C) shows the sieve on object 9 and (D) shows the sieve on object 11.}
+\label{fig:sieve}
 \end{figure}
 
 \subsection{Deconstructing and synthesizing biological information}
