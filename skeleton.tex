@@ -60,9 +60,332 @@ Here we define the concepts from category theory necessary to understand the way
 Distinction between biological systems or some components thereof and the environments within which they are embedded is implied in models of such systems. This distinction is useful in many contexts, but the boundary between a biological system and its environment is dependent upon the level of resolution of the \emph{model and modeler} independent of its relationship to properties of the biological system itself \cite{Fontana1996}. In this light, it is desirable to develop a model of biological systems that supports variation of this boundary without requiring complete reconfiguration of the model. Constructing a framework for such models requires the determination, unification, and incorporation of abstract features of biological systems that are invariant across levels of organization from molecules to cells, organisms, populations, communities, ecosystems and more fine-grained levels of resolution that likely lie between these broadly and imprecisely defined perspectives one can take with regard to representing biological systems.
 
 
-\subsection{Transformation of biological information at system-environment boundaries}
+\subsection{General coherence constraints for intrinsic biological information representation}
 The use of categorical adjunctions to model intrinsic information representation in biological systems has been suggested \cite{GOGUEN1979,Ellerman2005}, but these efforts have yet to be incorporated into more detailed theories. This may be in part a result of the difficulty in specifying the appropriate level of abstraction at which a precise metaphor can be developed between collections of interacting biological entities and a particular type of mathematical structure. We begin here by developing the prerequisite definitions to explain why the transformation of biological information is naturally represented as a pair of adjoint functors in the context of category theory. A relevant piece of intuition to associate to what follows is that any interaction between biological entities is, minimally, a dyadic relationship wherein contingencies associated to other interactions of each of the participants establishes prerequisite potential value to high fidelity transmission and representation of information regarding the state of other collections of spatio-temporally distant interactions. The participants in such a dyadic interaction are modelled as categories because each may represent an underlying arbitrarily complicated collection of interactions that are necessary for the very existence of the interface implicit to any interaction.
 
+\iftoggle{thmsty}{
+\begin{definition}
+\label{definition-category}
+}{}
+A {\it category} $\mathcal{C}$ is:
+\begin{enumerate}
+\item A set of objects $\Ob(\mathcal{C})$.
+\item For each pair $x, y \in \Ob(\mathcal{C})$ a set of morphisms
+$\Mor_\mathcal{C}(x, y)$.
+\item For each triple $x, y, z\in \Ob(\mathcal{C})$ a composition
+map $ \Mor_\mathcal{C}(y, z) \times \Mor_\mathcal{C}(x, y)
+\to \Mor_\mathcal{C}(x, z) $, denoted $(\phi, \psi) \mapsto
+\phi \circ \psi$.
+\end{enumerate}
+Such that these constraints are satisfied:
+\begin{enumerate}
+\item For every element $x\in \Ob(\mathcal{C})$ there exists a
+morphism $\text{id}_x\in \Mor_\mathcal{C}(x, x)$ such that
+$\text{id}_x \circ \phi = \phi$ and $\psi \circ \text{id}_x = \psi $.
+\item Composition is associative, i.e., $(\phi \circ \psi) \circ \chi =
+\phi \circ ( \psi \circ \chi)$.
+\end{enumerate}
+\iftoggle{thmsty}{
+\end{definition}
+}
+
+\iftoggle{thmsty}{
+\begin{definition}
+\label{definition-functor}
+}{}
+A {\it functor} $F : \mathcal{A} \to \mathcal{B}$
+between two categories $\mathcal{A}, \mathcal{B}$ is:
+\begin{enumerate}
+\item A map $F : \Ob(\mathcal{A}) \to \Ob(\mathcal{B})$.
+\item For every $x, y \in \Ob(\mathcal{A})$ a map
+$F : \Mor_\mathcal{A}(x, y) \to \Mor_\mathcal{B}(F(x), F(y))$,
+denoted $\phi \mapsto F(\phi)$.
+\end{enumerate}
+These data should be compatible with composition and identity morphisms
+in the following manner: $F(\phi \circ \psi) =
+F(\phi) \circ F(\psi)$ for a composable pair $(\phi, \psi)$ of
+morphisms of $\mathcal{A}$ and $F(\text{id}_x) = \text{id}_{F(x)}$.
+\iftoggle{thmsty}{
+\end{definition}
+}
+
+\iftoggle{thmsty}{
+\begin{definition}
+\label{definition-transformation-functors}
+}{}
+Let $F, G : \mathcal{A} \to \mathcal{B}$ be functors.
+A {\it natural transformation}, or a {\it morphism of functors}
+$t : F \to G$, is a collection $\{t_x\}_{x\in \Ob(\mathcal{A})}$
+such that
+\begin{enumerate}
+\item $t_x : F(x) \to G(x)$ is a morphism in the category $\mathcal{B}$, and
+\item for every morphism $\phi : x \to y$ of $\mathcal{A}$ the following
+diagram is commutative
+$$
+\xymatrix{
+F(x) \ar[r]^{t_x} \ar[d]_{F(\phi)} & G(x) \ar[d]^{G(\phi)} \\
+F(y) \ar[r]^{t_y} & G(y) }
+$$
+\end{enumerate}
+\iftoggle{thmsty}{
+\end{definition}
+}
+
+We can define a category having functors as objects and natural transformations as morphisms, which is called a functor category, by recognizing that every functor $F$ comes with the {\it identity} transformation $\text{id}_F : F \to F$. In addition, given a morphism of
+functors $t : F \to G$ and a morphism of functors $s : E \to F$
+then the {\it composition} $t \circ s$ is defined by the rule
+$$
+(t \circ s)_x = t_x \circ s_x : E(x) \to G(x)
+$$
+for $x \in \Ob(\mathcal{A})$.
+This is a morphism of functors
+from $E$ to $G$.
+Thus, given categories
+$\mathcal{A}$ and $\mathcal{B}$ we obtain the category of functors between $\mathcal{A}$ and
+$\mathcal{B}$.
+
+\iftoggle{thmsty}{
+\begin{definition}
+\label{definition-equivalence-categories}
+}{}
+An {\it equivalence of categories}
+$F : \mathcal{A} \to \mathcal{B}$ is a functor such that there
+exists a functor $G : \mathcal{B} \to \mathcal{A}$ such that
+the compositions $F \circ G$ and $G \circ F$ are isomorphic to the
+identity functors $\text{id}_\mathcal{B}$,
+respectively $\text{id}_\mathcal{A}$.
+In this case we say that $G$ is a {\it quasi-inverse} to $F$.
+\iftoggle{thmsty}{
+\end{definition}
+}
+
+\iftoggle{thmsty}{
+\begin{definition}
+\label{definition-adjoint}
+}{}
+Let $\mathcal{C}$, $\mathcal{D}$ be categories.
+Let $u : \mathcal{C} \to \mathcal{D}$ and
+$v : \mathcal{D} \to \mathcal{C}$ be functors.
+We say that $u$ is a {\it left adjoint} of $v$ or that
+$v$ is a {\it right adjoint} to $u$, written $u \dashv v$, if there are bijections
+$$
+\phi_{X,Y}:\Mor_\mathcal{D}(u(X), Y)
+\simeq
+\Mor_\mathcal{C}(X, v(Y))
+$$
+functorial in $X \in \Ob(\mathcal{C})$, and
+$Y \in \Ob(\mathcal{D})$.
+\iftoggle{thmsty}{
+\end{definition}
+}
+
+$F \dashv G$ is thus equivalent to the statement $\phi_{-,-}:b_{(-)} \cong b^{(-)}$ (see Appendix \ref{app:CatTh}). In this framework, information encoding/decoding is an asymmetric process that can only be accomplished without loss of information in one direction: objects of $\cD$ can be encoded into objects of $\cC$ and decoded into objects of $\cD$ but, in general, proceeding in the opposite order may result in loss of information. This asymmetry is clarified by consideration of the unit and counit morphisms of the adjunction.
+
+\iftoggle{thmsty}{
+\begin{definition}
+\label{definition-unit}
+}{}
+Consider the identity morphism $1_{Fc} \in \Mor_{\cD}(Fc,Fc)$. The adjoint transpose of $1_{Fc}$ is the {\it unit} morphism at $c$
+$$
+\phi_{c,Fc}(1_{Fc})=1_{Fc}^*=\eta_c: c \rightarrow GFc
+$$
+where $\eta_c \in \Mor_{\cC^{opp}}(c,GFc)$, which, when taken to be natural in $c \in \Ob(\cC^{opp})$, gives the natural transformation
+$$
+\eta : 1_{\cC^{opp}} \Rightarrow GF
+$$
+\iftoggle{thmsty}{
+\end{definition}
+}
+
+\iftoggle{thmsty}{
+\begin{definition}
+\label{definition-counit}
+}{}
+Consider the identity morphism $1_{Gd} \in \Mor_{\cC^{opp}}(Gd,Gd)$. The adjoint transpose of $1_{Gd}$ is the {\it counit} morphism at $d$
+$$
+\phi_{Gd,d}^{-1}(1_{Gd})=1_{Gd}^*=\epsilon_d: FGd \rightarrow d
+$$
+where $\epsilon_d \in \Mor_{\cD}(d,FGd)$, which, when natural in $d$, gives the natural transformation
+$$
+\epsilon: FG \Rightarrow 1_{\cD}
+$$
+\iftoggle{thmsty}{
+\end{definition}
+}
+
+The composite encoding inspection functor 
+$$
+b_{(-)} \circ G(-): \cD \rightarrow \cC^{opp} \rightarrow \textit{Sets}
+$$
+that specifies a set of morphisms in $\cD$ from the perspective of $\cC^{opp}$ is represented by the pair $(F,\eta)$. Likewise, the composite decoding inspection functor 
+$$
+b^{(-)} \circ F(-): \cC^{opp} \rightarrow \cD \rightarrow \textit{Sets}
+$$
+that specifies a set of morphisms in $\cC^{opp}$ from the perspective of $\cD$ is represented by the pair $(G,\epsilon)$. Figure \ref{fig:adjunction} summarizes features of the information encoding-decoding adjunction between $F$ and $G$.
+
+\begin{figure}
+\noindent\includegraphics[width=0.9\columnwidth]{fig/adjunction.pdf}
+\caption{The adjoint relationship between functors $F \dashv G$ with unit $\eta$ and counit $\epsilon$ natural transformations. The asymmetry in the encoding-decoding relationship indicates that $FG \cD$ can be translated back into the original terms of $\cD$ whereas $GF \cC^{opp}$ cannot be translated back into the original terms of $\cC^{opp}$.}
+\label{fig:adjunction}
+\end{figure}
+
+The asymmetry of the adjunction can be dispensed with if the unit and counit natural transformations are in fact natural isomorphisms $\eta: 1_{\cC^{opp}} \cong GF$ and $\epsilon: FG \cong 1_{\cD}$. In any limit in which this is the case the adjunction $F \dashv G$ gives an equivalence of categories $\cC^{opp} = \cD$ and the information encoding-decoding process becomes bidirectionally exact.
+
+\subsection{Intrinsic measurement processes of biological systems}
+The perspective taken here seeks to abstract from the fundamental relationship between algebraic structures and geometric state spaces that enables translation between them in certain cases \cite{Nestruev2002}. The significance of this perspective is in its capacity to address an important issue that arises in the process of constructing models of biological systems. It is conventional to assume that the geometry of the state space in dynamical models of biological systems is invariantly Euclidean leading to the specification of models of biological systems as a system of ordinary differential equations or the flow of a vector field on a Euclidean manifold, colloquially written as something similar to
+$$
+\frac{d \vec{x}}{dt} = V(\vec{x}),
+$$ 
+where $\vec{x}$ is a vector of state variables upon which $V$ is a function specifying a vector field that, for each variable, may be a function of all specified state variables. This framework requires generalization to approach accurate representation of biological systems, which are evolvable. Presumably, the geometry of the state space is not fixed {\it a priori} and is itself constructed as part of the intrinsic dynamics intuitively associated to current understanding of biological systems \cite{Fontana1994,Fontana1996}. In this light, we need to explicitly consider the process by which a state space is intrinsically constructed in the context of developing a theoretical framework for constructing models of biological systems. This can be accomplished within a framework of {\it intrinsic operationalism} \cite{Bridgman1927} that begins with an abstract accounting of measurements that biological entities may perform upon one another leading to the view of morphisms in a category as specifying a measurement process in which the structure of a biological entity is measured in terms of the structure of another \cite{Rosen1978}.
+ 
+At any level of organization, for example in the case of protein-protein interactions \cite{Johnson2010a, Heo2011}, there are interactions that do not provide stable channels for information flow or may poison otherwise stable channels resulting in the appearance of fundamental randomness at the population level. At another extreme, interactions that do support information flow at the population level culminate in robust correlations that may in turn impinge as a selective filter for a particular type of information flow in another connected, but potentially distal, interaction. The space spanning these relative extremes is embodied in structure preserving transformations between objects in a category where the domain object is viewed as an observable and the codomain object is viewed as representing the result of an intrinsic measurement. Of course, these objects may themselves be represented by categories or some higher-order algebraic structure in which the notion of structure preservation implies important subtleties, but the interpretation of a process in which observables take values according to measurements is invariant.
+From this perspective, what is necessary to characterize any biological entity is precisely a mechanism for determining the set of interactions in which it participates from the point of view of any other entity with which it interacts. This simple principle has a precise formulation in category theory in terms of {\it Yoneda's lemma}.
+
+\iftoggle{thmsty}{
+\begin{definition}
+\label{lemma-yoneda}
+}{}
+Given a category $\cC$, for $c,c' \in \Ob(\cC)$ and $h_{c},h_{c'} \in \Ob(\textit{Sets}^{\cC})$, the {\it covariant Yoneda lemma} states that the set of natural transformations between copresheaves $Nat_{\textit{Sets}^{\cC}}(h_{c'},h_c)$ is isomorphic to $h_{c}(c')=Mor_{\cC}(c,c')$ and natural in $c$ and $c'$:
+$$
+Nat_{\textit{Sets}^{\cC}}(h_{c'},h_c) \cong Mor_{\cC}(c,c')
+$$
+Dually, for $h^{c},h^{c'} \in \Ob(\textit{Sets}^{\cC^{opp}})$ the {\it contravariant Yoneda lemma} states that the set of natural transformations between presheaves $Nat_{\textit{Sets}^{\cC^{opp}}}(h^{c},h^{c'})$ is isomorphic to $h^{c'}(c)=Mor_{\cC^{opp}}(c,c')$ and natural in $c$ and $c'$:
+$$
+Nat_{\textit{Sets}^{\cC^{opp}}}(h^{c},h^{c'}) \cong Mor_{\cC^{opp}}(c,c')
+$$
+\iftoggle{thmsty}{
+\end{definition}
+}
+
+The covariant form of Yoneda's lemma in the reverse direction from morphisms to natural transformations implies that if we have an intrinsic measurement procedure $f:c \rightarrow c' \in Mor(\cC)$  where an observable $c$ takes values in $c'$ as the result of an interaction between $c$ and $c'$ then we have an associated natural transformation between the functors represented by $c'$ and $c$, $\xi^{c'}_{c} : h_{c'} \Rightarrow h_c$. 
+This relationship has two important meanings. The first is that all of the information implicit in a particular biological entity can be expressed in terms of the set of intrinsic measurement procedures to which it is subjected in interactions with all other biological entities, which is formalized in terms of the functor that it represents $h_c \equiv hom(c,-)$, being a variable set of morphisms parametrized by all other biological entities within the category of such. The second is that if two biological entities interact with all others in equivalent ways, then this will be identified according to the Yoneda lemma by the existence of a natural isomorphism between the functors represented by each.
+
+Depending upon the specific nature of the category modelling biological entities, the functor $h_c$ can be endowed with a geometric interpretation. For example, the evaluation of $h_c$ from the perspective of any $c' \in \Ob(\cC)$ can be taken to represent the set of states within a geometric space that represent $c$ in terms of $c'$ under all possible measurement procedures acting on $c$. Dually, evaluation of the functor $h^c$ from the perspective of any $c' \in \Ob(\cC)$ can be taken to determine all the points specifying measurement values in terms of $c$ which together determine the structure of the state space represented by $c$. In cases where the objects of such a category have sufficient structure, the intuitive security provided by the association between geometry and visualizability is illusory because the only known methods of interrogation of such complicated objects are algebraic. The geometric semantics are nevertheless helpful in the context of explaining the modelling framework.
+
+\section{A topological framework for biological information}
+
+\subsection{Hierarchical biological information representation}
+
+From the perspective of intrinsic operationalism described thus far, the components of biological systems take on the role of the measurements they are capable of performing on and representing in terms of one another. Collections of interacting biological entities can also perform measurements on other collections and it is necessary to establish in our modeling framework a method for representing the way in which collections of interactions can be woven together to produce higher-order structures. Although this choice may be generalized in the future, as a first approximation, we qualitatively associate algebraic rings, which abstractly support concepts of addition and multiplication of measurements fundamental to biological systems \cite{Houle2011}, to the relatively primitive biological entities under consideration that provide a {\it local} description with respect to a {\it global} structure which may be represented by a composite ring of observables that can be constructed by potentially integrating components from each ring defined locally. This perspective suggests the capacity to both deconstruct and resynthesize composite systems in terms of locally and globally defined rings.
+
+The approach outlined above can, in principle, be iterated over multiple local-global transitions where in ascending from bottom to top global objects and the associated measurements they are capable of performing in terms of one another become local objects when the perspective is shifted to the next level of organization. This capacity will be taken advantage of to define a structural condition characterizing the occurrence of a so-called major transition in evolution \cite{MaynardSmith1995,Okasha2006,Calcott2011}. For now, in order to describe the generic relationship between one collection of local entities and another collection of global entities that are composite constructions upon the collection of local entities we first construct a category for each of the local and global levels of interaction, $\mathcal{L}_0$ and $\mathcal{L}_1$, respectively. In general, all the structure in $\mathcal{L}_0$ may be recapitulated in $\mathcal{L}_1$ but not necessarily conversely. In the context of categories of rings the representable functors $h_r$ and $h^r$ where $r \in \Ob(\textit{Rings})$ can be referred to as spectrum functors.
+
+%[[[[[[[[[[[[[[[It might be appropriate to develop the connection to von Neumann algebras, which attempt to generalize $C^*$-algebras by considering general rings of operators and were referred to as such by von Neumann. In addition \cite{Heunen2009} has developed the geometric logic of $C^*$-algebras demonstrating how a state space can be constructed from algebras of observables.]]]]]]]]]]]]]]]
+
+%\subsection{Intrinsic perspectives on biological information representation}
+
+The relationship between local and global biological information representation in the categories $\mathcal{L}_0$ and $\mathcal{L}_1$. We can construct a method for relating local and global biological information contained in these two categories. We have previously defined the Yoneda embedding for an arbitrary category, which we specialize to the case of $\mathcal{L}_0$ as $PSh: \mathcal{L}_0 \rightarrow \textit{Sets}^{\mathcal{L}_0^{opp}}$. We abstractly define a functor to be constructed $A:\mathcal{L}_0 \rightarrow \mathcal{L}_1$ that assigns representations of global information and morphisms that preserve the structure between them to those of local information with respect to a biological system.  Similarly, the functor $R: \mathcal{L}_1 \rightarrow \textit{Sets}^{\mathcal{L}_0^{opp}}$ assigns presheaves on $\mathcal{L}_0$ to the composite information structures in $\mathcal{L}_1$ and $L$ acts conversely. The categories of local and global information representation and the functors enabling partial translation between them is summarized in Figure \ref{fig:ascent}.
+
+\begin{figure}
+\noindent\includegraphics[width=0.5\columnwidth]{fig/ascent.pdf}
+\caption{A framework for the construction of a mechanism of local-global translation of biological information. $\mathcal{L}_0$ and $\mathcal{L}_1$ are respectively the categories of relatively local and global biological information structures. The standard presheaf functor $PSh$ is already concrete and constructs the presheaf functor category on $\mathcal{L}_0$. The functors $A$, $R$, and $L$ are initially defined abstractly and subsequently constructed.}
+\label{fig:ascent}
+\end{figure}
+
+In order to construct the functor $L$, we need to explain the relationship between objects in the category of presheaves and the representable functors from their underlying category.
+
+\iftoggle{thmsty}{
+\begin{definition}
+\label{definition-category-of-elements}
+}{}
+For any category $\mathcal{C}$, index category $J$, and functor $A:J \rightarrow \cC$, every $P \in \Ob(\textit{Sets}^{\cC^{opp}})$ is a colimit of $\cC$-representable functors
+$$
+\lim_{\overrightarrow{j \in J}} PSh A_j \cong P.
+$$
+There is a canonical choice for $J$ and $A$ such that
+$$
+\lim_{\rightarrow{J}} PSh \circ A \cong P.
+$$
+The unique index category $J$ is called the {\it category of elements} of the presheaf $P$ and is denoted
+$$
+\int_{\cC} P.
+$$
+The objects of $\int_{\cC} P$ are pairs $(C,x)$ where $C \in \Ob(\cC)$ and $x \in PC$. The morphisms are triples $(g,(C',x'),(C,x))$ where $g:(C',x') \rightarrow (C,x)$ derives from $g: C \rightarrow C \in \Mor(\cC)$ and these satisfy the condition
+$$
+P(g)(x)=x'.
+$$
+There is also a projection functor that recovers structure in $\cC$ from the category of elements of $P$
+$$
+\pi : \int_{\cC} P \rightarrow \cC
+$$
+defined on objects and morphisms of the category of elements of $P$ respectively as $\pi(C,x)=C$ and $\pi (g,(C',x'),(C,x)) = g$.
+\iftoggle{thmsty}{
+\end{definition}
+}
+
+Colimits over the category of elements of a presheaf are used in the construction of the functors $R$ and $L$ informally presented in Figure \ref{fig:ascent}.
+
+\iftoggle{thmsty}{
+\begin{theorem}
+\label{theorem-cocompletion-adjunction}
+}{}
+Consider $\mathcal{L}_0$ a small category, $\mathcal{L}_1$ is a cocomplete category, and a functor $A : \mathcal{L}_0 \rightarrow \mathcal{L}_1$. Then we can construct a pair of adjoint functors $L \dashv R$ between $\mathcal{L}_1$ and $\textit{Sets}^{\mathcal{L}_0^{opp}}$ such that $L: \textit{Sets}^{\mathcal{L}_0^{opp}} \rightarrow \mathcal{L}_1 :R$ where $L$ and $R$ are defined componentwise as
+\begin{eqnarray}
+R(L_1) &:& L_0 \mapsto Mor_{\mathcal{L}_1}(A(L_0),L_1),\\
+L(P) &=& Colim \left( \int P \xrightarrow{\pi} \mathcal{L}_0 \xrightarrow{A} \mathcal{L}_1 \right) .
+\end{eqnarray}
+\iftoggle{thmsty}{
+\end{theorem}
+}
+
+\iftoggle{thmsty}{
+\begin{proof}
+\label{proof-cocompletion-adjunction}
+}{}
+A natural transformation can be constructed $\tau : P \rightarrow R(L_1)$ by defining it on components as set functions parameterized by $L_0 \in \Ob(\mathcal{L}_0)$
+$$
+\tau_{L_0} : P(L_0) \rightarrow Mor_{\mathcal{L}_1}(A(L_0),L_1)
+$$
+which is natural in $C$ according to the commutativity of the diagram
+$$
+\xymatrix{
+P(L_0) \ar[r]^-{\tau_{L_0}} \ar[d]_{P(u)} & Mor_{\mathcal{L}_1}(A(L_0),L_1) \ar[d]^{A(u)^*} \\
+P(L'_0) \ar[r]^-{\tau_{L'_0}} & Mor_{\mathcal{L}_1}(A(L'_0),L_1) }
+$$
+for all $u:L'_0 \rightarrow L_0 \in \Mor(\mathcal{L}_0)$. $\tau$ is also determined by a family of morphisms in $\Mor(\mathcal{L}_1)$ by
+$$
+\{ \tau_{L_0}(x):A(L_0) \rightarrow L_1 \}_{(L_0,x)}
+$$
+indexed by objects $(L_0,x)$ of the category of elements $\int P$. This construction is natural in objects $(L_0,x)$ in the sense that the diagram
+$$
+\xymatrix{
+A(L_0) \ar@{=}[r] \ar[dd]_{A(u)} & A\pi(L_0,x) \ar[rd]^{\tau_{L_0}(x)} \ar[dd]^{u_*} & \\
+& & L_1 \\
+A(L'_0) \ar@{=}[r] & A\pi(L'_0,x') \ar[ru]_{\tau_{L'_0}(x')} &
+}
+$$
+commutes for each morphism $u$. There is thus a bijection
+$$
+Nat(P,R(L_1)) \cong Mor_{L_1}(LP,L_1),
+$$
+which is natural in both $P$ and $L_1$ demonstrating the adjoint relationship $L \dashv R$. The functor $L$ is unique for a given $A$ and all functors $A$ from a small category $\mathcal{L}_0$ to a cocomplete category $\mathcal{L}_1$ factor through the Yoneda embedding $PSh$. The Yoneda embedding is thus the universal method of appending colimits to a small category as suggested by the diagram
+$$
+\xymatrix{
+& \mathcal{L}_1 & \\
+\mathcal{L}_0 \ar[ru]^{A} \ar[rr]_{PSh} & & \textit{Sets}^{\mathcal{L}_0^{opp}} \ar@{-->}[lu]_{L}
+}
+$$
+which commutes uniquely in $L$.
+\iftoggle{thmsty}{
+\end{proof}
+}
+
+In order to be able to represent objects in the global category of interacting biological entities in terms of diagrams modeled in the local category we make use of a very general notion of topology that can be applied to any category and that can be specialized to, for example, the case in which objects and morphisms of the category take on a particular type of algebraic structure such as rings or graphs among others. The purpose of this construction is to develop a method of defining a covering system composed of interacting entities in the category representing local information that can be used to establish a decomposition of objects in the category representing global information with respect to a biological system.
+
+
+
+\subsection{Topological deconstruction and synthesis of biological information}
+
+
+\subsection{Coherence constraints on emerging transitions in the hierarchical organization of biological systems}
+
+\section{Conclusion}
+
+%-----------------------------------------------%
+%                   appendix
+%-----------------------------------------------%
+\appendix
+\section{Category theory}\label{app:CatTh}
 \iftoggle{thmsty}{
 \begin{definition}
 \label{definition-category}
@@ -410,213 +733,7 @@ b_{c} (g_{ij}) &:& \Mor_{\cD}(Fc,d_i) \rightarrow \Mor_{\cD}(Fc,d_j).
 \end{definition}
 }
 
-$F \dashv G$ is thus equivalent to the statement $\phi_{-,-}:b_{(-)} \cong b^{(-)}$. In this framework, information encoding/decoding is an asymmetric process that can only be accomplished without loss of information in one direction: objects of $\cD$ can be encoded into objects of $\cC$ and decoded into objects of $\cD$ but, in general, proceeding in the opposite order may result in loss of information. This asymmetry is clarified by consideration of the unit and counit morphisms of the adjunction.
-
-\iftoggle{thmsty}{
-\begin{definition}
-\label{definition-unit}
-}{}
-Consider the identity morphism $1_{Fc} \in \Mor_{\cD}(Fc,Fc)$. The adjoint transpose of $1_{Fc}$ is the {\it unit} morphism at $c$
-$$
-\phi_{c,Fc}(1_{Fc})=1_{Fc}^*=\eta_c: c \rightarrow GFc
-$$
-where $\eta_c \in \Mor_{\cC^{opp}}(c,GFc)$, which, when taken to be natural in $c \in \Ob(\cC^{opp})$, gives the natural transformation
-$$
-\eta : 1_{\cC^{opp}} \Rightarrow GF
-$$
-\iftoggle{thmsty}{
-\end{definition}
-}
-
-\iftoggle{thmsty}{
-\begin{definition}
-\label{definition-counit}
-}{}
-Consider the identity morphism $1_{Gd} \in \Mor_{\cC^{opp}}(Gd,Gd)$. The adjoint transpose of $1_{Gd}$ is the {\it counit} morphism at $d$
-$$
-\phi_{Gd,d}^{-1}(1_{Gd})=1_{Gd}^*=\epsilon_d: FGd \rightarrow d
-$$
-where $\epsilon_d \in \Mor_{\cD}(d,FGd)$, which, when natural in $d$, gives the natural transformation
-$$
-\epsilon: FG \Rightarrow 1_{\cD}
-$$
-\iftoggle{thmsty}{
-\end{definition}
-}
-
-The composite encoding inspection functor 
-$$
-b_{(-)} \circ G(-): \cD \rightarrow \cC^{opp} \rightarrow \textit{Sets}
-$$
-that specifies a set of morphisms in $\cD$ from the perspective of $\cC^{opp}$ is represented by the pair $(F,\eta)$. Likewise, the composite decoding inspection functor 
-$$
-b^{(-)} \circ F(-): \cC^{opp} \rightarrow \cD \rightarrow \textit{Sets}
-$$
-that specifies a set of morphisms in $\cC^{opp}$ from the perspective of $\cD$ is represented by the pair $(G,\epsilon)$. Figure \ref{fig:adjunction} summarizes features of the information encoding-decoding adjunction between $F$ and $G$.
-
-\begin{figure}
-\noindent\includegraphics[width=0.9\columnwidth]{fig/adjunction.pdf}
-\caption{The adjoint relationship between functors $F \dashv G$ with unit $\eta$ and counit $\epsilon$ natural transformations. The asymmetry in the encoding-decoding relationship indicates that $FG \cD$ can be translated back into the original terms of $\cD$ whereas $GF \cC^{opp}$ cannot be translated back into the original terms of $\cC^{opp}$.}
-\label{fig:adjunction}
-\end{figure}
-
-The asymmetry of the adjunction can be dispensed with if the unit and counit natural transformations are in fact natural isomorphisms $\eta: 1_{\cC^{opp}} \cong GF$ and $\epsilon: FG \cong 1_{\cD}$. In any limit in which this is the case the adjunction $F \dashv G$ gives an equivalence of categories $\cC^{opp} = \cD$ and the information encoding-decoding process becomes bidirectionally exact.
-
-\subsection{Intrinsic measurement processes of biological systems}
-The perspective taken here seeks to abstract from the fundamental relationship between algebraic structures and geometric state spaces that enables translation between them in certain cases \cite{Nestruev2002}. The significance of this perspective is in its capacity to address an important issue that arises in the process of constructing models of biological systems. It is conventional to assume that the geometry of the state space in dynamical models of biological systems is invariantly Euclidean leading to the specification of models of biological systems as a system of ordinary differential equations or the flow of a vector field on a Euclidean manifold, colloquially written as something similar to
-$$
-\frac{d \vec{x}}{dt} = V(\vec{x}),
-$$ 
-where $\vec{x}$ is a vector of state variables upon which $V$ is a function specifying a vector field that, for each variable, may be a function of all specified state variables. This framework requires generalization to approach accurate representation of biological systems, which are evolvable. Presumably, the geometry of the state space is not fixed {\it a priori} and is itself constructed as part of the intrinsic dynamics intuitively associated to current understanding of biological systems \cite{Fontana1994,Fontana1996}. In this light, we need to explicitly consider the process by which a state space is intrinsically constructed in the context of developing a theoretical framework for constructing models of biological systems. This can be accomplished within a framework of {\it intrinsic operationalism} \cite{Bridgman1927} that begins with an abstract accounting of measurements that biological entities may perform upon one another leading to the view of morphisms in a category as specifying a measurement process in which the structure of a biological entity is measured in terms of the structure of another \cite{Rosen1978}.
- 
-At any level of organization, for example in the case of protein-protein interactions \cite{Johnson2010a, Heo2011}, there are interactions that do not provide stable channels for information flow or may poison otherwise stable channels resulting in the appearance of fundamental randomness at the population level. At another extreme, interactions that do support information flow at the population level culminate in robust correlations that may in turn impinge as a selective filter for a particular type of information flow in another connected, but potentially distal, interaction. The space spanning these relative extremes is embodied in structure preserving transformations between objects in a category where the domain object is viewed as an observable and the codomain object is viewed as representing the result of an intrinsic measurement. Of course, these objects may themselves be represented by categories or some higher-order algebraic structure in which the notion of structure preservation implies important subtleties, but the interpretation of a process in which observables take values according to measurements is invariant.
-From this perspective, what is necessary to characterize any biological entity is precisely a mechanism for determining the set of interactions in which it participates from the point of view of any other entity with which it interacts. This simple principle has a precise formulation in category theory in terms of {\it Yoneda's lemma}.
-
-\iftoggle{thmsty}{
-\begin{definition}
-\label{lemma-yoneda}
-}{}
-Given a category $\cC$, for $c,c' \in \Ob(\cC)$ and $h_{c},h_{c'} \in \Ob(\textit{Sets}^{\cC})$, the {\it covariant Yoneda lemma} states that the set of natural transformations between copresheaves $Nat_{\textit{Sets}^{\cC}}(h_{c'},h_c)$ is isomorphic to $h_{c}(c')=Mor_{\cC}(c,c')$ and natural in $c$ and $c'$:
-$$
-Nat_{\textit{Sets}^{\cC}}(h_{c'},h_c) \cong Mor_{\cC}(c,c')
-$$
-Dually, for $h^{c},h^{c'} \in \Ob(\textit{Sets}^{\cC^{opp}})$ the {\it contravariant Yoneda lemma} states that the set of natural transformations between presheaves $Nat_{\textit{Sets}^{\cC^{opp}}}(h^{c},h^{c'})$ is isomorphic to $h^{c'}(c)=Mor_{\cC^{opp}}(c,c')$ and natural in $c$ and $c'$:
-$$
-Nat_{\textit{Sets}^{\cC^{opp}}}(h^{c},h^{c'}) \cong Mor_{\cC^{opp}}(c,c')
-$$
-\iftoggle{thmsty}{
-\end{definition}
-}
-
-The covariant form of Yoneda's lemma in the reverse direction from morphisms to natural transformations implies that if we have an intrinsic measurement procedure $f:c \rightarrow c' \in Mor(\cC)$  where an observable $c$ takes values in $c'$ as the result of an interaction between $c$ and $c'$ then we have an associated natural transformation between the functors represented by $c'$ and $c$, $\xi^{c'}_{c} : h_{c'} \Rightarrow h_c$. 
-This relationship has two important meanings. The first is that all of the information implicit in a particular biological entity can be expressed in terms of the set of intrinsic measurement procedures to which it is subjected in interactions with all other biological entities, which is formalized in terms of the functor that it represents $h_c \equiv hom(c,-)$, being a variable set of morphisms parametrized by all other biological entities within the category of such. The second is that if two biological entities interact with all others in equivalent ways, then this will be identified according to the Yoneda lemma by the existence of a natural isomorphism between the functors represented by each.
-
-Depending upon the specific nature of the category modelling biological entities, the functor $h_c$ can be endowed with a geometric interpretation. For example, the evaluation of $h_c$ from the perspective of any $c' \in \Ob(\cC)$ can be taken to represent the set of states within a geometric space that represent $c$ in terms of $c'$ under all possible measurement procedures acting on $c$. Dually, evaluation of the functor $h^c$ from the perspective of any $c' \in \Ob(\cC)$ can be taken to determine all the points specifying measurement values in terms of $c$ which together determine the structure of the state space represented by $c$. In cases where the objects of such a category have sufficient structure, the intuitive security provided by the association between geometry and visualizability is illusory because the only known methods of interrogation of such complicated objects are algebraic. The geometric semantics are nevertheless helpful in the context of explaining the modelling framework.
-
-\section{A topological framework for biological information}
-
-\subsection{Topological features of biological information representation}
-
-From the perspective of intrinsic operationalism described thus far, the components of biological systems take on the role of the measurements they are capable of performing on and representing in terms of one another. Collections of interacting biological entities can also perform measurements on other collections and it is necessary to establish in our modeling framework a method for representing the way in which collections of interactions can be woven together to produce higher-order structures. Although this choice may be generalized in the future, as a first approximation, we qualitatively associate algebraic rings, which abstractly support concepts of addition and multiplication of measurements fundamental to biological systems \cite{Houle2011}, to the relatively primitive biological entities under consideration that provide a {\it local} description with respect to a {\it global} structure which may be represented by a composite ring of observables that can be constructed by potentially integrating components from each ring defined locally. This perspective suggests the capacity to both deconstruct and resynthesize composite systems in terms of locally and globally defined rings.
-
-The approach outlined above can, in principle, be iterated over multiple local-global transitions where in ascending from bottom to top global objects and the associated measurements they are capable of performing in terms of one another become local objects when the perspective is shifted to the next level of organization. This capacity will be taken advantage of to define a structural condition characterizing the occurrence of a so-called major transition in evolution \cite{MaynardSmith1995,Okasha2006,Calcott2011}. For now, in order to describe the generic relationship between one collection of local entities and another collection of global entities that are composite constructions upon the collection of local entities we first construct a category for each of the local and global levels of interaction, $\mathcal{L}_0$ and $\mathcal{L}_1$, respectively. In general, all the structure in $\mathcal{L}_0$ may be recapitulated in $\mathcal{L}_1$ but not necessarily conversely. In the context of categories of rings the representable functors $h_r$ and $h^r$ where $r \in \Ob(\textit{Rings})$ can be referred to as spectrum functors.
-
-%[[[[[[[[[[[[[[[It might be appropriate to develop the connection to von Neumann algebras, which attempt to generalize $C^*$-algebras by considering general rings of operators and were referred to as such by von Neumann. In addition \cite{Heunen2009} has developed the geometric logic of $C^*$-algebras demonstrating how a state space can be constructed from algebras of observables.]]]]]]]]]]]]]]]
-
-%\subsection{Intrinsic perspectives on biological information representation}
-
-The relationship between local and global biological information representation in the categories $\mathcal{L}_0$ and $\mathcal{L}_1$. We can construct a method for relating local and global biological information contained in these two categories. We have previously defined the Yoneda embedding for an arbitrary category, which we specialize to the case of $\mathcal{L}_0$ as $PSh: \mathcal{L}_0 \rightarrow \textit{Sets}^{\mathcal{L}_0^{opp}}$. We abstractly define a functor to be constructed $A:\mathcal{L}_0 \rightarrow \mathcal{L}_1$ that assigns representations of global information and morphisms that preserve the structure between them to those of local information with respect to a biological system.  Similarly, the functor $R: \mathcal{L}_1 \rightarrow \textit{Sets}^{\mathcal{L}_0^{opp}}$ assigns presheaves on $\mathcal{L}_0$ to the composite information structures in $\mathcal{L}_1$ and $L$ acts conversely. The categories of local and global information representation and the functors enabling partial translation between them is summarized in Figure \ref{fig:ascent}.
-
-\begin{figure}
-\noindent\includegraphics[width=0.5\columnwidth]{fig/ascent.pdf}
-\caption{A framework for the construction of a mechanism of local-global translation of biological information. $\mathcal{L}_0$ and $\mathcal{L}_1$ are respectively the categories of relatively local and global biological information structures. The standard presheaf functor $PSh$ is already concrete and constructs the presheaf functor category on $\mathcal{L}_0$. The functors $A$, $R$, and $L$ are initially defined abstractly and subsequently constructed.}
-\label{fig:ascent}
-\end{figure}
-
-In order to construct the functor $L$, we need to explain the relationship between objects in the category of presheaves and the representable functors from their underlying category.
-
-\iftoggle{thmsty}{
-\begin{definition}
-\label{definition-category-of-elements}
-}{}
-For any category $\mathcal{C}$, index category $J$, and functor $A:J \rightarrow \cC$, every $P \in \Ob(\textit{Sets}^{\cC^{opp}})$ is a colimit of $\cC$-representable functors
-$$
-\lim_{\overrightarrow{j \in J}} PSh A_j \cong P.
-$$
-There is a canonical choice for $J$ and $A$ such that
-$$
-\lim_{\rightarrow{J}} PSh \circ A \cong P.
-$$
-The unique index category $J$ is called the {\it category of elements} of the presheaf $P$ and is denoted
-$$
-\int_{\cC} P.
-$$
-The objects of $\int_{\cC} P$ are pairs $(C,x)$ where $C \in \Ob(\cC)$ and $x \in PC$. The morphisms are triples $(g,(C',x'),(C,x))$ where $g:(C',x') \rightarrow (C,x)$ derives from $g: C \rightarrow C \in \Mor(\cC)$ and these satisfy the condition
-$$
-P(g)(x)=x'.
-$$
-There is also a projection functor that recovers structure in $\cC$ from the category of elements of $P$
-$$
-\pi : \int_{\cC} P \rightarrow \cC
-$$
-defined on objects and morphisms of the category of elements of $P$ respectively as $\pi(C,x)=C$ and $\pi (g,(C',x'),(C,x)) = g$.
-\iftoggle{thmsty}{
-\end{definition}
-}
-
-Colimits over the category of elements of a presheaf are used in the construction of the functors $R$ and $L$ informally presented in Figure \ref{fig:ascent}.
-
-\iftoggle{thmsty}{
-\begin{theorem}
-\label{theorem-cocompletion-adjunction}
-}{}
-Consider $\mathcal{L}_0$ a small category, $\mathcal{L}_1$ is a cocomplete category, and a functor $A : \mathcal{L}_0 \rightarrow \mathcal{L}_1$. Then we can construct a pair of adjoint functors $L \dashv R$ between $\mathcal{L}_1$ and $\textit{Sets}^{\mathcal{L}_0^{opp}}$ such that $L: \textit{Sets}^{\mathcal{L}_0^{opp}} \rightarrow \mathcal{L}_1 :R$ where $L$ and $R$ are defined componentwise as
-\begin{eqnarray}
-R(L_1) &:& L_0 \mapsto Mor_{\mathcal{L}_1}(A(L_0),L_1),\\
-L(P) &=& Colim \left( \int P \xrightarrow{\pi} \mathcal{L}_0 \xrightarrow{A} \mathcal{L}_1 \right) .
-\end{eqnarray}
-\iftoggle{thmsty}{
-\end{theorem}
-}
-
-\iftoggle{thmsty}{
-\begin{proof}
-\label{proof-cocompletion-adjunction}
-}{}
-A natural transformation can be constructed $\tau : P \rightarrow R(L_1)$ by defining it on components as set functions parameterized by $L_0 \in \Ob(\mathcal{L}_0)$
-$$
-\tau_{L_0} : P(L_0) \rightarrow Mor_{\mathcal{L}_1}(A(L_0),L_1)
-$$
-which is natural in $C$ according to the commutativity of the diagram
-$$
-\xymatrix{
-P(L_0) \ar[r]^-{\tau_{L_0}} \ar[d]_{P(u)} & Mor_{\mathcal{L}_1}(A(L_0),L_1) \ar[d]^{A(u)^*} \\
-P(L'_0) \ar[r]^-{\tau_{L'_0}} & Mor_{\mathcal{L}_1}(A(L'_0),L_1) }
-$$
-for all $u:L'_0 \rightarrow L_0 \in \Mor(\mathcal{L}_0)$. $\tau$ is also determined by a family of morphisms in $\Mor(\mathcal{L}_1)$ by
-$$
-\{ \tau_{L_0}(x):A(L_0) \rightarrow L_1 \}_{(L_0,x)}
-$$
-indexed by objects $(L_0,x)$ of the category of elements $\int P$. This construction is natural in objects $(L_0,x)$ in the sense that the diagram
-$$
-\xymatrix{
-A(L_0) \ar@{=}[r] \ar[dd]_{A(u)} & A\pi(L_0,x) \ar[rd]^{\tau_{L_0}(x)} \ar[dd]^{u_*} & \\
-& & L_1 \\
-A(L'_0) \ar@{=}[r] & A\pi(L'_0,x') \ar[ru]_{\tau_{L'_0}(x')} &
-}
-$$
-commutes for each morphism $u$. There is thus a bijection
-$$
-Nat(P,R(L_1)) \cong Mor_{L_1}(LP,L_1),
-$$
-which is natural in both $P$ and $L_1$ demonstrating the adjoint relationship $L \dashv R$. The functor $L$ is unique for a given $A$ and all functors $A$ from a small category $\mathcal{L}_0$ to a cocomplete category $\mathcal{L}_1$ factor through the Yoneda embedding $PSh$. The Yoneda embedding is thus the universal method of appending colimits to a small category as suggested by the diagram
-$$
-\xymatrix{
-& \mathcal{L}_1 & \\
-\mathcal{L}_0 \ar[ru]^{A} \ar[rr]_{PSh} & & \textit{Sets}^{\mathcal{L}_0^{opp}} \ar@{-->}[lu]_{L}
-}
-$$
-which commutes uniquely in $L$.
-\iftoggle{thmsty}{
-\end{proof}
-}
-
-In order to be able to represent objects in the global category of interacting biological entities in terms of diagrams modeled in the local category we make use of a very general notion of topology that can be applied to any category and that can be specialized to, for example, the case in which objects and morphisms of the category take on a particular type of algebraic structure such as rings or graphs among others. The purpose of this construction is to develop a method of defining a covering system composed of interacting entities in the category representing local information that can be used to establish a decomposition of objects in the category representing global information with respect to a biological system.
-
-
-
-\subsection{Deconstructing and synthesizing biological information}
-
-
-\subsection{Structural conditions on hierarchical transformations}
-
-\section{Conclusion}
-
-%-----------------------------------------------%
-%                   appendix
-%-----------------------------------------------%
-\appendix
-\section{Sieves and sheaves}
+\section{Sieves and sheaves}\label{Sheaves}
 
 \iftoggle{thmsty}{
 \begin{definition}
