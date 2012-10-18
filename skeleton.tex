@@ -37,7 +37,7 @@
 
 \date{\today}
 \begin{abstract}
-One of the most important aspects of advancing theory in biology is the development of a constructed language that can be explicitly and precisely defined thereby supporting communication among scientists, between scientists and computers, and even within individual scientists themselves. Such a language should itself be evolvable and support flexible abstractions that enable the unification and compression of redundant information. It would be useful for such a language to be formally specified prior to or in concert with the development of a computational implementation that may support complementary organization of semi-autonomously linked and computable data. We propose the adaptation of a language originally developed in a mathematical context that apparently meets these criteria. We argue for the particular choice we suggest, not from a mathematical perspective but, by providing an example of the way in which this language enables precise qualitative reasoning and flexible methods of abstraction with respect to integrating biological information in a manner that would, ideally, be analogous to the way in which information is integrated by biological systems themselves. Enabling lossless compression and representation of synthetic knowledge about biological systems, in addition to raw biological data, is necessary for understanding in the context of limited cognitive and other computational resources.
+One of the most important aspects of advancing theory in biology is the development of a constructed language that can be explicitly and precisely defined thereby supporting communication, computer-based knowledge representation, and hypothesis-generating thought. Such a language should itself be evolvable and support flexible abstractions that enable the unification and compression of redundant information via the expression of principles of invariance. It would be useful for such a language to be formally specified prior to or in concert with the development of a computational implementation that may support complementary organization of autonomously linked data. We propose the specialization of a language originally developed in a mathematical context that apparently meets these criteria. We argue for this choice, not from a mathematical perspective but, by providing an example of the way in which this language enables precise qualitative reasoning and flexible methods of abstraction with respect to integrating biological information in a manner that would, ideally, be analogous to the way in which information is integrated by biological systems themselves. Enabling lossless compression and representation of synthetic knowledge about biological systems, in addition to raw biological data, is necessary for understanding in the context of limited cognitive and other computational resources.
 \end{abstract}
 
 \maketitle
@@ -45,11 +45,18 @@ One of the most important aspects of advancing theory in biology is the developm
 \tableofcontents
 
 \section{Introduction}
+
+\begin{figure*}
+\noindent\includegraphics[width=1.8\columnwidth]{fig/biograph.pdf}
+\caption{Particular features of interaction networks underlying biological systems can be abstracted as graphs of some type with morphisms translating structure between them.}
+\label{fig:biograph}
+\end{figure*}
+
 The development of a formal language for modeling biological systems was suggested by Joseph Woodger in collaboration with the developmental biologist Conrad Waddington and the logician Alfred Tarski as early as 1937 \cite{Woodger1937,Woodger1951,Woodger1952,Woodger1952a}. At that time it was perhaps difficult to understand how such a language could be put to use. Today we have tools that could enable the use of such a language: namely 1) computational machines to automate the details of routine transformations within the language and 2) large, accessible, growing repositories of biological data. Though we have access to necessary infrastructure, we lack such a language suggested by Woodger and others throughout the course of the 20th century as we have continued to rely on natural language heuristics to communicate and reason about biological systems.
 
 Category theory \cite{Lane1985,Lane1998,MacLane1992,Lawvere1997,Lawvere2003,Awodey2006} is a language that has been suggested since Woodger to provide a framework for representing and reasoning about biological systems \cite{GOGUEN1979,Ehresmann2007,Louie2009}. What is immediately useful about this language from the perspective of biology is that it presents as primitive the notion of transformation or interaction between objects. In fact, from this point of view, a defining characteristic of any entity (e.g. a protein, cell, organism, or population) is structural: the set of relationships between it and other entities under consideration. Intrinsic properties are taken into account implicitly in this framework since the possible set of relationships between any object and any other is constrained by the nature of its intrinsic properties. 
 
-What is less obvious at first meeting is the way in which category theory, especially with regard to its interface with logic and geometry \cite{MacLane1992,Jacobs1998}, enables the precise definition of what might be viewed as a framework for explaining the nature and development of so-called \emph{emergent properties} of systems of interacting processes. This expression is general enough that it can be equally well applied to the consideration of relationships between any levels of biological organization and may be generalizable to arbitrary physical contexts. This unity deriving from the judicious definition of underlying categorical concepts along the way is precisely the type of abstraction that we argue is necessary to enable compression without loss of biological information and thus synthesis of existing biological knowledge.
+What is less obvious at first meeting is the way in which category theory, especially with regard to its interface with logic and geometry \cite{MacLane1992,Jacobs1998}, enables the precise definition of what might be viewed as a framework for explaining the nature and development of so-called \emph{emergent properties} of systems of interacting processes. This expression is general enough that it can be equally well applied to the consideration of relationships between any levels of biological organization. This unity deriving from the judicious definition of underlying categorical concepts along the way is precisely the type of abstraction that we argue is necessary to enable compression without loss of biological information and thus synthesis of existing biological knowledge.
 
 Here we define the concepts from category theory necessary to understand the way in which interacting objects at one level of organization (e.g. molecules) can produce phenomena that would themselves be identifiable as derived objects (e.g. cells) that justify the very conceptualization of a \emph{level of organization} in the first instance. Here we focus exclusively on defining the boundary conditions relating levels (e.g. molecules and cells or cells and multicellular organisms) of organization, which are necessary to understand in the course of defining a dynamical system that could model the \emph{evolution} of such. What results is a refinement of the concept of the levels of organization that are ubiquitously employed in biology and examples of which are used so far only heuristically as guides to pre-existing intuition. Understanding how to integrate information regarding biological processes across such levels of organization is fundamental to the understanding of complex phenotypes and the associated set of contingencies necessary to account for in methods that may be targeted at controlling or otherwise manipulating them.
 
@@ -58,7 +65,6 @@ Here we define the concepts from category theory necessary to understand the way
 \section{Intrinsic operationalism in biological systems}
 \subsection{System-environment duality}
 Distinction between biological systems or some components thereof and the environments within which they are embedded is implied in models of such systems. This distinction is useful in many contexts, but the boundary between a biological system and its environment is dependent upon the level of resolution of the \emph{model and modeler} independent of its relationship to properties of the biological system itself \cite{Fontana1996}. In this light, it is desirable to develop a model of biological systems that supports variation of this boundary without requiring complete reconfiguration of the model. Constructing a framework for such models requires the determination, unification, and incorporation of abstract features of biological systems that are invariant across levels of organization from molecules to cells, organisms, populations, communities, ecosystems and more fine-grained levels of resolution that likely lie between these broadly and imprecisely defined perspectives one can take with regard to representing biological systems.
-
 
 \subsection{General coherence constraints for intrinsic biological information representation}
 The use of categorical adjunctions to model intrinsic information representation in biological systems has been suggested \cite{GOGUEN1979,Ellerman2005}, but these efforts have yet to be incorporated into more detailed theories. This may be in part a result of the difficulty in specifying the appropriate level of abstraction at which a precise metaphor can be developed between collections of interacting biological entities and a particular type of mathematical structure. We begin here by developing the prerequisite definitions to explain why the transformation of biological information is naturally represented as a pair of adjoint functors in the context of category theory. A relevant piece of intuition to associate to what follows is that any interaction between biological entities is, minimally, a dyadic relationship wherein contingencies associated to other interactions of each of the participants establishes prerequisite potential value to high fidelity transmission and representation of information regarding the state of other collections of spatio-temporally distant interactions. The participants in such a dyadic interaction are modelled as categories because each may represent an underlying arbitrarily complicated collection of interactions that are necessary for the very existence of the interface implicit to any interaction.
@@ -313,7 +319,7 @@ defined on objects and morphisms of the category of elements of $P$ respectively
 \end{definition}
 }
 
-Colimits over the category of elements of a presheaf are used in the construction of the functors $R$ and $L$ informally presented in Figure \ref{fig:ascent}.
+The category of elements of a presheaf functor is depicted schematically in figure \ref{fig:catofel}. Colimits over the category of elements of a presheaf are used in the construction of the functors $R$ and $L$ informally presented in Figure \ref{fig:ascent}.
 
 \iftoggle{thmsty}{
 \begin{theorem}
@@ -365,21 +371,106 @@ $$
 \mathcal{L}_0 \ar[ru]^{A} \ar[rr]_{PSh} & & \textit{Sets}^{\mathcal{L}_0^{opp}} \ar@{-->}[lu]_{L}
 }
 $$
-which commutes uniquely in $L$.
+which commutes uniquely in $L$ for a given $A$.
 \iftoggle{thmsty}{
 \end{proof}
 }
 
-In order to be able to represent objects in the global category of interacting biological entities in terms of diagrams modeled in the local category we make use of a very general notion of topology that can be applied to any category and that can be specialized to, for example, the case in which objects and morphisms of the category take on a particular type of algebraic structure such as rings or graphs among others. The purpose of this construction is to develop a method of defining a covering system composed of interacting entities in the category representing local information that can be used to establish a decomposition of objects in the category representing global information with respect to a biological system.
-
-
+\begin{figure}
+\noindent\includegraphics[width=0.8\columnwidth]{fig/catofel.pdf}
+\caption{The category of elements of a presheaf functor.}
+\label{fig:catofel}
+\end{figure}
 
 \subsection{Topological deconstruction and synthesis of biological information}
+
+In order to be able to represent objects and their interactions in the global category of higher-order interacting biological entities in terms of diagrams modeled in the local category of such we make use of a general notion analogous to a topology that can be applied to any category and that can be specialized to, for example, the case in which objects and morphisms of the category take on a particular type of algebraic structure. The purpose of this construction is to develop a method of defining a {\it covering system} composed of interacting entities in the category representing local interactions that can be used to establish a decomposition of objects in the category representing global interactions that may each rely on a certain type of composition of local interactions with respect to any biological system.
+
+\iftoggle{thmsty}{
+\begin{definition}
+\label{definition-sieve}
+}{}
+For any category $\cC$ and $c \in \Ob(\cC)$ a {\it sieve} $S$ on $c$ is a collection in $\Mor(\cC)$ with codomain $c$ such that for $f,g \in \Mor(\cC)$
+$$
+f \in S \Rightarrow f \circ g \in S
+$$
+whenever there is a $g \in \Mor(\cC)$ such that $cod(g)=dom(f)$. Any sieve can be restricted to a sieve on the domain of a map whose codomain is the object of the sieve. If $S$ is a sieve on $c$ and $h:d \rightarrow c \in \Mor(\cC)$ with $cod(h)=c$ then
+$$
+h^* (S) \equiv \{ g \, | \, cod(g)=d, h \circ g \in S \}
+$$
+is a sieve on $d$.
+\iftoggle{thmsty}{
+\end{definition}
+}
+
+\begin{figure}
+\noindent\includegraphics[width=0.8\columnwidth]{fig/sieveHasseSetPartitions4.pdf}
+\caption{Sieves conceptualized on an algebraic lattice. All edges are directed from bottom to top. Blue edges are part of a sieve on an object represented by a node in the lattice. Black edges are part of the lattice but not part of the sieve under consideration. (A) shows the maximal sieve on the lattice, which is equivalent to a sieve on object 14. (B) shows a sieve on object 4, (C) shows a sieve on object 9 and (D) shows a sieve on object 11.}
+\label{fig:sieve}
+\end{figure}
+
+A sieve is thus a collection of all the morphisms impinging on a given object upon which it is defined. Examples of sieves on an algebraic lattice are shown in figure \ref{fig:sieve}. There is a simple connection between sieves and the Yoneda embedding $PSh:\cC \rightarrow \textit{Sets}^{\cC^{opp}}$. A sieve is a subfunctor $S \subseteq hom(-,c)$ of the functor in the presheaf category on $\cC$ that is represented by $c \in \Ob(\cC)$. Placing constraints on such sieves enables the definition of an abstract notion of topology on a category.
+
+\iftoggle{thmsty}{
+\begin{definition}
+\label{definition-grothendieck-topology}
+}{}
+A {\it Grothendieck topology} on a category $\cC$ is a function $J$ that assigns a collection $J(c)$ of sieves on $c$ to each $c \in \Ob(\cC)$ such that conditions of maximality, stability and transitivity are satisfied respectively
+\begin{enumerate}
+\item the maximal sieve $M_c = \{f \, | \, cod(f) = c\} \in J(c)$,
+\item for $S \in J(c)$, $f^*(S) \in J(d)$ for any $f:d \rightarrow c \in \Mor(\cC)$,
+\item for $S \in J(c)$, $R \in J(c)$ for any sieve $R$ on $c$ with $f^* (R) \in J(d)$ for all $f:d \rightarrow c \in S$.
+\end{enumerate}
+Sieves $S$ in $J(c)$ for an object $c \in \Ob(\cC)$ are referred to as $J-covering$ sieves.
+\iftoggle{thmsty}{
+\end{definition}
+}
+
+\iftoggle{thmsty}{
+\begin{definition}
+\label{definition-basis}
+}{}
+A {\it basis} for a topology on a category $\cC$ that has pullbacks is a function $B$ that assigns to each object $c \in \Ob(\cC)$ a collection of families $\{c_i \rightarrow c \}$ of morphisms referred to as {\it covering families} in $B(c)$ such that
+\begin{enumerate}
+\item every family consisting of a single isomorphism $\{ d \cong c \}$ is a covering family in $B(c)$
+\item if $\{f_i:c_i \rightarrow c \}$ is a covering family and $g:d \rightarrow c$ is any morphism in $\Mor(\cC)$ then $\{g^* c_i \rightarrow d \}$ is a covering family in $B(d)$ of $d$, which means that the collection of covering families is stable under pullbacks
+\item if $\{f_i : c_i \rightarrow c \}_{i \in I}$ is a covering family and $\{ g_{i,j} : c_{i,j} \rightarrow c_i \}_{j \in J_i}$ then the family of composites $\{ f_i \circ g_{i,j} : c_{i,j} \rightarrow c_i \rightarrow c \}_{i \in I, j \in J_i}$ is a covering family in $B(c)$
+\end{enumerate}
+\iftoggle{thmsty}{
+\end{definition}
+}
+
+\iftoggle{thmsty}{
+\begin{definition}
+\label{definition-site}
+}{}
+A pair $(\cC,J)$ or $(\cC,B)$ consisting of a category $\cC$ and a Grothendieck topology $J$ on $\cC$ or a basis $B$ for such a topology is referred to as a {\it site}. If $S \in J(c)$, then $S$ is a {\it covering sieve} of $c$. If $B$ is a basis on $\cC$, then $B$ is said to {\it generate} a topology $J$ according to the equivalence between the statements that a sieve $S$ is a $J$-cover and that a sieve $S$ contains an associated $B$-cover
+$$
+S \in J(c) \Longleftrightarrow \exists Q \in B(c) \,\,\, Q \subseteq S.
+$$
+\iftoggle{thmsty}{
+\end{definition}
+}
+
+\iftoggle{thmsty}{
+\begin{definition}
+\label{definition-sheaves}
+}{}
+
+\iftoggle{thmsty}{
+\end{definition}
+}
 
 
 \subsection{Coherence constraints on emerging transitions in the hierarchical organization of biological systems}
 
 \section{Conclusion}
+
+%------bibliography---%
+\bibliographystyle{unsrt} 
+\bibliography{bib/books,bib/papers}
+%---------------------%
+
 
 %-----------------------------------------------%
 %                   appendix
@@ -801,19 +892,13 @@ say that $\mathcal{G}'$ is the {\it image of $\varphi$}.
 
 \iftoggle{thmsty}{
 \begin{definition}
-\label{definition-sieve}
+\label{definition-sieve-s}
 }{}
 Let $\mathcal{C}$ be a category. Let $U \in \Ob(\mathcal{C})$.
 A {\it sieve $S$ on $U$} is a subpresheaf $S \subset h_U$.
 \iftoggle{thmsty}{
 \end{definition}
 }
-
-\begin{figure}
-\noindent\includegraphics[width=0.8\columnwidth]{fig/sieveHasseSetPartitions4.pdf}
-\caption{Sieves conceptualized on an algebraic lattice. All edges are directed from bottom to top. Blue edges are part of a sieve on an object represented by a node in the lattice. Black edges are part of the lattice but not part of the sieve under consideration. (A) shows the maximal sieve on the lattice, which is equivalent to a sieve on object 14. (B) shows a sieve on object 4, (C) shows a sieve on object 9 and (D) shows a sieve on object 11.}
-\label{fig:sieve}
-\end{figure}
 
 \noindent
 In other words, a sieve on $U$ picks out for each object
@@ -981,7 +1066,7 @@ notation is meant to suggest an open covering as in topology.
 
 \iftoggle{thmsty}{
 \begin{definition}
-\label{definition-site}
+\label{definition-site-s}
 }{}
 A {\it site} is given by a category $\mathcal{C}$ and a set
 $\text{Cov}(\mathcal{C})$ of families of morphisms with fixed target
@@ -1056,11 +1141,5 @@ is bijective.
 The left hand side of the formula equals $\mathcal{F}(U)$ according to the Yoneda lemma. In other words, $\mathcal{F}$ is a sheaf if and only if a section of $\mathcal{F}$
 over $U$ is the same thing as a compatible collection of sections
 $s_{T, \alpha} \in \mathcal{F}(T)$ parametrized by $(\alpha : T \to U) \in S(T)$, and this for every covering sieve $S$ on $U$.
-
-
-%------bibliography---%
-\bibliographystyle{unsrt} 
-\bibliography{bib/books,bib/papers}
-%---------------------%
 
 \end{document}
