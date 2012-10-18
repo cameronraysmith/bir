@@ -62,6 +62,12 @@ Here we define the concepts from category theory necessary to understand the way
 
 [ Note that biological systems are concretely represented as graphs of some kind and all the letters representing categories can be specialized to categories of graphs of some kind ]
 
+\begin{quotation}
+{\it One such idea, which underlies everything in this book, is the concept
+of genomically encoded information processing. To return to my metaphor above,
+this is like the geological basis of the landscape. In my view, cis-regulatory information processing, and information processing at the gene regulatory network circuit level, are the real secret of animal development. Probably the appearance of genomic regulatory systems capable of information processing is what made animal evolution possible.} -Eric H. Davidson \cite{Davidson2006a}
+\end{quotation}
+
 \section{Intrinsic operationalism in biological systems}
 \subsection{System-environment duality}
 Distinction between biological systems or some components thereof and the environments within which they are embedded is implied in models of such systems. This distinction is useful in many contexts, but the boundary between a biological system and its environment is dependent upon the level of resolution of the \emph{model and modeler} independent of its relationship to properties of the biological system itself \cite{Fontana1996}. In this light, it is desirable to develop a model of biological systems that supports variation of this boundary without requiring complete reconfiguration of the model. Constructing a framework for such models requires the determination, unification, and incorporation of abstract features of biological systems that are invariant across levels of organization from molecules to cells, organisms, populations, communities, ecosystems and more fine-grained levels of resolution that likely lie between these broadly and imprecisely defined perspectives one can take with regard to representing biological systems.
@@ -284,7 +290,7 @@ The relationship between local and global biological information representation 
 
 \begin{figure}
 \noindent\includegraphics[width=0.5\columnwidth]{fig/ascent.pdf}
-\caption{A framework for the construction of a mechanism of local-global translation of biological information. $\mathcal{L}_0$ and $\mathcal{L}_1$ are respectively the categories of relatively local and global biological information structures. The standard presheaf functor $PSh$ is already concrete and constructs the presheaf functor category on $\mathcal{L}_0$. The functors $A$, $R$, and $L$ are initially defined abstractly and subsequently constructed.}
+\caption{A framework for the construction of a mechanism of local-global translation of biological information. $\mathcal{L}_0$ and $\mathcal{L}_1$ are respectively the categories of relatively local and global biological information structures. The Yoneda embedding functor $PSh$ is already concrete and constructs the presheaf functor category on $\mathcal{L}_0$. The functors $A$, $R$, and $L$ are initially defined abstractly and subsequently constructed.}
 \label{fig:ascent}
 \end{figure}
 
@@ -306,7 +312,7 @@ The unique index category $J$ is called the {\it category of elements} of the pr
 $$
 \int_{\cC} P.
 $$
-The objects of $\int_{\cC} P$ are pairs $(C,x)$ where $C \in \Ob(\cC)$ and $x \in PC$. The morphisms are triples $(g,(C',x'),(C,x))$ where $g:(C',x') \rightarrow (C,x)$ derives from $g: C \rightarrow C \in \Mor(\cC)$ and these satisfy the condition
+The objects of $\int_{\cC} P$ are pairs $(C,x)$ where $C \in \Ob(\cC)$ and $x \in PC$. The morphisms are triples $(g,(C',x'),(C,x))$ where $g:(C',x') \rightarrow (C,x)$ derives from $g: C' \rightarrow C \in \Mor(\cC)$ and these satisfy the condition
 $$
 P(g)(x)=x'.
 $$
@@ -319,7 +325,7 @@ defined on objects and morphisms of the category of elements of $P$ respectively
 \end{definition}
 }
 
-The category of elements of a presheaf functor is depicted schematically in figure \ref{fig:catofel}. Colimits over the category of elements of a presheaf are used in the construction of the functors $R$ and $L$ informally presented in Figure \ref{fig:ascent}.
+The category of elements of a presheaf functor is depicted schematically in figure \ref{fig:catofel}. Colimits over the category of elements of a presheaf are used in the construction of the functors $R$ and $L$ suggested in figure \ref{fig:ascent}.
 
 \iftoggle{thmsty}{
 \begin{theorem}
@@ -405,7 +411,7 @@ is a sieve on $d$.
 
 \begin{figure}
 \noindent\includegraphics[width=0.8\columnwidth]{fig/sieveHasseSetPartitions4.pdf}
-\caption{Sieves conceptualized on an algebraic lattice. All edges are directed from bottom to top. Blue edges are part of a sieve on an object represented by a node in the lattice. Black edges are part of the lattice but not part of the sieve under consideration. (A) shows the maximal sieve on the lattice, which is equivalent to a sieve on object 14. (B) shows a sieve on object 4, (C) shows a sieve on object 9 and (D) shows a sieve on object 11.}
+\caption{Sieves conceptualized on {\it Hasse diagrams} of an algebraic lattice. All edges are directed from bottom to top. Blue edges are part of a sieve on an object represented by a node in the lattice. Black edges are part of the lattice but not part of the sieve under consideration. (A) shows the maximal sieve on the lattice, which is equivalent to a sieve on object 14. (B) shows a sieve on object 4, (C) shows a sieve on object 9 and (D) shows a sieve on object 11.}
 \label{fig:sieve}
 \end{figure}
 
@@ -456,7 +462,15 @@ $$
 \begin{definition}
 \label{definition-sheaves}
 }{}
-
+Given a basis for, $B$, or an explicit Grothendieck topology, $J$, on a category $\cC$ we can define necessary conditions in order for presheaves $P$ in the presheaf category $\textit{Sets}^{\cC^{opp}}$ to be sheaves on the site $(\cC,J)$. If in addition to $P$ we have the sieve $S$ that is a cover of an object $c \in \Ob(\cC)$, then we can define a {\it matching family} for $S$ from elements of $P$ as a function assigning to each $f:d \rightarrow c \in S$ an element $x_f \in P(d)$ such that
+$$
+\forall g:e \rightarrow d \in \Mor(\cC), \,\,\, x_f \cdot g = x_{fg},
+$$
+where $x_f \cdot g \equiv P(g)(x_f)$ and $fg \in S$. We can further define an {\it almagamation} of a matching family as a single element $x \in P(c)$ such that
+$$
+\forall f \in S, \,\,\, x \cdot f = x_f,
+$$
+implying that $P(f)(x)=x_f$ and thus $P(g)(P(f)(x))=x_{fg}$. $P$ is then a {\it sheaf} for $J$ when every matching family for all covers of all objects in $\Ob(\cC)$ have a unique amalgamation.
 \iftoggle{thmsty}{
 \end{definition}
 }
