@@ -56,9 +56,9 @@ The development of a formal language for modeling biological systems was suggest
 
 Category theory \cite{Lane1985,Lane1998,MacLane1992,Lawvere1997,Lawvere2003,Awodey2006} is a language that has been suggested since Woodger to provide a framework for representing and reasoning about biological systems \cite{GOGUEN1979,Ehresmann2007,Louie2009}. What is immediately useful about this language from the perspective of biology is that it presents as primitive the notion of transformation or interaction between objects. In fact, from this point of view, a defining characteristic of any entity (e.g. a protein, cell, organism, or population) is structural: the set of relationships between it and other entities under consideration. Intrinsic properties are taken into account implicitly in this framework since the possible set of relationships between any object and any other is constrained by the nature of its intrinsic properties. 
 
-What is less obvious at first meeting is the way in which category theory, especially with regard to its interface with logic and geometry \cite{MacLane1992,Jacobs1998}, enables the precise definition of what might be viewed as a framework for explaining the nature and development of so-called \emph{emergent properties} of systems of interacting processes. This expression is general enough that it can be equally well applied to the consideration of relationships between any levels of biological organization. This unity deriving from the judicious definition of underlying categorical concepts along the way is precisely the type of abstraction that we argue is necessary to enable compression without loss of biological information and thus synthesis of existing biological knowledge.
+What may be less obvious at first meeting is the way in which concepts from category theory, especially with regard to its interface with logic and geometry \cite{MacLane1992,Jacobs1998}, enable the formulation of what might be viewed as a framework for explaining the nature and development of so-called \emph{emergent properties} of systems that are able to represent information in molecular terms at their base, but build upon this to generate the capacity to process information at higher levels of organization as well. We note that the existence of {\it levels of organization} that may have come into existence during the evolutionary process thus far, although common in various informal taxonomic systems used in biology, is a hypothesis that we hope to render verifiable in the long term through the introduction of a language capable of making predictions that could help distinguish the case in which there is from that in which there is not justification to reify the conceptual levels of organization that have been introduced to organize biological knowledge. The concept of separation of spatio-temporal scales, which is used to justify the consideration of one level of organization at a time in the biological model-building process \cite{Gunawardena2012,Karr2012}, may make it impossible to explain evolutionary processes that transcend such levels of organization providing one justification to our search for a language that can support model-building that does not require such approximations. The expression discussed here is general enough that it can be equally well applied to the consideration of relationships between any levels of biological organization assuming that any at all exist. Of course, it will need to be further specialized to be of use in specific contexts. However, the unity deriving from the judicious definition of underlying categorical concepts along the way is precisely the type of abstraction that we argue is necessary to enable conceptual compression of biological information and thereby improve our capacity to communicate and synthesize existing and future knowledge about biological systems.
 
-Here we define the concepts from category theory necessary to understand the way in which interacting objects at one level of organization (e.g. molecules) can produce phenomena that would themselves be identifiable as derived objects (e.g. cells) that justify the very conceptualization of a \emph{level of organization} in the first instance. Here we focus exclusively on defining the boundary conditions relating levels (e.g. molecules and cells or cells and multicellular organisms) of organization, which are necessary to understand in the course of defining a dynamical system that could model the \emph{evolution} of such. What results is a refinement of the concept of the levels of organization that are ubiquitously employed in biology and examples of which are used so far only heuristically as guides to pre-existing intuition. Understanding how to integrate information regarding biological processes across such levels of organization is fundamental to the understanding of complex phenotypes and the associated set of contingencies necessary to account for in methods that may be targeted at controlling or otherwise manipulating them.
+Here we explain the concepts from category theory necessary to understand the way in which interacting objects at one level of organization (e.g. molecules) can produce phenomena that would themselves be identifiable as derived objects (e.g. cells) that justify the very conceptualization of a \emph{level of organization} in the first instance. Here we focus exclusively on defining the boundary conditions relating levels (e.g. molecules and cells or cells and multicellular organisms) of organization, which are necessary to understand in the course of defining a dynamical system that could model the \emph{evolution} of such. What results is a refinement of the concept of the levels of organization that are ubiquitously employed in biology and examples of which are used so far only heuristically as guides to pre-existing intuition. Understanding how to integrate information regarding biological processes across such levels of organization is fundamental to the understanding of complex phenotypes and the associated set of contingencies necessary to account for in methods that may be targeted at controlling or otherwise manipulating them.
 
 [ Note that biological systems are concretely represented as graphs of some kind and all the letters representing categories can be specialized to categories of graphs of some kind ]
 
@@ -384,13 +384,13 @@ which commutes uniquely in $L$ for a given $A$.
 
 \begin{figure}
 \noindent\includegraphics[width=0.8\columnwidth]{fig/catofel.pdf}
-\caption{The category of elements of a presheaf functor.}
+\caption{The category of elements of a presheaf functor. Adapted from \cite{Awodey2006}.}
 \label{fig:catofel}
 \end{figure}
 
 \subsection{Topological deconstruction and synthesis of biological information}
 
-In order to be able to represent objects and their interactions in the global category of higher-order interacting biological entities in terms of diagrams modeled in the local category of such we make use of a general notion analogous to a topology that can be applied to any category and that can be specialized to, for example, the case in which objects and morphisms of the category take on a particular type of algebraic structure. The purpose of this construction is to develop a method of defining a {\it covering system} composed of interacting entities in the category representing local interactions that can be used to establish a decomposition of objects in the category representing global interactions that may each rely on a certain type of composition of local interactions with respect to any biological system.
+In order to be able to represent objects and their interactions in the global category of higher-order interacting biological entities in terms of diagrams modeled in the local category of such we make use of a generalized form of topology that can be applied to any category meeting a couple of constraints and that can be specialized to, for example, the case in which objects and morphisms of the category take on a particular type of algebraic structure. The purpose of this construction is to develop a method of defining a {\it covering system} composed of interacting entities in the category representing local interactions that can be used to establish a decomposition of objects in the category representing global interactions that may each rely on a certain type of composition of local interactions with respect to any biological system. We first give a conceptual overview of the standard concepts of {\it sieve}, {\it Grothendieck topology}, {\it site}, and {\it sheaf} for an arbitrary category $\cC$ and then explain how sieves on $\mathcal{L}_0$ can be used to specify a topology, and thus a site and sheaves on $\mathcal{L}_1$ under certain conditions.
 
 \iftoggle{thmsty}{
 \begin{definition}
@@ -452,7 +452,7 @@ A {\it basis} for a topology on a category $\cC$ that has pullbacks is a functio
 }{}
 A pair $(\cC,J)$ or $(\cC,B)$ consisting of a category $\cC$ and a Grothendieck topology $J$ on $\cC$ or a basis $B$ for such a topology is referred to as a {\it site}. If $S \in J(c)$, then $S$ is a {\it covering sieve} of $c$. If $B$ is a basis on $\cC$, then $B$ is said to {\it generate} a topology $J$ according to the equivalence between the statements that a sieve $S$ is a $J$-cover and that a sieve $S$ contains an associated $B$-cover
 $$
-S \in J(c) \Longleftrightarrow \exists Q \in B(c) \,\,\, Q \subseteq S.
+S \in J(c) \Longleftrightarrow \exists Q \in B(c), \,\,\, Q \subseteq S.
 $$
 \iftoggle{thmsty}{
 \end{definition}
@@ -470,11 +470,44 @@ where $x_f \cdot g \equiv P(g)(x_f)$ and $fg \in S$. We can further define an {\
 $$
 \forall f \in S, \,\,\, x \cdot f = x_f,
 $$
-implying that $P(f)(x)=x_f$ and thus $P(g)(P(f)(x))=x_{fg}$. $P$ is then a {\it sheaf} for $J$ when every matching family for all covers of all objects in $\Ob(\cC)$ have a unique amalgamation.
+implying that $P(f)(x)=x_f$ and thus $P(g)(P(f)(x))=x_{fg}$. $P$ is then a {\it sheaf} for $J$ when every matching family for all covers of all objects in $\Ob(\cC)$ have a unique amalgamation. A sieve $S$ on an object $c$ is a subfunctor of the functor represented by $c$ under the Yoneda embedding. This is to say that $S \subseteq h^c = hom(-,c)$. In this case, $P$ is a sheaf if and only if for every covering sieve $S$ on $c$ the inclusion $S \hookrightarrow P$ induces an isomorphism $hom(S,P) \cong hom(h^c,P)$. This can also be expressed as the equalizer
+\begin{displaymath}
+\xymatrix{
+P(c) \ar[r]
+&
+\prod\limits_{f \in S}
+P(dom \, f)
+\ar@<1ex>[r]^-{p} \ar@<-1ex>[r]_-{a}
+&
+\prod\limits_{\substack{f,g \,\,\, f \in S \\ dom \, f=cod \, g}}
+P(dom \, g)
+}
+\end{displaymath}
+\noindent for each $c \in \Ob(\cC)$ and each cover $S \in J(c)$. $e$ refers to $e(x)=\{x \cdot f\}_f = \{P(f)(x)\}_f$, $p$ refers to $p( \mathbf{x} )_{f,g} = x_{fg}$, and $a$ refers to $a( \mathbf{x} )_{f,g} = x_f \cdot g$ for $\mathbf{x} = \{ x_f \}_{f \in S}$. Given that the equalizer condition, $p \circ e = a \circ e \Leftrightarrow p=a$, is satisfied for a cover $S$ then $P$ is a sheaf with respect to the cover $S$.
+
+Finally, to express the sheaf condition in terms of a basis $B$ for a topology $J$ generated by $B$ on a category $\cC$ having pullbacks. If $Q = \{ f_i : c_i \rightarrow c \}_{i \in I}$ is a B-cover of $c$ a family of elements $x_i \in P(c_i)(i \in I)$ is a matching family for $Q$ if $ x_i \cdot \pi_{ij}^1 = x_j \cdot \pi_{ij}^2$ for all $i,j \in I$. $\pi^1$ and $\pi^2$ are defined as
+\begin{displaymath}
+\xymatrix{
+c_i \times_c c_j \ar[r]^-{\pi_{ij}^2} \ar[d]_{\pi_{ij}^1} & c_j \ar[d]^{f_j} \\
+c_i \ar[r]^{f_i} & c
+}
+\end{displaymath}
+\noindent Now again, a presheaf $P \in \textit{Sets}^{\cC^{opp}}$ is a sheaf for the topology $J$ generated by the basis $B$ if and only if for any cover $\{ f_i : c_i \rightarrow c \}_{i \in I}$ in $B$ any matching family $\{ x_i \}_i$ has a unique amalgamation $x \in P(c)$ such that $x \cdot f_i = x_i$ for all $i \in I$. This condition can also be expressed in terms of a diagram that is an equalizer
+\begin{displaymath}
+\xymatrix{
+P(c) \ar[r]
+&
+\prod\limits_{i \in I}
+P(c_i)
+\ar@<1ex>[r]^-{p_1} \ar@<-1ex>[r]_-{p_2}
+&
+P(c_i \times_c c_j)
+}
+\end{displaymath}
+\noindent The morphism $e$ refers to $e(x) = \{ x \cdot f_i \}_i$, $p_1$ refers to $p_1(\{ x_i \})_{i,j} = x_i \cdot \pi_{ij}^1$, and $p_2$ refers to $p_2(\{x_i\})_{i,j} = x_j \cdot \pi_{ij}^{2}$.
 \iftoggle{thmsty}{
 \end{definition}
 }
-
 
 \subsection{Coherence constraints on emerging transitions in the hierarchical organization of biological systems}
 
