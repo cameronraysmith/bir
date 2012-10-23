@@ -37,7 +37,7 @@
 
 \date{\today}
 \begin{abstract}
-One of the most important aspects of advancing theory in biology is the development of a constructed language that can be explicitly and precisely defined thereby supporting communication, computer-based knowledge representation, and hypothesis-generating thought. Such a language should itself be evolvable and support flexible abstractions that enable the unification and compression of redundant information via the expression of principles of invariance. It would be useful for such a language to be formally specified prior to or in concert with the development of a computational implementation that may support complementary organization of autonomously linked data. We propose the specialization of a language originally developed in a mathematical context that apparently meets these criteria. We argue for this choice, not from a mathematical perspective but, by providing an example of the way in which this language enables precise qualitative reasoning and flexible methods of abstraction with respect to integrating biological information in a manner that would, ideally, be analogous to the way in which information is integrated by biological systems themselves. Enabling lossless compression and representation of synthetic knowledge about biological systems, in addition to raw biological data, is necessary for understanding in the context of limited cognitive and other computational resources.
+One of the most important aspects of advancing theory in biology is the development of a constructed language that can be explicitly and precisely defined thereby supporting communication, computer-based knowledge representation, and hypothesis-generating thought. Such a language should itself be evolvable and support flexible abstractions that enable the unification and compression of redundant information via the expression of principles of invariance. It would be useful for such a language to be formally specified prior to or in concert with the development of a computational implementation that may support complementary organization of existing and future data. We propose the specialization of a language originally developed in a mathematical context that may be capable of meeting these criteria. We argue for this choice, not from a mathematical perspective but, by providing an example of the way in which this language enables precise qualitative reasoning and flexible methods of abstraction with respect to integrating biological information in a manner that would, ideally, be analogous to the way in which information is integrated by biological systems themselves. Enabling compression and representation of synthetic knowledge about biological systems, in addition to raw biological data, is necessary for understanding in the context of limited data and computational resources.
 \end{abstract}
 
 \maketitle
@@ -76,7 +76,7 @@ this is like the geological basis of the landscape. In my view, cis-regulatory i
 \subsection{System-environment duality}
 Distinction between biological systems or some components thereof and the environments within which they are embedded is implied in models of such systems. This distinction is useful in many contexts, but the boundary between a biological system and its environment is dependent upon the level of resolution of the \emph{model and modeler} independent of its relationship to properties of the biological system itself \cite{Fontana1996}. In this light, it is desirable to develop a model of biological systems that supports variation of this boundary without requiring complete reconfiguration of the model. Constructing a framework for such models requires the determination, unification, and incorporation of abstract features of biological systems that are invariant across levels of organization from molecules to cells, organisms, populations, communities, ecosystems and more fine-grained levels of resolution that likely lie between these broadly and imprecisely defined perspectives one can take with regard to representing biological systems.
 
-\subsection{General coherence constraints for intrinsic biological information representation}
+\subsection{Intrinsic biological information representation}
 The use of categorical adjunctions to model intrinsic information representation in biological systems has been suggested \cite{GOGUEN1979,Ellerman2005}, but these efforts have yet to be incorporated into more detailed theories. This may be in part a result of the difficulty in specifying the appropriate level of abstraction at which a precise metaphor can be developed between collections of interacting biological entities and a particular type of mathematical structure. We begin here by developing the prerequisite definitions to explain why the transformation of biological information is naturally represented as a pair of adjoint functors in the context of category theory. A relevant piece of intuition to associate to what follows is that any interaction between biological entities is, minimally, a dyadic relationship wherein contingencies associated to other interactions of each of the participants establishes prerequisite potential value to high fidelity transmission and representation of information regarding the state of other collections of spatio-temporally distant interactions. The participants in such a dyadic interaction are modelled as categories because each may represent an underlying arbitrarily complicated collection of interactions that are necessary for the very existence of the interface implicit to any interaction.
 
 \iftoggle{thmsty}{
@@ -306,11 +306,11 @@ In order to construct the functor $L$, we need to explain the relationship betwe
 }{}
 For any category $\mathcal{C}$, index category $J$, and functor $A:J \rightarrow \cC$, every $P \in \Ob(\textit{Sets}^{\cC^{opp}})$ is a colimit of $\cC$-representable functors
 $$
-\lim_{\overrightarrow{j \in J}} PSh A_j \cong P.
+\lim\limits_{\overrightarrow{j \in J}} PSh A_j \cong P.
 $$
 There is a canonical choice for $J$ and $A$ such that
 $$
-\lim_{\rightarrow{J}} PSh \circ A \cong P.
+\lim\limits_{\rightarrow{J}} PSh \circ A \cong P.
 $$
 The unique index category $J$ is called the {\it category of elements} of the presheaf $P$ and is denoted
 $$
@@ -335,10 +335,10 @@ The category of elements of a presheaf functor is depicted schematically in figu
 \begin{theorem}
 \label{theorem-cocompletion-adjunction}
 }{}
-Consider $\mathcal{L}_0$ a small category, $\mathcal{L}_1$ is a cocomplete category, and a functor $A : \mathcal{L}_0 \rightarrow \mathcal{L}_1$. Then we can construct a pair of adjoint functors $L \dashv R$ between $\mathcal{L}_1$ and $\textit{Sets}^{\mathcal{L}_0^{opp}}$ such that $L: \textit{Sets}^{\mathcal{L}_0^{opp}} \rightarrow \mathcal{L}_1 :R$ where $L$ and $R$ are defined componentwise as
+Consider $\mathcal{L}_0$ a small category, $\mathcal{L}_1$ is a cocomplete category, and a functor $A : \mathcal{L}_0 \rightarrow \mathcal{L}_1$. Then we can construct a pair of adjoint functors $L \dashv R$ between $\mathcal{L}_1$ and $\textit{Sets}^{\mathcal{L}_0^{opp}}$ such that $L: \textit{Sets}^{\mathcal{L}_0^{opp}} \leftrightarrows \mathcal{L}_1 :R$ where $L$ and $R$ are defined componentwise as
 \begin{eqnarray}
 R(L_1) &:& L_0 \mapsto Mor_{\mathcal{L}_1}(A(L_0),L_1),\\
-L(P) &=& Colim \left( \int P \xrightarrow{\pi} \mathcal{L}_0 \xrightarrow{A} \mathcal{L}_1 \right) .
+L(P) &=& \lim\limits_{\longrightarrow} \left( \int P \xrightarrow{\pi_P} \mathcal{L}_0 \xrightarrow{A} \mathcal{L}_1 \right) .
 \end{eqnarray}
 \iftoggle{thmsty}{
 \end{theorem}
@@ -392,7 +392,7 @@ which commutes uniquely in $L$ for a given $A$.
 \label{fig:catofel}
 \end{figure}
 
-\subsection{Topological deconstruction and synthesis of biological information}
+\subsection{A topological framework for biological information}
 
 In order to be able to represent objects and their interactions in the global category of higher-order interacting biological entities in terms of diagrams modeled in the local category of such we make use of a generalized form of topology that can be applied to any category meeting a few constraints and that can be specialized to, for example, the case in which objects and morphisms of the category take on a particular type of algebraic structure. The purpose of this construction is to develop a method of defining a {\it covering system} composed of interacting entities in the category representing local interactions that can be used to establish a decomposition of objects in the category representing global interactions that may each rely on a certain type of composition of local interactions with respect to any biological system. We first give a conceptual overview of the standard concepts of {\it sieve}, {\it Grothendieck topology}, {\it site}, and {\it sheaf} for an arbitrary category $\cC$ and then explain how covering sieves on $\mathcal{L}_0$ defined in terms of epimorphic families of morphisms in $\mathcal{L}_1$ provides a Grothendieck topology on $\mathcal{L}_0$, which induces a site and sheaves on $\mathcal{L}_0$, which can be shown to precisely encode the category $\mathcal{L}_1$. The theoretical constraints necessary to ensure the equivalence between information represented in terms of sheaves on the category $\mathcal{L}_0$ and information represented in terms of the category $\mathcal{L}_1$ provide a framework for understanding hierarchically organized systems. The process of transforming the category $\mathcal{L}_0$ into its category of sheaves may then provide broad but precise insight into transitions in hierarchical organization, which is a common property providing a unifying perspective on some of the major transitions in biological evolution.
 
@@ -513,10 +513,41 @@ P(c_i \times_c c_j)
 \end{definition}
 }
 
-We are now able to describe the task specified at the beginning of this section in more detail. 
+We are now able to explain how covering sieves on $\mathcal{L}_0$ defined in terms of epimorphic families of morphisms in $\mathcal{L}_1$ provides a Grothendieck topology on $\mathcal{L}_0$, which induces a site and sheaves on $\mathcal{L}_0$, which can be shown to precisely encode the category $\mathcal{L}_1$.
 
 \subsection{Coherence constraints on emerging transitions in the hierarchical organization of biological systems}
 
+Given a functor $A: \mathcal{L}_0 \rightarrow \mathcal{L}_1$, we can recall the adjunction $L_A \dashv R_A$ between the category of presheaves on the local category $\mathcal{L}_0$ and the global category $\mathcal{L}_1$:
+$$
+L_A: \textit{Sets}^{\mathcal{L}_0^{opp}} \leftrightarrows \mathcal{L}_1 :R_A.
+$$
+We can describe the adjoint pair parameterized by a presheaf $P \in \textit{Sets}^{\mathcal{L}_0^{opp}}$, an object $L_1 \in \Ob(\mathcal{L}_1)$ and and object $L_0 \in \Ob(\mathcal{L}_0)$ as
+\begin{eqnarray*}
+L_A(P) &=& \lim\limits_{\longrightarrow} \left( \int P \xrightarrow{\pi_P} \mathcal{L}_0 \xrightarrow{A} \mathcal{L}_1 \right),\\
+R_A(L_1)(L_0) &=& Mor_{\mathcal{L}_1}(A(L_0),L_1).
+\end{eqnarray*}
+The functor $L_A$ can also be constructed as a coequalizer
+\begin{displaymath}
+\xymatrix{
+\coprod\limits_{\substack{u : L'_0 \rightarrow L_0 \\ p \in P(L_0)}}
+A(L'_0)
+\ar@<1ex>[r]^-{\theta} \ar@<-1ex>[r]_-{\tau}
+&
+\coprod\limits_{\substack{L_0 \\ p \in P(L_0)}}
+A(L_0)
+\ar[r]
+&
+P(L_0) \otimes_{\mathcal{L}_0} A
+}
+\end{displaymath}
+
+For a suitable topology $J$ on $\mathcal{L}_0$, the functor $R_A = \Mor_{\mathcal{L}_1}(A(-),-)$ sends $L_1 \in \Ob(\mathcal{L}_1)$ into sheaves (as opposed to mere presheaves) on $\mathcal{L}_0$. $J$ is defined by specifying that a sieve $S(L_0)$ on an object $L_0 \in \mathcal{C}$ is a cover of $L_0$ when the morphisms $g_i : M_0^i \rightarrow L_0 \in S(L_0)$ form an epimorphic family in $\mathcal{L}_1$. The morphisms $g_i$ are components of a morphism defined on the coproduct
+$$
+b_{S(L_0)} : \coprod\limits_{g_i \in S(L_0)} M_0^i \longrightarrow L_0
+$$
+over $S(L_0)$ . $S(L_0)$ covers $L_0$ when $b_{S(L_0)}$ is an epimorphism in $\mathcal{L}_1$.
+
+This defines a Grothendieck topology on $\mathcal{L}_0$. The conditions of maximality, stability under pullback, and transitivity of a sieve definitive of a Grothendieck topology can all be checked. Roughly, the maximality condition is satisfied by including $1_{L_0} : L_0 \rightarrow L_0$ in the set of morphisms $g_i$ for some $i$. 
 \section{Conclusion}
 
 %------bibliography---%
