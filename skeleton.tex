@@ -48,11 +48,11 @@ One of the most important aspects of advancing theory in biology is the developm
 
 \subsection{Domain-specific language construction for biology}
 
-\begin{figure*}
-\noindent\includegraphics[width=1.8\columnwidth]{fig/biograph.pdf}
-\caption{Particular features of interaction networks underlying biological systems can be abstracted as graphs of some type with morphisms translating structure between them.}
-\label{fig:biograph}
-\end{figure*}
+\begin{quotation}
+{\it One [...] idea, which underlies everything in this book, is the concept
+of genomically encoded information processing. [...],
+this is like the geological basis of the landscape. In my view, cis-regulatory information processing, and information processing at the gene regulatory network circuit level, are the real secret of animal development. Probably the appearance of genomic regulatory systems capable of information processing is what made animal evolution possible.} -Eric H. Davidson \cite{Davidson2006a}
+\end{quotation}
 
 The development of a formal language for modeling and reasoning about biological systems was suggested by Joseph Woodger in collaboration with the developmental biologist Conrad Waddington and the logician Alfred Tarski as early as 1937 \cite{Woodger1937,Woodger1951,Woodger1952,Woodger1952a}. At that time it was perhaps difficult to understand how such a language could be put to use. Today we have tools that could enable the use of such a language: namely 1) computational machines to automate the details of routine transformations within the language and 2) large, accessible, growing repositories of biological data. Though we have access to necessary infrastructure, we lack such a language suggested by Woodger and others throughout the course of the 20th century as we have continued to rely on natural language heuristics to communicate and reason about biological systems.
 
@@ -64,13 +64,15 @@ Here we explain the concepts from category theory necessary to understand the wa
 
 \subsection{Network representations of biological systems}
 
-\begin{quotation}
-{\it One [...] idea, which underlies everything in this book, is the concept
-of genomically encoded information processing. [...],
-this is like the geological basis of the landscape. In my view, cis-regulatory information processing, and information processing at the gene regulatory network circuit level, are the real secret of animal development. Probably the appearance of genomic regulatory systems capable of information processing is what made animal evolution possible.} -Eric H. Davidson \cite{Davidson2006a}
-\end{quotation}
+\begin{figure*}
+\noindent\includegraphics[width=1.3\columnwidth]{fig/biograph.pdf}
+\caption{Particular features of interaction networks underlying biological systems can be abstracted as graphs of some type with morphisms translating structure between them.}
+\label{fig:biograph}
+\end{figure*}
 
-[ Note that biological systems are concretely represented as graphs of some kind and all the letters representing categories can be specialized to categories of graphs of some kind. The introduction of categories supports precise reasoning about biological systems in terms of their network representations.]
+At least since the advent of network science and perhaps before it has become common to represent various aspects of ostensible knowledge about biological systems such as protein-protein interactions, gene regulation, and population, community, and ecological interactions using algebraic graphs of some flavor (e.g. undirected, directed, multi-, hyper-, and cell complexes among others). There has been an effort in the molecular context to standardize such representations using, for example, the so-called systems biology graphical notation among others \cite{Ghosh2011}. While these efforts may be helpful in some contexts, they have yet to be considered in a manner that balances biological knowledge with mathematical and computational knowledge regarding structures that can encapsulate data. The purpose behind supporting the latter approach would be to render the representation that emerges susceptible to all of the analytical techniques that have been developed for reasoning about whatever particular type of structure may be chosen. Of course, ultimately the project of representing knowledge about biological systems may require the development of structures that have not been thought of yet in a mathematical or computational setting; however, taking as a point of departure \emph{ad hoc} structures upon which no framework for reasoning whatever has been developed would seem to be an inefficient approach given that there are in existence many such structures supporting very useful reasoning methods.
+
+Given that biological systems may be concretely represented as graphs of some kind, or some perhaps modest generalization thereof, we find that concepts from category theory may serve as a more flexible as well as mathematically and computationally well-supported point of departure for representing the kind of knowledge about biological systems that has come to be commonly expressed in terms of some flavor of graph. We will recount more precise definitions in what follows, but we note here that all the letters representing categories and objects and morphisms thereof can be specialized to categories where objects represent graphs of some kind. What is perhaps most important about this approach is that, upon subsequent specialization, the introduction of categories will have enabled support for precise reasoning about biological systems in terms of something like their colloquial network representations.
 
 \section{Intrinsic operationalism in biological systems}
 \subsection{System-environment duality}
@@ -682,7 +684,35 @@ This demonstrates that $\epsilon_{L_1}$ is indeed an isomorphism and thus
 \epsilon_{L_1} &:& L \circ R(L_1) \cong L_1\\
 \epsilon &:& L \circ R \cong 1_{\mathcal{L}_1}
 \end{eqnarray*}
+
+We can also demonstrate that the unit of the adjunction is an isomorphism. For any presheaf $Q \in Sets^{\mathcal{L}_0^{opp}}$ the unit of the adjunction $L_A \dashv R_A$ is 
+
+\begin{eqnarray*}
+\eta_{Q} &:& Q \rightarrow R \circ L(Q)\\
+&:& Q \rightarrow \Mor_{\mathcal{L}_1}(A(-),L_A(Q))\\ 
+&:& Q \rightarrow \Mor_{\mathcal{L}_1}(A(-), Q \otimes_{\mathcal{L}_0} A)
+\end{eqnarray*}
+
+For the case in which $Q$ is also a sheaf on $\mathcal{L}_0$, it can be dually characterized in terms of a colimit of representable functors $PSh(L_0) = Mor_{\mathcal{L}_0}(-,L_0)$. Additionally, the representable functors are sheaves for the case of the subcanonical topology $J$ on $\mathcal{L}_0$ defined above. Thus if we consider the component of the unit natural transformation at any representable functor we find an isomorphism
+$$
+\eta_{PSh(L_0)}: PSh(L_0) \cong \Mor_{\mathcal{L}_1}(A(-), PSh(L_0) \otimes_{\mathcal{L}_0} A)
+$$
+because $PSh(L_0) \cong \Mor_{\mathcal{L}_1}(A(-), A(L_0)$ and $A(L_0) \cong L_A(PSh(L_0))$ in the category $\mathcal{L}_1$. Because the functors $L_A$ and $R_A$ both preserve colimits, any sheaf $Q$ is a colimit of representables, and $\eta_PSh(L_0)$ is an isomorphism for representable functors, then $\eta$ is an isomorphism for any sheaf $Q$.
+
+We have demonstrated the counit, $\epsilon$, and the unit $\eta$, to both be isomorphisms for the adjunction $L_A \dashv R_A$ upon restriction from $Sets^{\mathcal{L}_0^{opp}}$ to sheaves on the site defined by $J$ in terms of epimorphic families of morphisms in $\mathcal{L}_1$ for $\mathcal{L}_0)$ written as $Sh(\mathcal{L}_0,J)$ 
+\begin{eqnarray*}
+\eta &:& 1_{Sh(\mathcal{L}_0,J)} \cong R_A \circ L_A,\\
+\epsilon &:& L_A \circ R_A \cong 1_{\mathcal{L}_1}.
+\end{eqnarray*}
+We thus have an equivalence of categories between the category of local representations of biological information and that of global representations
+$$
+Sh(\mathcal{L}_0,J) \cong \mathcal{L}_1.
+$$
+In this light, we can view a process in which interactions among local entities generate higher-level properties that themselves also become entities that may participate in still higher-level processes as requiring the type of coherence precisely specified by the sheaf condition. As biological systems constitute a nested hierarchy, this constraint, as applied to models of particular biological systems in a category not limited to but including the graphs which are often produced from network data, can be used to link models across levels of organization.
+ 
 \section{Conclusion}
+
+The goal of organizing knowledge about biological systems will ultimately require the development of languages that can be tailored specifically for that task. The purpose of developing such a language is to provide a precise framework for a qualitative phenomenology of biological systems such that, any piece of data that can be collected, can be integrated and used to deduce apparent consequences that in some sense attempt to optimize the production of new or classification of old hypotheses that may be distinguished on that basis. Despite the fact that abstract concepts from pure mathematics have had little explicit coupling to the study of biological systems, we find that certain concepts can be adapted to serve as a high-level nucleus for the development of such a domain-specific language for reasoning about biological systems. In order to realize such a goal, this language will need to be implemented in computational form rather than simply stated in abstract notation; however, clarification of the relationship between purely abstract concepts and concepts abstracted from the study of biological systems can help to make the costly choice of a framework to be implemented for the purposes of knowledge representation.
 
 %------bibliography---%
 \bibliographystyle{unsrt} 
