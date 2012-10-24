@@ -74,7 +74,7 @@ this is like the geological basis of the landscape. In my view, cis-regulatory i
 
 \section{Intrinsic operationalism in biological systems}
 \subsection{System-environment duality}
-Distinction between biological systems or some components thereof and the environments within which they are embedded is implied in models of such systems. This distinction is useful in many contexts, but the boundary between a biological system and its environment is dependent upon the level of resolution of the \emph{model and modeler} independent of its relationship to properties of the biological system itself \cite{Fontana1996}. In this light, it is desirable to develop a model of biological systems that supports variation of this boundary without requiring complete reconfiguration of the model. Constructing a framework for such models requires the determination, unification, and incorporation of abstract features of biological systems that are invariant across levels of organization from molecules to cells, organisms, populations, communities, ecosystems and more fine-grained levels of resolution that likely lie between these broadly and imprecisely defined perspectives one can take with regard to representing biological systems.
+Distinction between biological systems or some components thereof and the environments within which they are embedded is implied in models of such systems. This distinction is useful in many contexts, but the boundary between a biological system and its environment is dependent upon the level of resolution of the \emph{model and modeler} independent of its relationship to properties of the biological system itself \cite{Fontana1996}. In this light, it is desirable to develop a model of biological systems that supports variation of this boundary without requiring complete reconfiguration of the model. Constructing a framework for such models requires the determination, unification, and incorporation of abstract features of biological systems that are invariant across levels of organization from molecules to cells, organisms, populations, communities, ecosystems and more fine-grained levels of resolution that likely lie between these broadly and imprecisely defined perspectives one can take with regard to representing biological systems. This capacity already exists within and is the primary potential utility of so-called network representations of biological systems; however, what we propose to import into this context is the use of algebraic methods to enable reasoning and subsequent hypothesis development about such network representations for the purpose of coupling such modeling methods into a feedback loop with empirical ones.
 
 \subsection{Intrinsic biological information representation}
 The use of categorical adjunctions to model intrinsic information representation in biological systems has been suggested \cite{GOGUEN1979,Ellerman2005}, but these efforts have yet to be incorporated into more detailed theories. This may be in part a result of the difficulty in specifying the appropriate level of abstraction at which a precise metaphor can be developed between collections of interacting biological entities and a particular type of mathematical structure. We begin here by developing the prerequisite definitions to explain why the transformation of biological information is naturally represented as a pair of adjoint functors in the context of category theory. A relevant piece of intuition to associate to what follows is that any interaction between biological entities is, minimally, a dyadic relationship wherein contingencies associated to other interactions of each of the participants establishes prerequisite potential value to high fidelity transmission and representation of information regarding the state of other collections of spatio-temporally distant interactions. The participants in such a dyadic interaction are modelled as categories because each may represent an underlying arbitrarily complicated collection of interactions that are necessary for the very existence of the interface implicit to any interaction.
@@ -517,7 +517,7 @@ We are now able to explain how covering sieves on $\mathcal{L}_0$ defined in ter
 
 \subsection{Coherence constraints on emerging transitions in the hierarchical organization of biological systems}
 
-Given a functor $A: \mathcal{L}_0 \rightarrow \mathcal{L}_1$, we can recall the adjunction $L_A \dashv R_A$ between the category of presheaves on the local category $\mathcal{L}_0$ and the global category $\mathcal{L}_1$:
+This section relies on and mostly follows the notation of the proof of Giraud's theorem in \cite{MacLane1992}. Given a functor $A: \mathcal{L}_0 \rightarrow \mathcal{L}_1$, we can recall the adjunction $L_A \dashv R_A$ between the category of presheaves on the local category $\mathcal{L}_0$ and the global category $\mathcal{L}_1$:
 $$
 L_A: \textit{Sets}^{\mathcal{L}_0^{opp}} \leftrightarrows \mathcal{L}_1 :R_A.
 $$
@@ -540,14 +540,148 @@ A(L_0)
 P(L_0) \otimes_{\mathcal{L}_0} A
 }
 \end{displaymath}
+where $P(L_0) \otimes_{\mathcal{L}_0} A = L_A(P(L_0))$.
 
 For a suitable topology $J$ on $\mathcal{L}_0$, the functor $R_A = \Mor_{\mathcal{L}_1}(A(-),-)$ sends $L_1 \in \Ob(\mathcal{L}_1)$ into sheaves (as opposed to mere presheaves) on $\mathcal{L}_0$. $J$ is defined by specifying that a sieve $S(L_0)$ on an object $L_0 \in \mathcal{C}$ is a cover of $L_0$ when the morphisms $g_i : M_0^i \rightarrow L_0 \in S(L_0)$ form an epimorphic family in $\mathcal{L}_1$. The morphisms $g_i$ are components of a morphism defined on the coproduct
 $$
 b_{S(L_0)} : \coprod\limits_{g_i \in S(L_0)} M_0^i \longrightarrow L_0
 $$
-over $S(L_0)$ . $S(L_0)$ covers $L_0$ when $b_{S(L_0)}$ is an epimorphism in $\mathcal{L}_1$.
+over $S(L_0)$ . $S(L_0)$ is defined to cover $L_0$ when $b_{S(L_0)}$ is an epimorphism in $\mathcal{L}_1$, which will be demonstrated in more detail using $A:\mathcal{L}_0 \rightarrow \mathcal{L}_1$.
 
-This defines a Grothendieck topology on $\mathcal{L}_0$. The conditions of maximality, stability under pullback, and transitivity of a sieve definitive of a Grothendieck topology can all be checked. Roughly, the maximality condition is satisfied by including $1_{L_0} : L_0 \rightarrow L_0$ in the set of morphisms $g_i$ for some $i$. 
+Since this construction is parametric over $L_0 \in \Ob(\mathcal{L}_0)$ and satisfies the maximality, stability and transitivity conditions, this defines a Grothendieck topology on $\mathcal{L}_0$. The conditions of maximality, stability under pullback, and transitivity that ensure the sieve is a Grothendieck topology can all be checked. Roughly, the maximality condition is satisfied by including $1_{L_0} : L_0 \rightarrow L_0$ in the set of morphisms $g_i$ for some $i$. The stability condition requires more detail to verify. Consider the pullback square of an epimorphic family along a morphism $h:L'_0 \rightarrow L_0$
+\begin{displaymath}
+\xymatrix{
+\coprod\limits_{g_i \in S(L_0)} M_0^i \times_{L_0} L'_0 \ar[r]^-{\tilde{g_i}} \ar[d]_{} & L'_0 \ar[d]^{h} \\
+\coprod\limits_{g_i \in S(L_0)} M_0^i \ar[r]^-{g_i} & L_0
+}
+\end{displaymath}
+where $\tilde{g_i}$ is also an epimorphism. For $\{ g_i : M_0^i \rightarrow L_0 \}_i \in S(L_0)$ there is an epimorphic family of morphisms $\{ N_0^{ij} \rightarrow M_0^i \times_{L_0} L'_0 \}_{ij}$ with each $N_0^{ij} \in \Ob(\mathcal{L}_0)$. Therefore the composites of these morphisms, $N_0^{ij} \rightarrow M_0^i \times_{L_0} L'_0 \rightarrow L'_0$, for all $i$ and $j$ form an epimorphic family on $L'_0$ contained in the sieve given by the preimage of $h$ on the sieve $S(L_0)$, $h^*(S(L_0))$, and thus $h^*(S(L_0))$ is a cover on $L'_0$, which satisfies the definition of stability of $S(L_0)$ under pullback. Transitivity can also be verified, and thus $J$ is shown to be a Grothendieck topology on $\mathcal{L}_0$ defined in terms of a condition---that sieves on $\mathcal{L}_0$ cover objects in $\mathcal{L}_1$---on its relationship to $\mathcal{L}_1$.
+
+Next we explain the way in which the right adjoint functor parametrically applied to an object $L_1 \in \Ob(\mathcal{L}_1)$, $R_A(L_1) = \Mor_{\mathcal{L}_1}(A(-),L_1): \mathcal{L}_0^{opp} \rightarrow Sets$, is interpreted as a sheaf for the topology $J$ on $\mathcal{L}_0$. Assuming that $\mathcal{L}_1$ is an exact category, the epimorphic family $b_{S(L_0)}$ is the coequalizer of the pullback of $b_{S(L_0)}$ along itself. Since coproducts are stable under pullback for the given assumptions on $\mathcal{L}_1$, 
+$$
+\left( \coprod\limits_{g'_i \in S(L_0)} M_{0}^{'i} \right) \times_{L_0} \left( \coprod\limits_{g_i \in S(L_0)} M_0^i \right) \cong \coprod\limits_{g'_i , g_i \in S(L_0)} M_0^{'i} \times_{L_0} M_0^i
+$$
+so that the coequalizer takes the form
+\begin{displaymath}
+\xymatrix{
+\coprod\limits_{g'_i , g_i \in S(L_0)} M_0^{'i} \times_{L_0} M_0^i
+\ar@<1ex>[r]^-{\sigma_1} \ar@<-1ex>[r]_-{\sigma_2}
+&
+\coprod\limits_{g_i \in S(L_0)} M_0^i
+\ar[r]^-{b_{S(L_0)}}
+&
+L_0
+}
+\end{displaymath}
+Due to transitivity of $S(L_0)$ there is an epimorphic family represented by $\{ N_0^{ij} \rightarrow M_0^{'i} \times_{L_0} M_0^i \}_{ij}$ that we can precompose with the coequalizer above yielding
+\begin{displaymath}
+\xymatrix{
+\coprod\limits_{i,j} N_0^{ij}
+\ar@<1ex>[r]^-{\alpha} \ar@<-1ex>[r]_-{\beta}
+&
+\coprod\limits_{g_i \in S(L_0)} M_0^i
+\ar[r]^-{b_{S(L_0)}}
+&
+L_0
+}
+\end{displaymath}
+where there is a commutative diagram in $\mathcal{L}_0$ of the following form
+\begin{displaymath}
+\xymatrix{
+N_0^{ij} \ar[r]^-{h} \ar[d]_{k} & M_0^i \ar[d]^{g_i} \\
+M_0^{'i} \ar[r]_-{g'_i} & L_0
+}
+\end{displaymath}
+for each $L_0 \in \Ob(\mathcal{L}_0)$ and where $\alpha$ is associated to $h$ and $\beta$ is associated to $k$.
+
+Now we can apply the functor $R(L_1): \mathcal{L}_0^{opp} \rightarrow Sets$ to the previous coequalizer to obtain
+\begin{displaymath}
+\xymatrix{
+R(L_1)(L_0) \ar[r]
+&
+\prod\limits_{g_i \in S(L_0)} R(L_1)(M_0^i)
+\ar@<1ex>[r]^-{} \ar@<-1ex>[r]_-{}
+&
+\prod\limits_{i,j} R(L_1)(N_0^{ij})
+}
+\end{displaymath}
+where the arrows are reversed and coproducts exchanged with products producing an equalizer due to the contravariance of the functor $R(L_1)$. This equalizer provides precisely the condition necessary for $R(L_1)$ to satisfy the sheaf condition for the covering sieve $S(L_0)$. Since this construction is parametric in $L_0 \in \Ob(\mathcal{L}_0)$ for a corresponding $L_1 \in \Ob(\mathcal{L}_1)$ of the topology $J$ then $R$ is a $J$-sheaf for the site $(\mathcal{L}_0,J)$. For those cases in which $L_1$ represents an object in $\Ob(\mathcal{L}_0)$ then $R(L_1)$ is equivalent to the functor represented by the object $L_0$ in the presheaf category on $\mathcal{L}_0$. When all representable functors are sheaves, the topology $J$ is referred to as the subcanonical topology on $\mathcal{L}_0$.
+
+Now we consider the unit and counit natural transformations of the adjunction $L_A \dashv R_A$ in the context of the functor $A: \mathcal{L}_0 \rightarrow \mathcal{L}_1$ that enables the transformation of information between the local and the global levels of organization represented by the respective categories. For each $L_1 \in \Ob(\mathcal{L}_1)$, the counit natural transformation
+\begin{eqnarray*}
+\epsilon_{L_1} &:& L \circ R(L_1) \rightarrow L_1\\
+&:& R(L_1) \otimes_{\mathcal{L}_0} A \rightarrow L_1\\
+&:& \Mor_{\mathcal{L}_1}(A(-),L_1) \otimes_{\mathcal{L}_0} A \rightarrow L_1
+\end{eqnarray*}
+can be defined in the coequalizer diagram
+\begin{displaymath}
+\xymatrix{
+\coprod\limits_{\substack{u : L'_0 \rightarrow L_0 \\ r:A(L_0) \rightarrow L_1}}
+A(L'_0)
+\ar@<1ex>[r]^-{\theta} \ar@<-1ex>[r]_-{\tau}
+&
+\coprod\limits_{\substack{L_0 \in \Ob(\mathcal{L}_0) \\ r:A(L_0) \rightarrow L_1}}
+A(L_0)
+\ar[r]^-{\pi} \ar[dr]_-{b_{A(L_0),r}}
+&
+L_A R_A(L_1) \ar[d]^-{\epsilon_{L_1}}\\
+& & L_1
+}
+\end{displaymath}
+where the functor $R_A$ sends objects $L_1 \in \Ob(\mathcal{L}_1)$ to $J$-sheaves on $\mathcal{L}_0$. The morphisms $\theta$ and $\tau$ are associated to the red and blue paths through the diagrams
+\begin{displaymath}
+\xymatrix{
+& A(L_0) \ar@[red][d]^{r_i} \\
+A(L_0^{'}) \ar@[red][ur]^{A(u)} \ar@[blue][r]_-{r'_i} & L_1
+}
+\end{displaymath}
+
+The counit $\epsilon_{L_1}$, parametric in $L_1$ is in fact an isomorphism. This can be seen by considering the epimorphic family
+$$
+b_{A(L_0),r} : \coprod\limits_{\substack{L_0 \in \Ob(\mathcal{L}_0) \\ r:A(L_0) \rightarrow L_1}}
+A(L_0) \longrightarrow L_1
+$$
+in $\mathcal{L}_1$ defined in terms of the functor $A$ and objects $L_0$. This epimorphic family is part of a coequalizer diagram
+\begin{displaymath}
+\xymatrix{
+\coprod\limits_{\substack{i,j}}
+A(N_0^{ij})
+\ar@<1ex>[r]^-{\alpha} \ar@<-1ex>[r]_-{\beta}
+&
+\coprod\limits_{\substack{r_i:A(M_0^i) \rightarrow L_1}}
+A(M_0^i)
+\ar[r]^-{b_{A(M_0^i),r_i}} \ar[dr]_-{\pi}
+&
+L_1 \ar[d]^-{\epsilon_{L_1}^*}\\
+& & L_A R_A(L_1)
+}
+\end{displaymath}
+where $i,j$ indexes commutative diagrams in $\mathcal{L}_1$ of the form
+\begin{displaymath}
+\xymatrix{
+A(N_0^{ij}) \ar@[red][r]^-{h} \ar@[blue][d]_{k} & A(M_0^i) \ar@[red][d]^{r_i} \\
+A(M_0^{'i}) \ar@[blue][r]_-{r'_i} & L_1
+}
+\end{displaymath}
+The morphisms $\alpha$ and $\beta$ are respectively associated to the red and blue paths through the diagrams. In this case, $b$ is a coequalizer for $\alpha$ and $\beta$ if and only if it is also a coequalizer for $\theta$ and $\tau$. This fact is evident in the argument \footnote{We allow the substitution rules $L_0 \rightarrow M_0^i$ and $L'_0 \rightarrow M_0^{'i}$ since these differences are merely notational in the sense that they only serve to index objects in the category $\mathcal{L}_0$.} that $(b \theta = b \tau) \Rightarrow (b \alpha = b \beta)$
+\begin{eqnarray*}
+(b \theta = b \tau) &\Rightarrow & b_{A(M_0^i),r_i} \circ h \\
+&=& b_{N_0^{ij},r_i h}\\
+&=& b_{N_0^{ij},r'_i k}\\
+&=& b_{A(M_0^{'i}),r'_i} \circ k\\
+&\Rightarrow & (b \alpha = b \beta)
+\end{eqnarray*}
+and the converse $(b \alpha = b \beta) \Rightarrow (b \theta = b \tau)$
+\begin{eqnarray*}
+(b \alpha = b \beta) &\Rightarrow & b_{A(M_0^i),r_i} \circ A(u) \\
+&=& b_{A(M_0^{'i}),r_i A(u)}\\
+&\Rightarrow & (b \theta = b \tau).
+\end{eqnarray*}
+This demonstrates that $\epsilon_{L_1}$ is indeed an isomorphism and thus
+\begin{eqnarray*}
+\epsilon_{L_1} &:& L \circ R(L_1) \cong L_1\\
+\epsilon &:& L \circ R \cong 1_{\mathcal{L}_1}
+\end{eqnarray*}
 \section{Conclusion}
 
 %------bibliography---%
