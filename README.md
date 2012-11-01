@@ -1,6 +1,6 @@
-latexmkrc - configures latexmk
-crs.sty - includes common packages and definitions
-skeleton.tex - main tex file
-./fig/ - contains files for figures
-./bib/ - contains bibtex files
-./sec/ - contains tex files to be included in skeleton
+1. latexmkrc - configures latexmk
+1. crs.sty - includes common packages and definitions
+1. skeleton.tex - main tex file
+1. ./fig/ - contains files for figures
+1. ./bib/ - contains bibtex files
+1. ./sec/ - contains tex files to be included in skeleton
