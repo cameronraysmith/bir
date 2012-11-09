@@ -243,6 +243,121 @@ there is exactly one morphism $y \to x$.
 initial object and any {\it singleton} set, a set with one element,
 is a final object.
 
+%definitions of pullbacks and pushouts
+\iftoggle{thmsty}{
+\begin{definition}
+\label{definition-fibre-products}
+}{}
+Let $x, y, z\in \Ob(\mathcal{C})$,
+$f\in \Mor_\mathcal{C}(x, y)$
+and $g\in \Mor_{\mathcal C}(z, y)$.
+A {\it fibre product} of $f$ and $g$ is
+an object $x \times_y z\in \Ob(\mathcal{C})$
+together with morphisms
+$p\in \Mor_{\mathcal C}(x \times_y z, x)$ and
+$q\in\Mor_{\mathcal C}(x \times_y z, z)$ making the diagram
+$$
+\xymatrix{
+x \times_y z \ar[r]^{q} \ar[d]_p
+&
+z \ar[d]^{g}
+\\
+x \ar[r]^{f}
+&
+y
+}
+$$
+commute, and such that the following universal property holds: for
+any $w\in \Ob(\mathcal{C})$ and morphisms
+$\alpha \in \Mor_{\mathcal C}(w, x)$ and
+$\beta \in \Mor_\mathcal{C}(w, z)$ with
+$f \circ \alpha= g\circ \beta$
+there is a unique
+$\gamma\in \Mor_{\mathcal C}(w, x \times_z y)$ making
+the diagram
+$$
+\xymatrix{
+w \ar[rrrd]^\beta \ar@{-->}[rrd]_\gamma \ar[rrdd]_\alpha
+&
+&
+\\
+&
+&
+x \times_y z \ar[d]_p \ar[r]_q
+&
+z \ar[d]^{g}
+\\
+&
+&
+x \ar[r]^{f}
+&
+z
+}
+$$
+commute.
+\iftoggle{thmsty}{
+\end{definition}
+}
+
+\noindent
+The dual notion to fibre products is that of push outs.
+
+\iftoggle{thmsty}{
+\begin{definition}
+\label{definition-pushouts}
+}{}
+Let $x, y, z\in \Ob(\mathcal{C})$,
+$f\in \Mor_\mathcal{C}(y, x)$
+and $g\in \Mor_{\mathcal C}(y, z)$.
+A {\it push out} of $f$ and $g$ is
+an object $x\amalg_y z\in \Ob(\mathcal{C})$
+together with morphisms
+$p\in \Mor_{\mathcal C}(x, x\amalg_y z)$ and
+$q\in\Mor_{\mathcal C}(z, x\amalg_y z)$ making the diagram
+$$
+\xymatrix{
+y \ar[r]^{g} \ar[d]_f
+&
+z \ar[d]^{q}
+\\
+x \ar[r]^{p}
+&
+x\amalg_y z
+}
+$$
+commute, and such that the following universal property holds:
+For any $w\in \Ob(\mathcal{C})$ and morphisms
+$\alpha \in \Mor_{\mathcal C}(x, w)$ and
+$\beta \in \Mor_\mathcal{C}(z, w)$ with
+$\alpha \circ f = \beta \circ g$ there is a unique
+$\gamma\in \Mor_{\mathcal C}(x\amalg_z y, w)$ making
+the diagram
+$$
+\xymatrix{
+y \ar[r]^{g} \ar[d]_f
+&
+z \ar[d]^{q} \ar[rrdd]^\beta
+&
+&
+\\
+x \ar[r]^{p} \ar[rrrd]^\alpha
+&
+x\amalg_y z  \ar@{-->}[rrd]^\gamma
+&
+&
+\\
+&&&
+w
+}
+$$
+commute.
+\iftoggle{thmsty}{
+\end{definition}
+}
+
+\noindent In the category $\textit{Sets}$ a pullback is a subset of the cartesian product of two sets whereas a pushout is a quotient of the disjoint union of two sets.
+
+%definitions of limits and colimits
 Let $\mathcal{C}$ be a category. A {\it diagram} in $\mathcal{C}$ is a functor $M : \mathcal{I} \to \mathcal{C}$. $\mathcal{I}$ is the {\it index category} and $M$ is an $\mathcal{I}$-diagram. $M_i$ denotes the image of the object $i$ of $\mathcal{I}$ in $\cC$. For $\phi : i \to i' \in \Mor(I)$, $M(\phi) : M_i \to M_{i'}$.
 
 \iftoggle{thmsty}{

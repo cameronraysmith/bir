@@ -1,14 +1,32 @@
 \subsection{local and global}
 \begin{frame}
-For now, in order to describe the generic relationship between one collection of local entities and another collection of global entities that are composite constructions upon the collection of local entities we first construct a category for each of the local and global levels of interaction, $\mathcal{L}_0$ and $\mathcal{L}_1$, respectively. In general, all the structure in $\mathcal{L}_0$ may be recapitulated in $\mathcal{L}_1$ but not necessarily conversely.
+\begin{enumerate}
+\item How can we describe the generic relationship between one collection of local entities and another collection of global entities that are composite constructions upon the collection of local entities?
+
+\pause \item Consider a category for each of the local and global levels of interaction, $\mathcal{L}_0$ and $\mathcal{L}_1$, respectively. 
+
+\pause \item In general, all the structure in $\mathcal{L}_0$ may be recapitulated in $\mathcal{L}_1$ but not necessarily conversely.
+\end{enumerate}
 \end{frame}
 
 \begin{frame}
-The relationship between local and global biological information representation is expressed in terms of a relationship between the categories $\mathcal{L}_0$ and $\mathcal{L}_1$. We can construct a method for relating local and global biological information contained in these two categories. The Yoneda embedding of a category into its associated category of presheaves by the functor $PSh$ and the associated lemma guaranteeing that any category is a full subcategory of its category of presheaves for an arbitrary category, which we specialize to the case of $\mathcal{L}_0$ as $PSh: \mathcal{L}_0 \rightarrow \textit{Sets}^{\mathcal{L}_0^{opp}}$.
+\begin{enumerate}
+\item The relationship between local and global biological information representation is expressed in terms of a relationship between the categories $\mathcal{L}_0$ and $\mathcal{L}_1$. 
+
+\pause \item We can construct a method for relating local and global biological information contained in these two categories.
+
+\pause \item The Yoneda embedding of a category into its associated category of presheaves by the functor $PSh$ and the associated lemma guaranteeing that any category is a full subcategory of its category of presheaves for an arbitrary category, which we specialize to the case of $\mathcal{L}_0$ as $PSh: \mathcal{L}_0 \rightarrow \textit{Sets}^{\mathcal{L}_0^{opp}}$.
+\end{enumerate}
 \end{frame}
 
 \begin{frame}
-We abstractly define a functor to be constructed $A:\mathcal{L}_0 \rightarrow \mathcal{L}_1$ that assigns representations of global information and morphisms that preserve the structure between them to those of local information with respect to a biological system.  Similarly, the functor $R: \mathcal{L}_1 \rightarrow \textit{Sets}^{\mathcal{L}_0^{opp}}$ assigns presheaves on $\mathcal{L}_0$ to the composite information structures in $\mathcal{L}_1$ and $L$ acts conversely. The categories of local and global information representation and the functors enabling partial translation between them is summarized in the following figure.
+\begin{enumerate}
+\item We abstractly define a functor to be constructed $A:\mathcal{L}_0 \rightarrow \mathcal{L}_1$ that assigns representations of global information and morphisms that preserve the structure between them to those of local information with respect to a biological system.  
+
+\pause \item Similarly, the functor $R: \mathcal{L}_1 \rightarrow \textit{Sets}^{\mathcal{L}_0^{opp}}$ assigns presheaves on $\mathcal{L}_0$ to the composite information structures in $\mathcal{L}_1$ and $L$ acts conversely. 
+
+\pause \item The categories of local and global information representation and the functors enabling partial translation between them is summarized in the following figure.
+\end{enumerate}
 \end{frame}
 
 \begin{frame}
@@ -61,7 +79,7 @@ defined on objects and morphisms of the category of elements of $P$ respectively
 The category of elements of a presheaf functor is depicted schematically in the figure. Colimits over the category of elements of a presheaf are used in the construction of the functors $R$ and $L$.
 \begin{figure}
 \noindent\includegraphics[width=0.6\framewidth]{fig/catofel.pdf}
-\caption{The category of elements of a presheaf functor. Adapted from Awodey2006.}
+\caption{The category of elements of a presheaf functor. Adapted from \cite{Awodey2006}.}
 \label{fig:catofel}
 \end{figure}
 \end{frame}
@@ -135,9 +153,3 @@ which commutes uniquely in $L$ for a given $A$.
 \end{proof}
 }
 \end{frame}
-
-%\begin{figure}
-%\noindent\includegraphics[width=0.8\columnwidth]{fig/catofel.pdf}
-%\caption{The category of elements of a presheaf functor. Adapted from \cite{Awodey2006}.}
-%\label{fig:catofel}
-%\end{figure}

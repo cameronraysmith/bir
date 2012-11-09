@@ -16,7 +16,6 @@
 %\usetheme{default}
 \setbeamertemplate{navigation symbols}{}
 
-
 %\usepackage[latin1]{inputenc}
 \usepackage{graphicx}
 \usepackage{tikz}
@@ -28,7 +27,12 @@
 \usepackage{sansmathaccent}
 %\usepackage[ampersand]{easylist}
 \usepackage{verbatim}
-\usepackage{hyperref}
+\usepackage{ifpdf}
+\ifpdf
+%	\usepackage[backref]{hyperref}
+	\usepackage{hyperref}
+\else
+\fi
 
 % see
 %http://ctan.mirrorcatalogs.com/info/Free_Math_Font_Survey/survey.html#sec:Compar
@@ -40,6 +44,8 @@
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{amsthm}
+
+
 %\PassOptionsToPackage{all}{xy}
 \usepackage{xy}
 \usepackage{xypic}
