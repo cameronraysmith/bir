@@ -1,5 +1,6 @@
+\subsection{left adjoint}
 \begin{frame}
-This section relies on and follows the notation of the proof of Giraud's theorem in \cite{MacLane1992}. Given a functor $A: \mathcal{L}_0 \rightarrow \mathcal{L}_1$, we can recall the adjunction $L_A \dashv R_A$ between the category of presheaves on the local category $\mathcal{L}_0$ and the global category $\mathcal{L}_1$:
+This section relies on and follows the notation of the proof of Giraud's theorem. Given a functor $A: \mathcal{L}_0 \rightarrow \mathcal{L}_1$, we can recall the adjunction $L_A \dashv R_A$ between the category of presheaves on the local category $\mathcal{L}_0$ and the global category $\mathcal{L}_1$:
 $$
 L_A: \textit{Sets}^{\mathcal{L}_0^{opp}} \leftrightarrows \mathcal{L}_1 :R_A.
 $$
@@ -57,6 +58,7 @@ where $\tilde{g_i}$ is also an epimorphism.
 For $\{ g_i : M_0^i \rightarrow L_0 \}_i \in S(L_0)$ there is an epimorphic family of morphisms $\{ N_0^{ij} \rightarrow M_0^i \times_{L_0} L'_0 \}_{ij}$ with each $N_0^{ij} \in \Ob(\mathcal{L}_0)$. Therefore the composites of these morphisms, $N_0^{ij} \rightarrow M_0^i \times_{L_0} L'_0 \rightarrow L'_0$, for all $i$ and $j$ form an epimorphic family on $L'_0$ contained in the sieve given by the preimage of $h$ on the sieve $S(L_0)$, $h^*(S(L_0))$, and thus $h^*(S(L_0))$ is a cover on $L'_0$, which satisfies the definition of stability of $S(L_0)$ under pullback. Transitivity can also be verified, and thus $J$ is shown to be a Grothendieck topology on $\mathcal{L}_0$ defined in terms of a condition---that sieves on $\mathcal{L}_0$ cover objects in $\mathcal{L}_1$---on its relationship to $\mathcal{L}_1$.
 \end{frame}
 
+\subsection{right adjoint}
 \begin{frame}
 Next we explain the way in which the right adjoint functor parametrically applied to an object $L_1 \in \Ob(\mathcal{L}_1)$, $R_A(L_1) = \Mor_{\mathcal{L}_1}(A(-),L_1): \mathcal{L}_0^{opp} \rightarrow Sets$, is interpreted as a sheaf for the topology $J$ on $\mathcal{L}_0$.
 \end{frame}
@@ -122,6 +124,7 @@ where the arrows are reversed and coproducts exchanged with products producing a
 This equalizer provides precisely the condition necessary for $R(L_1)$ to satisfy the sheaf condition for the covering sieve $S(L_0)$. Since this construction is parametric in $L_0 \in \Ob(\mathcal{L}_0)$ for a corresponding $L_1 \in \Ob(\mathcal{L}_1)$ of the topology $J$ then $R$ is a $J$-sheaf for the site $(\mathcal{L}_0,J)$. For those cases in which $L_1$ represents an object in $\Ob(\mathcal{L}_0)$ then $R(L_1)$ is equivalent to the functor represented by the object $L_0$ in the presheaf category on $\mathcal{L}_0$. When all representable functors are sheaves, the topology $J$ is referred to as the subcanonical topology on $\mathcal{L}_0$.
 \end{frame}
 
+\subsection{unit and counit}
 \begin{frame}
 Now we consider the unit and counit natural transformations of the adjunction $L_A \dashv R_A$ in the context of the functor $A: \mathcal{L}_0 \rightarrow \mathcal{L}_1$ that enables the transformation of information between the local and the global levels of organization represented by the respective categories.
 \end{frame}
@@ -231,6 +234,7 @@ We can also demonstrate that the unit of the adjunction is an isomorphism. For a
 \end{eqnarray*}
 \end{frame}
 
+\subsection{equivalence of categories}
 \begin{frame}
 For the case in which $Q$ is also a sheaf on $\mathcal{L}_0$, it can be dually characterized in terms of a colimit of representable functors $PSh(L_0) = Mor_{\mathcal{L}_0}(-,L_0)$. Additionally, the representable functors are sheaves for the case of the subcanonical topology $J$ on $\mathcal{L}_0$ defined above. 
 \end{frame}
