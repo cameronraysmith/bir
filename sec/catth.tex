@@ -87,7 +87,7 @@ the diagram
 $$
 \xymatrix{
 w \ar[rrrd]^\beta \ar@{-->}[rrd]_\gamma \ar[rrdd]_\alpha & & \\
-& & x \times y \ar[d]_p \ar[r]_q & z \\
+& & x \times y \ar[d]_p \ar[r]_q & y \\
 & & x &
 }
 $$
@@ -473,22 +473,22 @@ In this case we say that $G$ is a {\it quasi-inverse} to $F$.
 \label{definition-adjoint}
 }{}
 Let $\mathcal{C}$, $\mathcal{D}$ be categories.
-Let $u : \mathcal{C} \to \mathcal{D}$ and
-$v : \mathcal{D} \to \mathcal{C}$ be functors.
-We say that $u$ is a {\it left adjoint} of $v$ or that
-$v$ is a {\it right adjoint} to $u$, written $u \dashv v$, if there are bijections
+Let $F : \mathcal{C} \to \mathcal{D}$ and
+$G : \mathcal{D} \to \mathcal{C}$ be functors.
+We say that $F$ is a {\it left adjoint} of $G$ or that
+$G$ is a {\it right adjoint} to $F$, written $F \dashv G$, if there are bijections
 $$
-\phi_{X,Y}:\Mor_\mathcal{D}(u(X), Y)
+\phi_{c,d}:\Mor_\mathcal{D}(Fc, d)
 \simeq
-\Mor_\mathcal{C}(X, v(Y))
+\Mor_\mathcal{C}(c, Gd)
 $$
-functorial in $X \in \Ob(\mathcal{C})$, and
-$Y \in \Ob(\mathcal{D})$.
+functorial in $c \in \Ob(\mathcal{C})$, and
+$d \in \Ob(\mathcal{D})$.
 \iftoggle{thmsty}{
 \end{definition}
 }
 
-Morphisms that are associated with each other according to the bijections of an adjunction are called {\it adjoint transposes} of one another. If $g:u(X) \rightarrow Y$, $g \in \Mor(\cD)$ then $g^*: X \rightarrow v(Y)$, $g^* \in \Mor(\cC)$ is given by $\phi_{X,Y}(g) = g^*$. Similarly for $f: X \rightarrow v(Y)$, $f \in \Mor(\cC)$ with $f^*:u(X) \rightarrow Y$, $f^* \in \Mor(\cD)$ is given by $\phi_{X,Y}^{-1}(f) = f^*$. We see then that $g^* = f$ and $f^* = g$.
+Morphisms that are associated with each other according to the bijections of an adjunction are called {\it adjoint transposes} of one another. If $g:Fc \rightarrow d$, $g \in \Mor(\cD)$ then $g^*: c \rightarrow Gd$, $g^* \in \Mor(\cC)$ is given by $\phi_{c,d}(g) = g^*$. Similarly for $f: c \rightarrow Gd$, $f \in \Mor(\cC)$ with $f^*:Fc \rightarrow d$, $f^* \in \Mor(\cD)$ is given by $\phi_{c,d}^{-1}(f) = f^*$. We see then that $g^* = f$ and $f^* = g$.
 
 \iftoggle{thmsty}{
 \begin{definition}

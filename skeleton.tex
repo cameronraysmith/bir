@@ -174,22 +174,22 @@ In this case we say that $G$ is a {\it quasi-inverse} to $F$.
 \label{definition-adjoint}
 }{}
 Let $\mathcal{C}$, $\mathcal{D}$ be categories.
-Let $u : \mathcal{C} \to \mathcal{D}$ and
-$v : \mathcal{D} \to \mathcal{C}$ be functors.
-We say that $u$ is a {\it left adjoint} of $v$ or that
-$v$ is a {\it right adjoint} to $u$, written $u \dashv v$, if there are bijections
+Let $F : \mathcal{C} \to \mathcal{D}$ and
+$G : \mathcal{D} \to \mathcal{C}$ be functors.
+We say that $F$ is a {\it left adjoint} of $G$ or that
+$G$ is a {\it right adjoint} to $F$, written $F \dashv G$, if there are bijections
 $$
-\phi_{X,Y}:\Mor_\mathcal{D}(u(X), Y)
+\phi_{c,d}:\Mor_\mathcal{D}(Fc, d)
 \simeq
-\Mor_\mathcal{C}(X, v(Y))
+\Mor_\mathcal{C}(c, Gd)
 $$
-functorial in $X \in \Ob(\mathcal{C})$, and
-$Y \in \Ob(\mathcal{D})$.
+functorial in $c \in \Ob(\mathcal{C})$, and
+$d \in \Ob(\mathcal{D})$.
 \iftoggle{thmsty}{
 \end{definition}
 }
 
-$F \dashv G$ is thus equivalent to the statement $\phi_{-,-}:b_{(-)} \cong b^{(-)}$ (see Appendix \ref{app:CatTh}). In this framework, information encoding/decoding is an asymmetric process that can only be accomplished without loss of information in one direction: objects of $\cD$ can be encoded into objects of $\cC$ and decoded into objects of $\cD$ but, in general, proceeding in the opposite order may result in loss of information. This asymmetry is clarified by consideration of the unit and counit morphisms of the adjunction.
+Morphisms that are associated with each other according to the bijections of an adjunction are called {\it adjoint transposes} of one another. If $g:Fc \rightarrow d$, $g \in \Mor(\cD)$ then $g^*: c \rightarrow Gd$, $g^* \in \Mor(\cC)$ is given by $\phi_{c,d}(g) = g^*$. Similarly for $f: c \rightarrow Gd$, $f \in \Mor(\cC)$ with $f^*:Fc \rightarrow d$, $f^* \in \Mor(\cD)$ is given by $\phi_{c,d}^{-1}(f) = f^*$. We see then that $g^* = f$ and $f^* = g$.
 
 \iftoggle{thmsty}{
 \begin{definition}
@@ -239,28 +239,34 @@ that specifies a set of morphisms in $\cC^{opp}$ from the perspective of $\cD$ i
 \label{fig:adjunction}
 \end{figure}
 
-The asymmetry of the adjunction can be dispensed with if the unit and counit natural transformations are in fact natural isomorphisms $\eta: 1_{\cC^{opp}} \cong GF$ and $\epsilon: FG \cong 1_{\cD}$. In any limit in which this is the case the adjunction $F \dashv G$ gives an equivalence of categories $\cC^{opp} = \cD$ and the information encoding-decoding process becomes bidirectionally exact.
+$F \dashv G$ is thus equivalent to the statement $\phi_{-,-}:b^{(-)} \cong b_{(-)}$ (see Appendix \ref{app:CatTh}). In this framework, information encoding/decoding is an asymmetric process that can only be accomplished without loss of information in one direction: objects of $\cD$ can be encoded into objects of $\cC$ and decoded into objects of $\cD$ but, in general, proceeding in the opposite order may result in loss of information. The asymmetry of the adjunction can be dispensed with if the unit and counit natural transformations are in fact natural isomorphisms $\eta: 1_{\cC^{opp}} \cong GF$ and $\epsilon: FG \cong 1_{\cD}$. In any limit in which this is the case the adjunction $F \dashv G$ gives an equivalence of categories $\cC^{opp} = \cD$ and the information encoding-decoding process becomes bidirectionally exact.
 
 %\section{A topological framework for biological information}
 
 \section{Hierarchical biological information representation}
 %% cite something explaining the concept of operationalism as intrinsic
 %% to interactions comprising biological systems
-Collections of interacting biological entities can be viewed as performing measurements and representing information derived from such measurements on other collections. It is thus helpful to consider a method for representing the way in which collections of interactions can be woven together to produce higher-order structures that are also capable of interacting with one another. This perspective can be abstractly referred to as intrinsic operationalism, where the components of biological systems take on the role of the measurements they are capable of performing on and representing in terms of one another \cite{Wolkenhauer2007,Houle2011}. We qualitatively associate an algebraic structure to the relatively primitive biological entities under consideration that provide a {\it local} description with respect to a {\it global} description which may be represented by a composite algebraic structure of observables that can be constructed by potentially gluing together components from those defined locally. This perspective suggests the capacity to both deconstruct and resynthesize composite systems in terms of locally and globally defined algebraic structures.
+Collections of interacting biological entities can be viewed as performing measurements and representing information derived from such measurements on other collections (Figure \ref{fig:infopres}). This perspective can be abstractly referred to as intrinsic operationalism, where the components of biological systems take on the role of the measurements they are capable of performing on and representing in terms of one another \cite{Wolkenhauer2007,Houle2011}. We qualitatively associate an algebraic structure to the relatively primitive biological entities under consideration that provide a {\it local} description with respect to a {\it global} description which may be represented by a composite algebraic structure of observables that can be constructed by potentially gluing together components from those defined locally. This perspective suggests the capacity to both deconstruct and resynthesize composite systems in terms of locally and globally defined algebraic structures.
 
-The approach outlined above can, in principle, be iterated over multiple local-global transitions where in ascending from bottom to top global objects and the associated measurements they are capable of performing in terms of one another become local objects when the perspective is shifted to the next level of organization. This capacity will be taken advantage of to define a structural condition abstractly characterizing a coherence constraint that must be satisfied to render complete a so-called major transition in evolution \cite{MaynardSmith1995,Okasha2006,Calcott2011}. For now, in order to describe the generic relationship between one collection of local entities and another collection of global entities that are composite constructions upon the collection of local entities we first construct a category for each of the local and global levels of interaction, $\mathcal{L}_0$ and $\mathcal{L}_1$, respectively. In general, all the structure in $\mathcal{L}_0$ may be recapitulated in $\mathcal{L}_1$ but not necessarily conversely.
+The approach outlined above can, in principle, be iterated over multiple local-global transitions where in ascending from bottom to top global objects and the associated measurements they are capable of performing in terms of one another become local objects when the perspective is shifted to the next level of organization. It is thus helpful to consider a method for representing the way in which collections of interactions can be woven together to produce higher-order structures that are also capable of interacting with one another. This capacity will be taken advantage of to define a structural condition abstractly characterizing a coherence constraint that must be satisfied to render complete a so-called major transition in evolution \cite{MaynardSmith1995,Okasha2006,Calcott2011}. For now, in order to describe the generic relationship between one collection of local entities and another collection of global entities that are composite constructions upon the collection of local entities we first construct a category for each of the local and global levels of interaction, $\mathcal{L}_0$ and $\mathcal{L}_1$, respectively. In general, all the structure in $\mathcal{L}_0$ may be recapitulated in $\mathcal{L}_1$ but not necessarily conversely.
+
+\begin{figure}
+\noindent\includegraphics[width=0.9\columnwidth]{fig/infopres.pdf}
+\caption{From bottom to top and on the left we imagine an information non-preserving interaction resulting from the inability of $a$ to distinguish in subsequent or {\it downstream} interactions the interaction of $d$  with $c$ from that of $e$ with $c$, whereas on the right we imagine an information preserving interaction wherein $b$ is capable of distinguishing in downstream interactions the interaction of $d$  with $c$ from that of $e$ with $c$.}
+\label{fig:infopres}
+\end{figure}
 
 %\subsection{Intrinsic perspectives on biological information representation}
 
-The relationship between local and global biological information representation is expressed in terms of a relationship between the categories $\mathcal{L}_0$ and $\mathcal{L}_1$. We can construct a method for relating local and global biological information contained in these two categories. The Yoneda embedding of a category into its associated category of presheaves by the functor $PSh$ and the associated lemma guaranteeing that any category is a full subcategory of its category of presheaves for an arbitrary category is explained in appendix \ref{CatTh}, which we specialize to the case of $\mathcal{L}_0$ as $PSh: \mathcal{L}_0 \rightarrow \textit{Sets}^{\mathcal{L}_0^{opp}}$. We abstractly define a functor to be constructed $A:\mathcal{L}_0 \rightarrow \mathcal{L}_1$ that assigns representations of global information and morphisms that preserve the structure between them to those of local information with respect to a biological system.  Similarly, the functor $R: \mathcal{L}_1 \rightarrow \textit{Sets}^{\mathcal{L}_0^{opp}}$ assigns presheaves on $\mathcal{L}_0$ to the composite information structures in $\mathcal{L}_1$ and $L$ acts conversely. The categories of local and global information representation and the functors enabling partial translation between them is summarized in Figure \ref{fig:ascent}.
+The relationship between local and global biological information representation is expressed in terms of a relationship between the categories $\mathcal{L}_0$ and $\mathcal{L}_1$. We can construct a method for relating local and global biological information contained in these two categories. The Yoneda embedding of a category into its associated category of presheaves by the functor $PSh$ and the associated lemma guaranteeing that any category is a full subcategory of its category of presheaves for an arbitrary category is explained in appendix \ref{app:CatTh}, which we specialize to the case of $\mathcal{L}_0$ as $PSh: \mathcal{L}_0 \rightarrow \textit{Sets}^{\mathcal{L}_0^{opp}}$. We abstractly define a functor to be constructed $A:\mathcal{L}_0 \rightarrow \mathcal{L}_1$ that assigns representations of global information and morphisms that preserve the structure between them to those of local information with respect to a biological system.  Similarly, the functor $R: \mathcal{L}_1 \rightarrow \textit{Sets}^{\mathcal{L}_0^{opp}}$ assigns presheaves on $\mathcal{L}_0$ to the composite information structures in $\mathcal{L}_1$ and $L$ acts conversely. The categories of local and global information representation and the functors enabling partial translation between them is summarized in Figure \ref{fig:ascent}.
+
+In order to construct the functor $L$, we need to explain the relationship between objects in the category of presheaves and the representable functors from their underlying category.
 
 \begin{figure}
 \noindent\includegraphics[width=0.5\columnwidth]{fig/ascent.pdf}
 \caption{A framework for the construction of a mechanism of local-global translation of biological information. $\mathcal{L}_0$ and $\mathcal{L}_1$ are respectively the categories of relatively local and global biological information structures. The Yoneda embedding functor $PSh$ constructs the presheaf functor category on $\mathcal{L}_0$. The functors $A$, $R$, and $L$ are initially defined abstractly and subsequently constructed.}
 \label{fig:ascent}
 \end{figure}
-
-In order to construct the functor $L$, we need to explain the relationship between objects in the category of presheaves and the representable functors from their underlying category.
 
 \iftoggle{thmsty}{
 \begin{definition}
@@ -685,7 +691,7 @@ The goal of organizing knowledge about biological systems will ultimately requir
 %-----------------------------------------------%
 \appendix
 
-\section{Category theory}\label{CatTh}
+\section{Category theory}\label{app:CatTh}
 \input{sec/catth.tex}
 
 %\section{Sieves and sheaves}\label{Sheaves}
