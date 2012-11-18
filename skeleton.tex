@@ -37,7 +37,7 @@
 
 \date{\today}
 \begin{abstract}
-Hierarchy is a fundamental organizing concept in biology. The existence of a number of apparently discrete levels of organization including molecules, cells, organisms, populations, communities, ecosystems, and more fine-grained levels below, above and in between these are taken for granted. Theoretical constructs capable of integrating information about such levels of organization and of explaining the emergence of such levels in the evolutionary process have not been adapted to a biological context. Here we make use of existing theory to characterize coherence constraints that must ostensibly be satisfied in any evolutionary process in which two levels of organization become coupled such that one serves as a base supporting interactions among higher-level entities in another. In this way, what may be considered as two distinct levels may come to be viewed as part of a unified system. This process of unification of distinct levels may serve as a basis for induction in the consideration of arbitrarily complex compositions of multilevel biological systems. The language we use to express these constraints is sufficiently general that it applies equally to several different concrete formalisms for representing biological systems, for example those that have become commonplace in the context of network science, in terms of algebraic graphs, hypergraphs, or (cell) complexes. The derived relationship between levels of organization in models of biological systems can be used to constrain dynamical models defined in terms of transformations of graphs or any other concrete relational structure that seek to take into account hierarchical transitions in evolutionary processes.
+Hierarchy is a fundamental organizing concept in biology. The existence of a number of apparently discrete levels of organization including molecules, cells, organisms, populations, communities, ecosystems, and more fine-grained levels below, above and in between these are taken for granted. Theoretical constructs capable of integrating information about such levels of organization and of explaining the emergence of such levels in the evolutionary process have not been adapted to a biological context. Here we make use of existing theory to characterize coherence constraints that must ostensibly be satisfied in any evolutionary process in which two levels of organization become coupled such that one serves as a base supporting interactions among higher-level entities in another. In this way, what may be considered as two distinct levels may come to be viewed as part of a unified system. This process of unification of distinct levels may serve as a basis for induction in the consideration of arbitrarily complex compositions of multilevel biological systems. The language we use to express these constraints is sufficiently general that it applies equally to several different concrete formalisms for representing biological systems, for example those that have become commonplace in the context of network science, in terms of algebraic graphs, hypergraphs, or (cell) complexes. The derived relationship constraining the synthesis of levels of organization in models of biological systems can be used to provide boundary conditions for dynamical models defined in terms of transformations of graphs or any other concrete relational structure that seek to take into account hierarchical transitions in evolutionary processes.
 \end{abstract}
 
 \maketitle
@@ -50,7 +50,7 @@ The development of a formal language for modeling and reasoning about biological
 
 Category theory \cite{Lane1985,Lane1998,MacLane1992,Lawvere1997,Lawvere2003,Awodey2006} is a language that has been suggested since Woodger to provide a framework for representing and reasoning about biological systems \cite{Rashevsky1954,Rosen1958,Rosen1958a,Rosen1978,GOGUEN1979,Rosen1985,Rosen1991,Ehresmann2007,Louie2009}. What is immediately useful about this language from the perspective of biology and its underlying chemistry is that it presents as primitive the notion of transformation between objects. In fact, from this point of view, a defining characteristic of any representation of an entity (e.g. a protein, cell, organism, or population) is the set of relationships between its representations of other entities under consideration. Intrinsic properties are taken into account implicitly in this framework since the possible set of relationships between any object and any other is constrained by the nature of its intrinsic properties. 
 
-Concepts from category theory, especially with regard to its interface with geometry and logic \cite{MacLane1992,Jacobs1998}, enable the formulation of what might be viewed as a framework for explaining the nature and development of so-called \emph{emergent properties} of systems that are able to represent information in molecular terms to take an arbitrary {\it base} level, but build upon this to generate the capacity to process information at higher levels of organization, such as the cellular or multicellular, as well. The existence of biological {\it levels of organization} that may have come into existence during the evolutionary process thus far, although commonly assumed for example in various informal taxonomic systems used in biology, is a hypothesis that should be able to be tested in the long term through the introduction of a language capable of making predictions that could help distinguish a case in which there is from that in which there is no justification to reify the conceptual levels of organization that have been introduced to organize biological knowledge. The concept of separation of spatio-temporal scales, which is used to justify the consideration of particular levels of organization in the process of constructing models of restricted biological subsystems \cite{Gunawardena2012,Karr2012}, may make it impossible to explain evolutionary processes that apparently transcend such levels of organization providing one justification to search for a language that can support model-building that can offer explanations for how biological systems might integrate information across levels of organization. The methods discussed here are general enough that they can be equally well applied to the consideration of relationships between any levels of biological organization assuming there are any at all. Of course, this framework will require specialization to be of use in particular contexts. However, the unity deriving from the judicious definition of concepts underlying category theory is precisely the type of abstraction that we argue is necessary to enable a compression of concepts and thereby improve our capacity to communicate and synthesize existing and future knowledge about biological systems.
+Concepts from category theory, especially with regard to its interface with geometry and logic \cite{MacLane1992,Jacobs1998}, enable the formulation of what might be viewed as a framework for explaining the nature and development of so-called \emph{emergent properties} of systems that are able to represent information in molecular terms to take an arbitrary {\it base} level, but build upon this to generate the capacity to process information at higher levels of organization, such as the cellular or multicellular, as well. The existence of biological {\it levels of organization} that may have come into existence during the evolutionary process thus far, although commonly assumed for example in various informal taxonomic systems used in biology, is a hypothesis that should be able to be tested in the long term through the introduction of a language capable of making predictions that could help distinguish a case in which there is from that in which there is no justification to reify the conceptual levels of organization that have been introduced to organize biological knowledge. The concept of separation of spatio-temporal scales, which is used to justify the consideration of particular levels of organization in the process of constructing models of restricted biological subsystems \cite{Gunawardena2012,Karr2012}, may make it impossible to explain evolutionary processes that apparently transcend such levels of organization providing one justification to search for a language that can support model-building that can offer explanations for how biological systems might integrate information across levels of organization. The methods discussed here are general enough that they can be equally well applied to the consideration of relationships, assuming there are any at all, among any levels of biological organization. Of course, this framework will require specialization to be of use in particular contexts. However, the unity deriving from the judicious definition of concepts underlying category theory is precisely the type of abstraction that we argue is necessary to enable a compression of concepts and thereby improve our capacity to communicate and synthesize existing and future knowledge about biological systems.
 
 Here we explain the concepts from category theory necessary to understand the way in which mathematical representations of interacting objects at one level of organization (e.g. molecules) can produce phenomena that would themselves be identifiable as derived objects (e.g. cells) that justify the very conceptualization of a \emph{level of organization} in the first instance. We focus exclusively on defining the boundary conditions relating levels of organization (e.g. molecules to cells or cells to multicellular organisms), which are necessary to understand in the course of defining a dynamical system rooted in transformations operating on structured objects rather than relatively less-structured quantities that could model the \emph{evolution} of such. What results is a refinement of the relationship among levels of organization that are ubiquitously employed in biology and examples of which are used so far only heuristically as guides to pre-existing intuition (e.g. in the hierarchical nature of taxonomy and in the characterization of transcriptional and epigenetic among other levels of regulation of gene expression). Understanding how information is integrated via biological processes across such levels of organization is fundamental to the understanding of so-called complex phenotypes and the associated set of contingencies necessary to account for in proposed methods targeted at controlling or otherwise manipulating them.
 
@@ -67,13 +67,14 @@ Distinction between biological systems or some components thereof and the enviro
 
 \begin{figure*}
 \noindent\includegraphics[width=1.9\columnwidth]{fig/biograph.pdf}
-\caption{Particular features of interaction networks underlying biological systems can be abstracted as algebraic structures of some type with morphisms translating structure between them. On the left is a representation of the integrated metabolic-gene regulatory glycolytic network of E. coli K12 MG1655 derived from the EcoCyc database \cite{Keseler2011} in terms of the BioPAX ontology \cite{Demir2010}. On the right is a conceptual picture of the way in which the relationships between substructure of a particular network can be represented algebraically in terms of algebraic structures that can be referred to as objects and methods of transforming or mapping between these structures referred to as morphisms.}
+\caption{Particular motifs within interaction networks underlying biological systems can be abstracted as algebraic structures of some type exhibiting internal structure associated to that type and external structure represented by morphisms translating structure between them. On the left is a representation of the integrated metabolic-gene regulatory glycolytic network of E. coli K12 MG1655 derived from the EcoCyc database \cite{Keseler2011} in terms of the BioPAX ontology \cite{Demir2010}. On the right is a conceptual picture of the way in which the relationships between substructural motifs of a particular network can be represented algebraically in terms of algebraic structures that can be referred to as objects and methods of transforming or mapping between these structures referred to as morphisms.}
 \label{fig:biograph}
 \end{figure*}
 
 %\subsection{Transformation of information via adjoint functors}
-The use of category theoretic adjunctions to model intrinsic information representation in biological systems has been suggested \cite{GOGUEN1979,Ellerman2005}, but these efforts have yet to be incorporated into more detailed theories. This is likely in part a result of the difficulty in specifying the appropriate level of abstraction at which a precise metaphor can be developed between collections of interacting biological entities and a particular type of mathematical structure. We begin here by developing the prerequisite definitions to explain why the transformation of biological information across an arbitrarily specified system boundary is naturally represented as a pair of adjoint functors in the context of category theory. A relevant piece of intuition to associate to what follows is that any interaction between biological entities is, minimally, a dyadic relationship wherein contingencies associated to other interactions of each of the participants potentially establishes prerequisite value to high- or low-fidelity transmission and representation of information regarding the state of other collections of spatio-temporally distant interactions. The participants in such a dyadic interaction are modelled as categories because each may represent an underlying, arbitrarily complicated collection of interactions that are necessary for the existence of the interface implicit to specifying such an interaction.
+The use of category theoretic adjunctions to model intrinsic information representation in biological systems has been suggested \cite{GOGUEN1979,Ellerman2005}, but these efforts have yet to be incorporated into more detailed theories that also incorporate potential for hierarchical information representation. This is likely in part a result of the difficulty in specifying the appropriate level of abstraction at which a precise metaphor can be developed between collections of interacting biological entities and a particular type of mathematical structure. We begin here by developing the prerequisite definitions to explain why the transformation of biological information across an arbitrarily specified system boundary is naturally represented as a pair of adjoint functors in the context of category theory. A relevant piece of intuition to associate to what follows is that any interaction between biological entities is, minimally, a dyadic relationship wherein contingencies associated to other interactions of each of the participants potentially establishes prerequisite value to high- or low-fidelity transmission and representation of information regarding the state of other collections of spatio-temporally distant interactions. The participants in such a dyadic interaction are modelled as categories because each may represent an underlying, arbitrarily complicated collection of interactions that are necessary for the existence of the interface implicit to specifying such an interaction.
 
+Most of the details of the technical background are presented in Appendix \ref{app:CatTh}. Here we present a minimal collection of definitions necessary for the proceeding discussion.
 \iftoggle{thmsty}{
 \begin{definition}
 \label{definition-category}
@@ -248,7 +249,7 @@ $F \dashv G$ is thus equivalent to the statement $\phi_{-,-}:b^{(-)} \cong b_{(-
 %% to interactions comprising biological systems
 Collections of interacting biological entities can be viewed as performing measurements and representing information derived from such measurements on other collections (Figure \ref{fig:infopres}). This perspective can be abstractly referred to as intrinsic operationalism, where the components of biological systems take on the role of the measurements they are capable of performing on and representing in terms of one another \cite{Wolkenhauer2007,Houle2011}. We qualitatively associate an algebraic structure to the relatively primitive biological entities under consideration that provide a {\it local} description with respect to a {\it global} description which may be represented by a composite algebraic structure of observables that can be constructed by potentially gluing together components from those defined locally. This perspective suggests the capacity to both deconstruct and resynthesize composite systems in terms of locally and globally defined algebraic structures.
 
-The approach outlined above can, in principle, be iterated over multiple local-global transitions where in ascending from bottom to top global objects and the associated measurements they are capable of performing in terms of one another become local objects when the perspective is shifted to the next level of organization. It is thus helpful to consider a method for representing the way in which collections of interactions can be woven together to produce higher-order structures that are also capable of interacting with one another. This capacity will be taken advantage of to define a structural condition abstractly characterizing a coherence constraint that must be satisfied to render complete a so-called major transition in evolution \cite{MaynardSmith1995,Okasha2006,Calcott2011}. For now, in order to describe the generic relationship between one collection of local entities and another collection of global entities that are composite constructions upon the collection of local entities we first construct a category for each of the local and global levels of interaction, $\mathcal{L}_0$ and $\mathcal{L}_1$, respectively. In general, all the structure in $\mathcal{L}_0$ may be recapitulated in $\mathcal{L}_1$ but not necessarily conversely.
+The approach outlined above can, in principle, be iterated over multiple local-global transitions where in ascending from bottom to top global objects and the associated measurements they are capable of performing in terms of one another become local objects when the perspective is shifted to the next level of organization. It is thus helpful to consider a method for representing the way in which collections of interactions can be woven together to produce higher-order structures that are also capable of interacting with one another. This capacity will be taken advantage of to define a structural condition abstractly characterizing a coherence constraint that must be satisfied by systems that can be considered to be comprised of two or more hierarchically related levels of organization. Such a representation is relevant to understanding and constructing models of so-called major transition in evolution \cite{MaynardSmith1995,Okasha2006,Calcott2011}. For now, in order to describe the generic relationship between one collection of local entities and another collection of global entities that are composite constructions upon the collection of local entities we first construct a category for each of the local and global levels of interaction, $\mathcal{L}_0$ and $\mathcal{L}_1$, respectively. In general, all the structure in $\mathcal{L}_0$ may be recapitulated in $\mathcal{L}_1$ but not necessarily conversely.
 
 \begin{figure}
 \noindent\includegraphics[width=0.9\columnwidth]{fig/infopres.pdf}
@@ -258,7 +259,7 @@ The approach outlined above can, in principle, be iterated over multiple local-g
 
 %\subsection{Intrinsic perspectives on biological information representation}
 
-The relationship between local and global biological information representation is expressed in terms of a relationship between the categories $\mathcal{L}_0$ and $\mathcal{L}_1$. We can construct a method for relating local and global biological information contained in these two categories. The Yoneda embedding of a category into its associated category of presheaves by the functor $PSh$ and the associated lemma guaranteeing that any category is a full subcategory of its category of presheaves for an arbitrary category is explained in appendix \ref{app:CatTh}, which we specialize to the case of $\mathcal{L}_0$ as $PSh: \mathcal{L}_0 \rightarrow \textit{Sets}^{\mathcal{L}_0^{opp}}$. We abstractly define a functor to be constructed $A:\mathcal{L}_0 \rightarrow \mathcal{L}_1$ that assigns representations of global information and morphisms that preserve the structure between them to those of local information with respect to a biological system.  Similarly, the functor $R: \mathcal{L}_1 \rightarrow \textit{Sets}^{\mathcal{L}_0^{opp}}$ assigns presheaves on $\mathcal{L}_0$ to the composite information structures in $\mathcal{L}_1$ and $L$ acts conversely. The categories of local and global information representation and the functors enabling partial translation between them is summarized in Figure \ref{fig:ascent}.
+The relationship between local and global biological information representation is expressed in terms of a relationship between the categories $\mathcal{L}_0$ and $\mathcal{L}_1$. We can construct a method for relating local and global biological information contained in these two categories. The Yoneda embedding of a category into its associated category of presheaves by the functor $PSh$ and the associated lemma guaranteeing that any category is a full subcategory of its category of presheaves for an arbitrary category is explained in appendix \ref{app:CatTh}, which we specialize to the case of $\mathcal{L}_0$ as $PSh: \mathcal{L}_0 \rightarrow \textit{Sets}^{\mathcal{L}_0^{opp}}$. We abstractly define a functor to be constructed $A:\mathcal{L}_0 \rightarrow \mathcal{L}_1$ that assigns representations of global information structures and morphisms that preserve the structure between them to those of local information structures with respect to a biological system.  Similarly, the functor $R: \mathcal{L}_1 \rightarrow \textit{Sets}^{\mathcal{L}_0^{opp}}$ assigns presheaves on $\mathcal{L}_0$ to the composite information structures in $\mathcal{L}_1$ and $L$ acts in the opposite direction. The categories of local and global information representation and the functors enabling partial translation between them is summarized in Figure \ref{fig:ascent}.
 
 In order to construct the functor $L$, we need to explain the relationship between objects in the category of presheaves and the representable functors from their underlying category.
 
@@ -272,15 +273,15 @@ In order to construct the functor $L$, we need to explain the relationship betwe
 \begin{definition}
 \label{definition-category-of-elements}
 }{}
-For any category $\mathcal{C}$, index category $J$, and functor $A:J \rightarrow \cC$, every $P \in \Ob(\textit{Sets}^{\cC^{opp}})$ is a colimit of $\cC$-representable functors
+For any category $\mathcal{C}$, {\it index} or {\it diagram} category $J$, and functor $D:J \rightarrow \cC$, every $P \in \Ob(\textit{Sets}^{\cC^{opp}})$ is a colimit of $\cC$-representable functors
 $$
-\lim\limits_{\overrightarrow{j \in J}} PSh A_j \cong P.
+\lim\limits_{\overrightarrow{j \in J}} PSh D_j \cong P.
 $$
-There is a canonical choice for $J$ and $A$ such that
+This means there is a unique choice for $J$ and $D$ such that
 $$
-\lim\limits_{\rightarrow{J}} PSh \circ A \cong P.
+\lim\limits_{\longrightarrow{J}} PSh \circ D \cong P.
 $$
-The unique index category $J$ is called the {\it category of elements} of the presheaf $P$ and is denoted
+The unique index category $J$ that serves to render the above statements true is called the {\it category of elements} of the presheaf $P$ and is denoted
 $$
 \int_{\cC} P.
 $$
@@ -297,17 +298,17 @@ defined on objects and morphisms of the category of elements of $P$ respectively
 \end{definition}
 }
 
-The category of elements of a presheaf functor is depicted schematically in figure \ref{fig:catofel}. Colimits over the category of elements of a presheaf are used in the construction of the functors $R$ and $L$ suggested in figure \ref{fig:ascent}.
+The category of elements of a presheaf functor is depicted schematically in figure \ref{fig:catofel}. Colimits over the category of elements of a presheaf are used in the construction of the functor $L$ and thus the adjoint pair $R \dashv L$ suggested in figure \ref{fig:ascent}.
 
 \iftoggle{thmsty}{
 \begin{theorem}
 \label{theorem-cocompletion-adjunction}
 }{}
-Consider $\mathcal{L}_0$ a small category, $\mathcal{L}_1$ is a cocomplete category, and a functor $A : \mathcal{L}_0 \rightarrow \mathcal{L}_1$. Then we can construct a pair of adjoint functors $L \dashv R$ between $\mathcal{L}_1$ and $\textit{Sets}^{\mathcal{L}_0^{opp}}$ such that $L: \textit{Sets}^{\mathcal{L}_0^{opp}} \leftrightarrows \mathcal{L}_1 :R$ where $L$ and $R$ are defined componentwise as
-\begin{eqnarray}
+Consider $\mathcal{L}_0$ a small category, $\mathcal{L}_1$ a cocomplete category, and a functor $A : \mathcal{L}_0 \rightarrow \mathcal{L}_1$. Then we can construct a pair of adjoint functors $L \dashv R$ between $\mathcal{L}_1$ and $\textit{Sets}^{\mathcal{L}_0^{opp}}$ such that $L: \textit{Sets}^{\mathcal{L}_0^{opp}} \leftrightarrows \mathcal{L}_1 :R$ where $L$ and $R$ are defined componentwise as
+\begin{eqnarray*}
 R(L_1) &:& L_0 \mapsto Mor_{\mathcal{L}_1}(A(L_0),L_1),\\
-L(P) &=& \lim\limits_{\longrightarrow} \left( \int P \xrightarrow{\pi_P} \mathcal{L}_0 \xrightarrow{A} \mathcal{L}_1 \right) .
-\end{eqnarray}
+L(P) &=& \lim\limits_{\longrightarrow} \left( \int_{\mathcal{L}_0} P \xrightarrow{\pi_P} \mathcal{L}_0 \xrightarrow{A} \mathcal{L}_1 \right) .
+\end{eqnarray*}
 \iftoggle{thmsty}{
 \end{theorem}
 }
@@ -320,7 +321,7 @@ A natural transformation can be constructed $\tau : P \rightarrow R(L_1)$ by def
 $$
 \tau_{L_0} : P(L_0) \rightarrow Mor_{\mathcal{L}_1}(A(L_0),L_1)
 $$
-which is natural in $C$ according to the commutativity of the diagram
+which is natural in $L_0$ according to the commutativity of the diagram
 $$
 \xymatrix{
 P(L_0) \ar[r]^-{\tau_{L_0}} \ar[d]_{P(u)} & Mor_{\mathcal{L}_1}(A(L_0),L_1) \ar[d]^{A(u)^*} \\
@@ -330,29 +331,52 @@ for all $u:L'_0 \rightarrow L_0 \in \Mor(\mathcal{L}_0)$. $\tau$ is also determi
 $$
 \{ \tau_{L_0}(x):A(L_0) \rightarrow L_1 \}_{(L_0,x)}
 $$
-indexed by objects $(L_0,x)$ of the category of elements $\int P$. This construction is natural in objects $(L_0,x)$ in the sense that the diagram
+indexed by objects $(L_0,x)$ of the category of elements $\int_{\mathcal{L}_0} P$. This construction is natural in objects $(L_0,x)$ in the sense that the diagram
 $$
 \xymatrix{
-A(L_0) \ar@{=}[r] \ar[dd]_{A(u)} & A\pi(L_0,x) \ar[rd]^{\tau_{L_0}(x)} \ar[dd]^{u_*} & \\
+A(L_0) \ar@{=}[r] \ar[dd]_{A(u)} & A\pi_P(L_0,x) \ar[rd]^{\tau_{L_0}(x)} \ar[dd]^{u_*} & \\
 & & L_1 \\
-A(L'_0) \ar@{=}[r] & A\pi(L'_0,x') \ar[ru]_{\tau_{L'_0}(x')} &
+A(L'_0) \ar@{=}[r] & A\pi_P(L'_0,x') \ar[ru]_{\tau_{L'_0}(x')} &
 }
 $$
-commutes for each morphism $u$. There is thus a bijection
-$$
-Nat(P,R(L_1)) \cong Mor_{L_1}(LP,L_1),
-$$
-which is natural in both $P$ and $L_1$ demonstrating the adjoint relationship $L \dashv R$. The functor $L$ is unique for a given $A$ and all functors $A$ from a small category $\mathcal{L}_0$ to a cocomplete category $\mathcal{L}_1$ factor through the Yoneda embedding $PSh$. The Yoneda embedding is thus the universal method of appending colimits to a small category as suggested by the diagram
+commutes for each morphism $u$.
+The functor $L$ is unique for a given $A$ and all functors $A$ from a small category $\mathcal{L}_0$ to a cocomplete category $\mathcal{L}_1$ factor through the Yoneda embedding $PSh$. The Yoneda embedding is thus the universal method of appending colimits to a small category as suggested by the diagram
 $$
 \xymatrix{
 & \mathcal{L}_1 & \\
 \mathcal{L}_0 \ar[ru]^{A} \ar[rr]_{PSh} & & \textit{Sets}^{\mathcal{L}_0^{opp}} \ar@{-->}[lu]_{L}
 }
 $$
-which commutes uniquely in $L$ for a given $A$.
+which commutes uniquely in $L$ for a given $A$. When $P = Mor(-,L_0) = PSh(L_0)$, the corresponding category of elements $\int_{\mathcal{L}_0} P$ has a terminal object $1_{L_0} : L_0 \rightarrow L_0 \in P(L_0)$. In this case the colimit of $A \circ \pi_P$ is its value on $1_{L_0}$, $L \circ PSh(L_0) \cong A \pi_P (L_0,1_{L_0}) = A(L_0)$ demonstrating the commutativity of the diagram. This construction is referred to as Yoneda extension \cite{Lane1998,MacLane1992}.
 \iftoggle{thmsty}{
 \end{proof}
 }
+
+Keeping in mind that $A \cong L \circ PSh$, the functor $R$ can be constructed directly as
+\begin{eqnarray*}
+R(L_1)(L_0) & \cong & Mor_{\textit{Sets}^{\mathcal{L}_0^{opp}}}(PSh( L_0),R(L_1)),\\
+		    & \cong & Mor_{\mathcal{L}_1}(L(PSh(L_0)),L_1),\\
+   		    & \cong & Mor_{\mathcal{L}_1}(A(L_0),L_1).
+\end{eqnarray*}
+So we can simply define $R$ according to
+$$
+R(L_1)(L_0) = Mor_{\mathcal{L}_1}(A(L_0),L_1),
+$$
+giving presheaves on $\mathcal{L}_0$ when taken to be parametric in $L_0$.
+We can now demonstrate that $L$ and $R$ are indeed adjoint functors
+\begin{eqnarray*}
+Nat(P,R(L_1)) & \cong &  Mor_{\textit{Sets}^{\mathcal{L}_0^{opp}}} \left( \lim\limits_{\overrightarrow{j \in \int_{\mathcal{L}_0} P}} PSh (L_{0j}),R(L_1) \right) ,\\	
+			  & \cong &  \lim\limits_{\overleftarrow{j \in \int_{\mathcal{L}_0} P}} Mor_{\textit{Sets}^{\mathcal{L}_0^{opp}}} \left( PSh (L_{0j}),R(L_1) \right) ,\\
+			  & \cong &  \lim\limits_{\overleftarrow{j \in \int_{\mathcal{L}_0} P}} \left( R(L_1)(L_{0j}) \right) ,\\
+  			  & \cong &  \lim\limits_{\overleftarrow{j \in \int_{\mathcal{L}_0} P}} Mor_{\mathcal{L}_1} \left( A (L_{0j}),L_1 \right) ,\\
+  			  & \cong &  Mor_{\mathcal{L}_1} \left( \lim\limits_{\overrightarrow{j \in \int_{\mathcal{L}_0} P}} A (L_{0j}),L_1 \right) ,\\
+  			  & \cong &  Mor_{L_1}(L(P),L_1).
+\end{eqnarray*}
+There is thus a bijection
+$$
+Nat_{\textit{Sets}^{\mathcal{L}_0^{opp}}} (P,R(L_1)) \cong Mor_{L_1}(L(P),L_1),
+$$
+which is natural in both $P$ and $L_1$ demonstrating the adjoint relationship $L \dashv R$.
 
 \begin{figure}
 \noindent\includegraphics[width=0.8\columnwidth]{fig/catofel.pdf}
@@ -362,7 +386,7 @@ which commutes uniquely in $L$ for a given $A$.
 
 \section{A topological framework for integration of biological information}
 
-In order to be able to represent objects and their interactions in the global category of higher-order interacting biological entities in terms of diagrams modeled in the local category of such we make use of a generalized form of topology that can be applied to any category meeting a few constraints and that can be specialized to, for example, the case in which objects and morphisms of the category take on a particular type of algebraic structure. The purpose of this construction is to develop a method of defining a {\it covering system} composed of interacting entities in the category representing local interactions that can be used to establish a decomposition of objects in the category representing global interactions that may each rely on a certain type of composition of local interactions with respect to any biological system. We first give a conceptual overview of the standard concepts of {\it sieve}, {\it Grothendieck topology}, {\it site}, and {\it sheaf} for an arbitrary category $\cC$ and then explain how covering sieves on $\mathcal{L}_0$ defined in terms of epimorphic families of morphisms in $\mathcal{L}_1$ provides a Grothendieck topology on $\mathcal{L}_0$, which induces a site and sheaves on $\mathcal{L}_0$, which can be shown to precisely encode the category $\mathcal{L}_1$. The theoretical constraints necessary to ensure the equivalence between information represented in terms of sheaves on the category $\mathcal{L}_0$ and information represented in terms of the category $\mathcal{L}_1$ provide a framework for understanding hierarchically organized systems. The process of transforming the category $\mathcal{L}_0$ into its category of sheaves may then provide broad but precise insight into transitions in hierarchical organization, which is a common property providing a unifying perspective on some of the major transitions in biological evolution.
+In order to be able to represent objects and their interactions in the category representing biological entities in terms of global information structures in terms of diagrams modeled in the category of local information structures we make use of a generalized form of topology that can be applied to any category meeting some constraints and that can be specialized to, for example, the case in which objects and morphisms of the category are modelled in terms of a particular type of algebraic structure. This construction develops a method of defining a {\it covering system} composed of interacting entities in the category representing interactions among local information structures that can be used to establish a decomposition of objects in the category representing interactions among global information structures that may each rely on a certain type of composition of local interactions with respect to a particular model of a biological system. We first give a conceptual overview of the standard concepts of {\it sieve}, {\it Grothendieck topology}, {\it site}, and {\it sheaf} for an arbitrary category $\cC$ and then explain how covering sieves on $\mathcal{L}_0$ defined in terms of epimorphic families of morphisms in $\mathcal{L}_1$ provides a Grothendieck topology on $\mathcal{L}_0$, which induces a site and sheaves on $\mathcal{L}_0$. Sheaves on $\mathcal{L}_0$ can be shown to precisely encode the category $\mathcal{L}_1$. The theoretical constraints necessary to ensure the equivalence between information represented in terms of sheaves on the category $\mathcal{L}_0$ and information represented in terms of the category $\mathcal{L}_1$ provide a framework for understanding models of hierarchically organized systems. The process of transforming the category $\mathcal{L}_0$ into its category of sheaves may then provide broad but precise insight into the nature of constraints contextualizing transitions in hierarchical organization that have occurred in the course of biological evolution.
 
 \iftoggle{thmsty}{
 \begin{definition}
@@ -382,8 +406,8 @@ is a sieve on $d$.
 }
 
 \begin{figure}
-\noindent\includegraphics[width=0.8\columnwidth]{fig/sieveHasseSetPartitions4.pdf}
-\caption{Sieves conceptualized on {\it Hasse diagrams} of an algebraic lattice. All edges are directed from bottom to top. Blue edges are part of a sieve on an object represented by a node in the lattice. Black edges are part of the lattice but not part of the sieve under consideration. (A) shows the maximal sieve on the lattice, which is equivalent to a sieve on object 14. (B) shows a sieve on object 4, (C) shows a sieve on object 9 and (D) shows a sieve on object 11.}
+\noindent\includegraphics[width=0.8\columnwidth]{fig/sieveHasseNoNum.pdf}
+\caption{Sieves conceptualized on {\it Hasse diagrams} of an algebraic lattice. All edges are directed from bottom to top. Red edges are part of a sieve on an object represented by a node in the lattice. Black edges are part of the lattice but not part of the sieve under consideration. (A) shows the maximal sieve on the lattice, which is equivalent to a sieve on the object marked with a white dot. (B), (C), and (D) show maximal sieves on the respective objects marked with white dots.}
 \label{fig:sieve}
 \end{figure}
 
@@ -408,7 +432,7 @@ Sieves $S$ in $J(c)$ for an object $c \in \Ob(\cC)$ are referred to as $J-coveri
 \begin{definition}
 \label{definition-basis}
 }{}
-A {\it basis} for a topology on a category $\cC$ that has pullbacks is a function $B$ that assigns to each object $c \in \Ob(\cC)$ a collection of families $\{c_i \rightarrow c \}$ of morphisms referred to as {\it covering families} in $B(c)$ such that
+A {\it basis} for a topology on a category $\cC$ that has pullbacks (see Appendix \ref{app:CatTh}) is a function $B$ that assigns to each object $c \in \Ob(\cC)$ a collection of families $\{c_i \rightarrow c \}$ of morphisms referred to as {\it covering families} in $B(c)$ such that
 \begin{enumerate}
 \item every family consisting of a single isomorphism $\{ d \cong c \}$ is a covering family in $B(c)$
 \item if $\{f_i:c_i \rightarrow c \}$ is a covering family and $g:d \rightarrow c$ is any morphism in $\Mor(\cC)$ then $\{g^* c_i \rightarrow d \}$ is a covering family in $B(d)$ of $d$, which means that the collection of covering families is stable under pullbacks
@@ -485,16 +509,16 @@ We are now able to explain how covering sieves on $\mathcal{L}_0$ defined in ter
 
 \section{Coherence constraints on emerging transitions in hierarchical organization of biological systems}
 
-This section relies on and follows the notation of the proof of Giraud's theorem in \cite{MacLane1992}. Given a functor $A: \mathcal{L}_0 \rightarrow \mathcal{L}_1$, we can recall the adjunction $L_A \dashv R_A$ between the category of presheaves on the local category $\mathcal{L}_0$ and the global category $\mathcal{L}_1$:
+This section relies on and follows the notation of the proof of Giraud's theorem in \cite{MacLane1992}. Given a functor $A: \mathcal{L}_0 \rightarrow \mathcal{L}_1$, recall the adjunction $L_A \dashv R_A$ between the category of presheaves on the local category $\mathcal{L}_0$ and the global category $\mathcal{L}_1$:
 $$
 L_A: \textit{Sets}^{\mathcal{L}_0^{opp}} \leftrightarrows \mathcal{L}_1 :R_A.
 $$
-We can describe the adjoint pair parameterized by a presheaf $P \in \textit{Sets}^{\mathcal{L}_0^{opp}}$, an object $L_1 \in \Ob(\mathcal{L}_1)$ and and object $L_0 \in \Ob(\mathcal{L}_0)$ as
+We can describe the adjoint pair parameterized by a presheaf $P \in \textit{Sets}^{\mathcal{L}_0^{opp}}$, an object $L_1 \in \Ob(\mathcal{L}_1)$ and an object $L_0 \in \Ob(\mathcal{L}_0)$ as
 \begin{eqnarray*}
-L_A(P) &=& \lim\limits_{\longrightarrow} \left( \int P \xrightarrow{\pi_P} \mathcal{L}_0 \xrightarrow{A} \mathcal{L}_1 \right),\\
+L_A(P) &=& \lim\limits_{\longrightarrow} \left( \int_{\mathcal{L}_0} P \xrightarrow{\pi_P} \mathcal{L}_0 \xrightarrow{A} \mathcal{L}_1 \right),\\
 R_A(L_1)(L_0) &=& Mor_{\mathcal{L}_1}(A(L_0),L_1).
 \end{eqnarray*}
-The functor $L_A$ can also be constructed as a coequalizer
+The functor $L_A$, because colimits can generally be expressed in terms of coequalizers, can also be constructed as a coequalizer
 \begin{displaymath}
 \xymatrix{
 \coprod\limits_{\substack{u : L'_0 \rightarrow L_0 \\ p \in P(L_0)}}
@@ -514,7 +538,7 @@ For a suitable topology $J$ on $\mathcal{L}_0$, the functor $R_A = \Mor_{\mathca
 $$
 b_{S(L_0)} : \coprod\limits_{g_i \in S(L_0)} M_0^i \longrightarrow L_0
 $$
-over $S(L_0)$ . $S(L_0)$ is defined to cover $L_0$ when $b_{S(L_0)}$ is an epimorphism in $\mathcal{L}_1$, which will be demonstrated in more detail using $A:\mathcal{L}_0 \rightarrow \mathcal{L}_1$.
+over $S(L_0)$ . $S(L_0)$ is defined to cover $L_0$ when $b_{S(L_0)}$ is an epimorphism in $\mathcal{L}_1$ via the functor $A:\mathcal{L}_0 \rightarrow \mathcal{L}_1$.
 
 Since this construction is parametric over $L_0 \in \Ob(\mathcal{L}_0)$ and satisfies the maximality, stability and transitivity conditions, this defines a Grothendieck topology on $\mathcal{L}_0$. The conditions of maximality, stability under pullback, and transitivity that ensure the sieve is a Grothendieck topology can all be checked. Roughly, the maximality condition is satisfied by including $1_{L_0} : L_0 \rightarrow L_0$ in the set of morphisms $g_i$ for some $i$. The stability condition requires more detail to verify. Consider the pullback square of an epimorphic family along a morphism $h:L'_0 \rightarrow L_0$
 \begin{displaymath}
@@ -674,11 +698,11 @@ We thus have an equivalence of categories between the category of local represen
 $$
 Sh(\mathcal{L}_0,J) \cong \mathcal{L}_1.
 $$
-In this light, we can view a process in which interactions among local entities generate higher-level properties that themselves also become entities that may participate in still higher-level processes as requiring the type of coherence precisely specified by the sheaf condition. As biological systems constitute a nested hierarchy, this constraint, as applied to models of particular biological systems in a category not limited to but including the graphs which are often produced from network data, can be used to link models across levels of organization.
+In this light, we can view a process in which interactions among local entities generate higher-level properties that themselves also become entities that may participate in still higher-level processes as requiring the type of coherence precisely specified by the sheaf condition. As biological systems are comprised of structurally nested and functional hierarchies, this constraint, as applied to models of particular biological systems in a category not limited to but including the graphs which are often produced from network data, may be able to be used to constrain models that incorporate multiple levels of organization.
  
 \section{Conclusion}
 
-The goal of organizing knowledge about biological systems will ultimately require the development of languages that can be tailored specifically for that task. The purpose of developing such a language is to provide a precise framework for a qualitative phenomenology of biological systems such that, any piece of data that can be collected, can be integrated and used to deduce apparent consequences that in some sense attempt to optimize the production of new or classification of old hypotheses that may be distinguished on that basis. Despite the fact that abstract concepts from pure mathematics have had little explicit coupling to the study of biological systems, we find that certain concepts can be adapted to serve as a high-level nucleus for the development of such a domain-specific language for reasoning about biological systems. In order to realize such a goal, this language will need to be implemented in computational form rather than simply stated in abstract notation; however, clarification of the relationship between purely abstract concepts and concepts abstracted from the study of biological systems can help to make the costly choice of a framework to be implemented for the purposes of knowledge representation.
+The goal of organizing knowledge about biological systems will ultimately require the development of languages that can be tailored specifically for that task. The purpose of developing such a language is to provide a precise framework for a qualitative phenomenology of biological systems such that, any piece of data that can be collected, can be integrated and used to deduce apparent consequences that in some sense attempt to optimize the production of new or classification of old hypotheses that may be distinguished on that basis. Despite the fact that abstract concepts from pure mathematics have had little explicit coupling to the study of biological systems so far, we find that certain concepts can be adapted to serve as a basis for the development of such a domain-specific language for reasoning about biological systems. In order to realize such a goal, this language will need to be implemented in computational form rather than simply stated in abstract notation; however, clarification of the relationship between purely abstract concepts and concepts abstracted from the study of biological systems can help to make the costly choice of a framework to be implemented for the purposes of knowledge representation.
 
 %------bibliography---%
 \bibliographystyle{unsrt} 
