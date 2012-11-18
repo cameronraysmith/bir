@@ -466,7 +466,7 @@ where $x_f \cdot g \equiv P(g)(x_f)$ and $fg \in S$. We can further define an {\
 $$
 \forall f \in S, \,\,\, x \cdot f = x_f,
 $$
-implying that $P(f)(x)=x_f$ and thus $P(g)(P(f)(x))=x_{fg}$. $P$ is then a {\it sheaf} for $J$ when every matching family for all covers of all objects in $\Ob(\cC)$ have a unique amalgamation. A sieve $S$ on an object $c$ is a subfunctor of the functor represented by $c$ under the Yoneda embedding. This is to say that $S \subseteq h^c = hom(-,c)$. In this case, $P$ is a sheaf if and only if for every covering sieve $S$ on $c$ the inclusion $S \hookrightarrow P$ induces an isomorphism $hom(S,P) \cong hom(h^c,P)$. This can also be expressed as the equalizer
+implying that $P(f)(x)=x_f$ and thus $P(g)(P(f)(x))=x_{fg}$. $P$ is then a {\it sheaf} for $J$ when every matching family for all covers of all objects in $\Ob(\cC)$ have a unique amalgamation. A sieve $S$ on an object $c$ is a subfunctor of the functor represented by $c$ under the Yoneda embedding. This is to say that $S \subseteq h_c = hom(-,c)$. In this case, $P$ is a sheaf if and only if for every covering sieve $S$ on $c$ the inclusion $S \hookrightarrow P$ induces an isomorphism $hom(S,P) \cong hom(h_c,P)$. This can also be expressed as the equalizer
 \begin{displaymath}
 \xymatrix{
 P(c) \ar[r]
@@ -505,11 +505,11 @@ P(c_i \times_c c_j)
 \end{definition}
 }
 
-We are now able to explain how covering sieves on $\mathcal{L}_0$ defined in terms of epimorphic families of morphisms in $\mathcal{L}_1$ provides a Grothendieck topology on $\mathcal{L}_0$, which induces a site and sheaves on $\mathcal{L}_0$, which can be shown to precisely encode the category $\mathcal{L}_1$.
+We now have the necessary machinery in place to explain how covering sieves on $\mathcal{L}_0$ defined in terms of epimorphic families of morphisms in $\mathcal{L}_1$ provides a Grothendieck topology on $\mathcal{L}_0$, which induces a site and sheaves on $\mathcal{L}_0$, which can be shown to precisely encode the category $\mathcal{L}_1$.
 
 \section{Coherence constraints on emerging transitions in hierarchical organization of biological systems}
 
-This section relies on and follows the notation of the proof of Giraud's theorem in \cite{MacLane1992}. Given a functor $A: \mathcal{L}_0 \rightarrow \mathcal{L}_1$, recall the adjunction $L_A \dashv R_A$ between the category of presheaves on the local category $\mathcal{L}_0$ and the global category $\mathcal{L}_1$:
+This section relies on the proof of Giraud's theorem in \cite{MacLane1992}. Given a functor $A: \mathcal{L}_0 \rightarrow \mathcal{L}_1$, recall the adjunction $L_A \dashv R_A$ between the category of presheaves on the local category $\mathcal{L}_0$ and the global category $\mathcal{L}_1$:
 $$
 L_A: \textit{Sets}^{\mathcal{L}_0^{opp}} \leftrightarrows \mathcal{L}_1 :R_A.
 $$
@@ -518,7 +518,7 @@ We can describe the adjoint pair parameterized by a presheaf $P \in \textit{Sets
 L_A(P) &=& \lim\limits_{\longrightarrow} \left( \int_{\mathcal{L}_0} P \xrightarrow{\pi_P} \mathcal{L}_0 \xrightarrow{A} \mathcal{L}_1 \right),\\
 R_A(L_1)(L_0) &=& Mor_{\mathcal{L}_1}(A(L_0),L_1).
 \end{eqnarray*}
-The functor $L_A$, because colimits can generally be expressed in terms of coequalizers, can also be constructed as a coequalizer
+The functor $L_A$, because colimits can generally be expressed in terms of coequalizers, can also be constructed as a coequalizer for each presheaf $P$
 \begin{displaymath}
 \xymatrix{
 \coprod\limits_{\substack{u : L'_0 \rightarrow L_0 \\ p \in P(L_0)}}
@@ -529,16 +529,16 @@ A(L'_0)
 A(L_0)
 \ar[r]
 &
-P(L_0) \otimes_{\mathcal{L}_0} A
+P \otimes_{\mathcal{L}_0} A
 }
 \end{displaymath}
-where $P(L_0) \otimes_{\mathcal{L}_0} A = L_A(P(L_0))$.
+where $P \otimes_{\mathcal{L}_0} A = L_A(P)$.
 
 For a suitable topology $J$ on $\mathcal{L}_0$, the functor $R_A = \Mor_{\mathcal{L}_1}(A(-),-)$ sends $L_1 \in \Ob(\mathcal{L}_1)$ into sheaves (as opposed to mere presheaves) on $\mathcal{L}_0$. $J$ is defined by specifying that a sieve $S(L_0)$ on an object $L_0 \in \mathcal{C}$ is a cover of $L_0$ when the morphisms $g_i : M_0^i \rightarrow L_0 \in S(L_0)$ form an epimorphic family in $\mathcal{L}_1$. The morphisms $g_i$ are components of a morphism defined on the coproduct
 $$
 b_{S(L_0)} : \coprod\limits_{g_i \in S(L_0)} M_0^i \longrightarrow L_0
 $$
-over $S(L_0)$ . $S(L_0)$ is defined to cover $L_0$ when $b_{S(L_0)}$ is an epimorphism in $\mathcal{L}_1$ via the functor $A:\mathcal{L}_0 \rightarrow \mathcal{L}_1$.
+over $S(L_0)$. $S(L_0)$ is defined to cover $L_0$ when $b_{S(L_0)}$ is an epimorphism in $\mathcal{L}_1$ via the functor $A:\mathcal{L}_0 \rightarrow \mathcal{L}_1$.
 
 Since this construction is parametric over $L_0 \in \Ob(\mathcal{L}_0)$ and satisfies the maximality, stability and transitivity conditions, this defines a Grothendieck topology on $\mathcal{L}_0$. The conditions of maximality, stability under pullback, and transitivity that ensure the sieve is a Grothendieck topology can all be checked. Roughly, the maximality condition is satisfied by including $1_{L_0} : L_0 \rightarrow L_0$ in the set of morphisms $g_i$ for some $i$. The stability condition requires more detail to verify. Consider the pullback square of an epimorphic family along a morphism $h:L'_0 \rightarrow L_0$
 \begin{displaymath}
@@ -620,7 +620,7 @@ L_A R_A(L_1) \ar[d]^-{\epsilon_{L_1}}\\
 & & L_1
 }
 \end{displaymath}
-where the functor $R_A$ sends objects $L_1 \in \Ob(\mathcal{L}_1)$ to $J$-sheaves on $\mathcal{L}_0$. The morphisms $\theta$ and $\tau$ are associated to the red and blue paths through the diagrams
+where the functor $R_A$ sends objects $L_1 \in \Ob(\mathcal{L}_1)$ to $J$-sheaves on $\mathcal{L}_0$. The morphisms $\theta$ and $\tau$ are associated to the red and blue paths through the diagram
 \begin{displaymath}
 \xymatrix{
 & A(L_0) \ar@[red][d]^{r_i} \\
@@ -687,7 +687,7 @@ For the case in which $Q$ is also a sheaf on $\mathcal{L}_0$, it can be dually c
 $$
 \eta_{PSh(L_0)}: PSh(L_0) \cong \Mor_{\mathcal{L}_1}(A(-), PSh(L_0) \otimes_{\mathcal{L}_0} A)
 $$
-because $PSh(L_0) \cong \Mor_{\mathcal{L}_1}(A(-), A(L_0)$ and $A(L_0) \cong L_A(PSh(L_0))$ in the category $\mathcal{L}_1$. Because the functors $L_A$ and $R_A$ both preserve colimits, any sheaf $Q$ is a colimit of representables, and $\eta_PSh(L_0)$ is an isomorphism for representable functors, then $\eta$ is an isomorphism for any sheaf $Q$.
+because $PSh(L_0) \cong \Mor_{\mathcal{L}_1}(A(-), A(L_0))$ and $A(L_0) \cong L_A(PSh(L_0))$ in the category $\mathcal{L}_1$. Because the functors $L_A$ and $R_A$ both preserve colimits, any sheaf $Q$ is a colimit of representables, and $\eta_{PSh(L_0)}$ is an isomorphism for representable functors, then $\eta$ is an isomorphism for any sheaf $Q$.
 
 We have demonstrated the counit, $\epsilon$, and the unit $\eta$, to both be isomorphisms for the adjunction $L_A \dashv R_A$ upon restriction from $Sets^{\mathcal{L}_0^{opp}}$ to sheaves on the site defined by $J$ in terms of epimorphic families of morphisms in $\mathcal{L}_1$ for $\mathcal{L}_0)$ written as $Sh(\mathcal{L}_0,J)$ 
 \begin{eqnarray*}
@@ -698,7 +698,7 @@ We thus have an equivalence of categories between the category of local represen
 $$
 Sh(\mathcal{L}_0,J) \cong \mathcal{L}_1.
 $$
-In this light, we can view a process in which interactions among local entities generate higher-level properties that themselves also become entities that may participate in still higher-level processes as requiring the type of coherence precisely specified by the sheaf condition. As biological systems are comprised of structurally nested and functional hierarchies, this constraint, as applied to models of particular biological systems in a category not limited to but including the graphs which are often produced from network data, may be able to be used to constrain models that incorporate multiple levels of organization.
+In this light, we can view a process in which interactions among local entities generate higher-level properties that themselves also become entities that may participate in still higher-level processes as requiring the type of coherence precisely specified by the sheaf condition. As biological systems are comprised of structurally nested and functional hierarchies, this constraint, as applied to models of particular biological systems in a category, not limited to but including the graphs which are often produced from network data, may be able to be used to constrain models that incorporate multiple levels of organization.
  
 \section{Conclusion}
 
