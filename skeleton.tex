@@ -313,6 +313,12 @@ L(P) &=& \lim\limits_{\longrightarrow} \left( \int_{\mathcal{L}_0} P \xrightarro
 \end{theorem}
 }
 
+\begin{figure}
+\noindent\includegraphics[width=1.0\columnwidth]{fig/graphyonedaext.pdf}
+\caption{As a concrete depiction in terms of graphs for intuitive consideration, but not precisely correct, we can imagine the graph on the left having colimits freely adjoined via Yoneda embedding into the graph on the right (colimits are represented by blue nodes and arrows) and then selecting some of those colimits for inclusion in the category of structures representing {\it global} biological information. Note that the category of global information structures in this picture is not actually cocomplete as  $\mathcal{L}_1$ is assumed to be in Figure \ref{fig:ascent}}
+\label{fig:graphyonedaext}
+\end{figure}
+
 \iftoggle{thmsty}{
 \begin{proof}
 \label{proof-cocompletion-adjunction}
@@ -347,7 +353,8 @@ $$
 \mathcal{L}_0 \ar[ru]^{A} \ar[rr]_{PSh} & & \textit{Sets}^{\mathcal{L}_0^{opp}} \ar@{-->}[lu]_{L}
 }
 $$
-which commutes uniquely in $L$ for a given $A$. When $P = Mor(-,L_0) = PSh(L_0)$, the corresponding category of elements $\int_{\mathcal{L}_0} P$ has a terminal object $1_{L_0} : L_0 \rightarrow L_0 \in P(L_0)$. In this case the colimit of $A \circ \pi_P$ is its value on $1_{L_0}$, $L \circ PSh(L_0) \cong A \pi_P (L_0,1_{L_0}) = A(L_0)$ demonstrating the commutativity of the diagram. This construction is referred to as Yoneda extension \cite{Lane1998,MacLane1992}.
+which commutes uniquely in $L$ for a given $A$. When $P = Mor(-,L_0) = PSh(L_0)$, the corresponding category of elements $\int_{\mathcal{L}_0} P$ has a terminal object $1_{L_0} : L_0 \rightarrow L_0 \in P(L_0)$. In this case the colimit of $A \circ \pi_P$ is its value on $1_{L_0}$, $L \circ PSh(L_0) \cong A \pi_P (L_0,1_{L_0}) = A(L_0)$ demonstrating the commutativity of the diagram. This construction is referred to as Yoneda extension \cite{Lane1998,MacLane1992}. Figure \ref{fig:graphyonedaext} presents an intuitive, but imprecise, picture exemplifying some salient features of this construction in terms of directed graphs, which are commonly used to represent {\it network} data pertaining to various molecular, organismal, and ecological aspects of biological systems. 
+
 \iftoggle{thmsty}{
 \end{proof}
 }
@@ -694,11 +701,18 @@ We have demonstrated the counit, $\epsilon$, and the unit $\eta$, to both be iso
 \eta &:& 1_{Sh(\mathcal{L}_0,J)} \cong R_A \circ L_A,\\
 \epsilon &:& L_A \circ R_A \cong 1_{\mathcal{L}_1}.
 \end{eqnarray*}
-We thus have an equivalence of categories between the category of local representations of biological information and that of global representations
+We thus have an equivalence of categories between the category of local representations of biological information and that of global representations (summarized in Figure \ref{fig:equivalence})
 $$
 Sh(\mathcal{L}_0,J) \cong \mathcal{L}_1.
 $$
 In this light, we can view a process in which interactions among local entities generate higher-level properties that themselves also become entities that may participate in still higher-level processes as requiring the type of coherence precisely specified by the sheaf condition. As biological systems are comprised of structurally nested and functional hierarchies, this constraint, as applied to models of particular biological systems in a category, not limited to but including the graphs which are often produced from network data, may be able to be used to constrain models that incorporate multiple levels of organization.
+
+\begin{figure}
+\noindent\includegraphics[width=0.9\columnwidth]{fig/equivalence.pdf}
+\caption{An extension of the framework for the construction of a mechanism of local-global translation of biological information shown in Figure \ref{fig:ascent}.  The functors $R$, and $L$, which were initially defined abstractly have been constructed in terms of $A$ by giving explicit formulas for their action on objects and morphisms. The category of sheaves on the site $(\mathcal{L}_0,J)$, $Sh(\mathcal{L}_0,J)$  has been shown to be equivalent to $\mathcal{L}_1$ via demonstrating that the unit and counit natural transformations of the pair of adjoint functors $R 
+\dashv L$ are actually natural isomorphisms.}
+\label{fig:equivalence}
+\end{figure}
  
 \section{Conclusion}
 
