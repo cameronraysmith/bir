@@ -183,16 +183,14 @@ a unique morphism $s : W \to Z$ such that $t = e \circ s$.
 \iftoggle{thmsty}{
 \end{definition}
 }
-
 \begin{displaymath}
 \xymatrix{
-X
-\ar@<1ex>[r]^-{a} \ar@<-1ex>[r]_-{b}
+Z \ar[r]^-{e}
 &
-Y \ar[r]^-{c} \ar[dr]_-{t}
+X \ar@<1ex>[r]^-{a} \ar@<-1ex>[r]_-{b}
 &
-Z \ar@{-->}[d]^-{s}\\
-& & W
+Y\\
+W \ar@{-->}[u]^-{s} \ar[ur]_-{t} & &
 }
 \end{displaymath}
 \iftoggle{thmsty}{
@@ -211,14 +209,30 @@ a unique morphism $s : Z \to W$ such that $t = s \circ c$.
 }
 \begin{displaymath}
 \xymatrix{
-Z \ar[r]^-{c}
+X
+\ar@<1ex>[r]^-{a} \ar@<-1ex>[r]_-{b}
 &
-X \ar@<1ex>[r]^-{a} \ar@<-1ex>[r]_-{b}
+Y \ar[r]^-{c} \ar[dr]_-{t}
 &
-Y\\
-W \ar@{-->}[u]^-{s} \ar[ur]_-{t} & &
+Z \ar@{-->}[d]^-{s}\\
+& & W
 }
 \end{displaymath}
+
+Examples of equalizers and coequalizers are presented in Figures \ref{fig:equalizer} and \ref{fig:coequalizer} respectively. From these one can recognize intuitive characterizations of each concept. The equalizer $(Z,e)$ is essentially the intersection or solution set of equating two different functions $a=b$. The coequalizer $(Z,c)$ represents the quotient by the smallest equivalence relation that renders $a=b$.
+
+\begin{figure}
+\noindent\includegraphics[width=0.9\columnwidth]{fig/equalizer.pdf}
+\caption{Examples of equalizers in the category of finite sets.}
+\label{fig:equalizer}
+\end{figure}
+
+\begin{figure}
+\noindent\includegraphics[width=0.9\columnwidth]{fig/coequalizer.pdf}
+\caption{Examples of coequalizers in the category of finite sets.}
+\label{fig:coequalizer}
+\end{figure}
+
 \iftoggle{thmsty}{
 \begin{definition}
 \label{definition-initial-final}
@@ -582,7 +596,21 @@ Functors that are isomorphic to $h^c$ or $h_c$ are referred to as {\it coreprese
 \label{fig:hom}
 \end{figure}
 
-The concrete action of $h_{c'}$ on objects and morphisms in $\cC$ is summarized in Figure \ref{fig:hom}. The preceding definitions are standard category theoretic constructions. Ellerman has proposed an interpretation of adjoint functors, that demonstrates their relevance to the concept of information encoding and decoding (or sending and receiving) in the context of biological systems \cite{Ellerman2005}.
+The concrete action of $h_{c'}$ on objects and morphisms in $\cC$ is summarized in Figure \ref{fig:hom}. A complementary characteristic of the Yoneda embedding is that it freely adjoins colimits. As such, one can extract from a presheaf $P \in \textit{Sets}^{\cC^{opp}}$ a diagram in $\cC$ for which $P$ serves as a colimit in $\textit{Sets}^{\cC^{opp}}$. This process follows a simple algorithm:
+\begin{enumerate}
+\item For all $X \in \Ob(\cC)$ make one copy of $X$ corresponding to each element in $P(X)$.
+\item If $f:X \rightarrow Y \in \Mor(\cC)$ consider $P(f):P(Y) \rightarrow P(X)$ and for each $e \in P(Y)$ and $P(f)(e) \in P(X)$ in $\textit{Sets}$ draw the map $f$ from the corresponding $X$ to $Y$ in $\cC$.
+\item Follow this procedure for all $f \in \Mor(\cC)$ to reconstruct the diagram in $\cC$ for which $P$ serves as colimit.
+\end{enumerate}
+The result of this procedure on a simple example from (finite) $\textit{Sets}$ is shown in Figure \ref{fig:presheafeg}.
+
+\begin{figure}
+\noindent\includegraphics[width=0.9\columnwidth]{fig/presheafeg.pdf}
+\caption{The top row shows an example of two diagrams (left and tright) that have the same colimit. The middle row provides explicit sets, $PY$ and $PX$, and set maps, $Pf$ and $Pg$, coming from the concrete category represented on the bottom left. The bottom right shows the diagram in $\cC$ reconstructed from $P$ for which $P$ serves as a colimit in $\textit{Sets}^{\cC^{opp}}$.}
+\label{fig:presheafeg}
+\end{figure}
+
+The preceding definitions are standard category theoretic constructions. Ellerman has proposed an interpretation of adjoint functors, that demonstrates their relevance to the concept of information encoding and decoding (or sending and receiving) in the context of biological systems \cite{Ellerman2005}.
 
 \iftoggle{thmsty}{
 \begin{definition}
