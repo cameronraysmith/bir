@@ -315,7 +315,7 @@ L(P) &=& \lim\limits_{\longrightarrow} \left( \int_{\mathcal{L}_0} P \xrightarro
 
 \begin{figure}
 \noindent\includegraphics[width=1.0\columnwidth]{fig/graphyonedaext.pdf}
-\caption{As a concrete depiction in terms of graphs for intuitive consideration, but not precisely correct, we can imagine the graph on the left having colimits freely adjoined via Yoneda embedding into the graph on the right (colimits are represented by blue nodes and arrows) and then selecting some of those colimits for inclusion in the category of structures representing {\it global} biological information. Note that the category of global information structures in this picture is not actually cocomplete as  $\mathcal{L}_1$ is assumed to be in Figure \ref{fig:ascent}}
+\caption{As a concrete but necessarily incomplete depiction in terms of graphs for intuitive consideration, we can imagine the graph on the left having colimits freely adjoined via Yoneda embedding into the graph on the right (colimits are represented by blue nodes and arrows) and then selecting some of those colimits for inclusion in the category of structures representing {\it global} biological information structures. Note that the category of global information structures in this picture is not actually cocomplete as  $\mathcal{L}_1$ is assumed to be in Figure \ref{fig:ascent}}
 \label{fig:graphyonedaext}
 \end{figure}
 
@@ -391,7 +391,7 @@ which is natural in both $P$ and $L_1$ demonstrating the adjoint relationship $L
 \label{fig:catofel}
 \end{figure}
 
-\section{A topological framework for integration of biological information}
+\section{A topological framework modelling intrinsic integration of biological information}
 
 In order to be able to represent objects and their interactions in the category representing biological entities in terms of global information structures in terms of diagrams modeled in the category of local information structures we make use of a generalized form of topology that can be applied to any category meeting some constraints and that can be specialized to, for example, the case in which objects and morphisms of the category are modelled in terms of a particular type of algebraic structure. This construction develops a method of defining a {\it covering system} composed of interacting entities in the category representing interactions among local information structures that can be used to establish a decomposition of objects in the category representing interactions among global information structures that may each rely on a certain type of composition of local interactions with respect to a particular model of a biological system. We first give a conceptual overview of the standard concepts of {\it sieve}, {\it Grothendieck topology}, {\it site}, and {\it sheaf} for an arbitrary category $\cC$ and then explain how covering sieves on $\mathcal{L}_0$ defined in terms of epimorphic families of morphisms in $\mathcal{L}_1$ provides a Grothendieck topology on $\mathcal{L}_0$, which induces a site and sheaves on $\mathcal{L}_0$. Sheaves on $\mathcal{L}_0$ can be shown to precisely encode the category $\mathcal{L}_1$. The theoretical constraints necessary to ensure the equivalence between information represented in terms of sheaves on the category $\mathcal{L}_0$ and information represented in terms of the category $\mathcal{L}_1$ provide a framework for understanding models of hierarchically organized systems. The process of transforming the category $\mathcal{L}_0$ into its category of sheaves may then provide broad but precise insight into the nature of constraints contextualizing transitions in hierarchical organization that have occurred in the course of biological evolution.
 
@@ -473,10 +473,19 @@ where $x_f \cdot g \equiv P(g)(x_f)$ and $fg \in S$. We can further define an {\
 $$
 \forall f \in S, \,\,\, x \cdot f = x_f,
 $$
-implying that $P(f)(x)=x_f$ and thus $P(g)(P(f)(x))=x_{fg}$. $P$ is then a {\it sheaf} for $J$ when every matching family for all covers of all objects in $\Ob(\cC)$ have a unique amalgamation. A sieve $S$ on an object $c$ is a subfunctor of the functor represented by $c$ under the Yoneda embedding. This is to say that $S \subseteq h_c = hom(-,c)$. In this case, $P$ is a sheaf if and only if for every covering sieve $S$ on $c$ the inclusion $S \hookrightarrow P$ induces an isomorphism $hom(S,P) \cong hom(h_c,P)$. This can also be expressed as the equalizer
+implying that $P(f)(x)=x_f$ and thus $P(g)(P(f)(x))=x_{fg}$. $P$ is then a {\it sheaf} for $J$ when every matching family for all covers of all objects in $\Ob(\cC)$ have a unique amalgamation.
 \begin{displaymath}
 \xymatrix{
-P(c) \ar[r]
+e \ar[r]^-{g} & d \ar[r]^-{f} & c\\
+P(e) & P(d) \ar[l]_-{P(g)} & P(c) \ar[l]_-{P(f)}\\
+x_f \cdot g = x_{fg} & x \cdot f = x_f \ar@{|->}[l]_-{P(g)} & x \ar@{|->}[l]_-{P(f)}
+}
+\end{displaymath}
+
+A sieve $S$ on an object $c$ is a subfunctor of the functor represented by $c$ under the Yoneda embedding. This is to say that $S \subseteq h_c = hom(-,c)$. In this case, $P$ is a sheaf if and only if for every covering sieve $S$ on $c$ the inclusion $S \hookrightarrow P$ induces an isomorphism $hom(S,P) \cong hom(h_c,P)$. This can also be expressed as the equalizer
+\begin{displaymath}
+\xymatrix{
+P(c) \ar[r]^-{e}
 &
 \prod\limits_{f \in S}
 P(dom \, f)
@@ -486,16 +495,23 @@ P(dom \, f)
 P(dom \, g)
 }
 \end{displaymath}
-\noindent for each $c \in \Ob(\cC)$ and each cover $S \in J(c)$. $e$ refers to $e(x)=\{x \cdot f\}_f = \{P(f)(x)\}_f$, $p$ refers to $p( \mathbf{x} )_{f,g} = x_{fg}$, and $a$ refers to $a( \mathbf{x} )_{f,g} = x_f \cdot g$ for $\mathbf{x} = \{ x_f \}_{f \in S}$. Given that the equalizer condition, $p \circ e = a \circ e \Leftrightarrow p=a$, is satisfied for a cover $S$ then $P$ is a sheaf with respect to the cover $S$.
+\noindent for each $c \in \Ob(\cC)$ and each cover $S \in J(c)$. $e$ refers to $e(x)=\{x \cdot f\}_f = \{P(f)(x)\}_f$, $p$ refers to composition in $\cC$ as $p( \mathbf{x} )_{f,g} = x_{fg}$, and $a$ refers to the action of $\cC$ on $P$ as $a( \mathbf{x} )_{f,g} = x_f \cdot g$ for $\mathbf{x} = \{ x_f \}_{f \in S}$. Given that the equalizer condition, $p \circ e = a \circ e \Leftrightarrow p=a$, is satisfied for a cover $S$ then every family for $S$ has a unique amalgamation and $P$ is thus a sheaf with respect to the cover $S$.
 
-Finally, to express the sheaf condition in terms of a basis $B$ for a topology $J$ generated by $B$ on a category $\cC$ having pullbacks. If $Q = \{ f_i : c_i \rightarrow c \}_{i \in I}$ is a B-cover of $c$ a family of elements $x_i \in P(c_i)(i \in I)$ is a matching family for $Q$ if $ x_i \cdot \pi_{ij}^1 = x_j \cdot \pi_{ij}^2$ for all $i,j \in I$. $\pi^1$ and $\pi^2$ are defined as
+We may express the sheaf condition in terms of a basis $B$ for a topology $J$ generated by $B$ on a category $\cC$, but then we require $\cC$ to have pullbacks. If $Q = \{ f_i : c_i \rightarrow c \}_{i \in I}$ is a B-cover of $c$ a family of elements $x_i \in P(c_i)(i \in I)$ is a matching family for $Q$ if $ x_i \cdot \pi_{ij}^1 = x_j \cdot \pi_{ij}^2$ for all $i,j \in I$. $\pi^1$ and $\pi^2$ are defined as
 \begin{displaymath}
 \xymatrix{
 c_i \times_c c_j \ar[r]^-{\pi_{ij}^2} \ar[d]_{\pi_{ij}^1} & c_j \ar[d]^{f_j} \\
 c_i \ar[r]^{f_i} & c
 }
 \end{displaymath}
-\noindent Now again, a presheaf $P \in \textit{Sets}^{\cC^{opp}}$ is a sheaf for the topology $J$ generated by the basis $B$ if and only if for any cover $\{ f_i : c_i \rightarrow c \}_{i \in I}$ in $B$ any matching family $\{ x_i \}_i$ has a unique amalgamation $x \in P(c)$ such that $x \cdot f_i = x_i$ for all $i \in I$. This condition can also be expressed in terms of a diagram that is an equalizer
+which has a corresponding diagram in terms of sets given a presheaf $P$
+\begin{displaymath}
+\xymatrix{
+P(c_i \times_c c_j)  & P(c_j) \ar[l]_-{P(\pi_{ij}^2)}  \\
+P(c_i) \ar[u]^-{P(\pi_{ij}^1)}  & P(c) \ar[l]^{f_i} \ar[u]_{f_j}
+}
+\end{displaymath}
+\noindent Now again, a presheaf $P \in \textit{Sets}^{\cC^{opp}}$ is a sheaf for the topology $J$ generated by the basis $B$ if and only if for any cover $\{ f_i : c_i \rightarrow c \}_{i \in I}$ in $B$ any matching family $\{ x_i \}_i$ has a unique amalgamation $x \in P(c)$ such that $x \cdot f_i = x_i$ for all $i \in I$. This condition can also be expressed in terms of an equalizer (see Appendix \ref{app:CatTh})
 \begin{displaymath}
 \xymatrix{
 P(c) \ar[r]
@@ -504,7 +520,7 @@ P(c) \ar[r]
 P(c_i)
 \ar@<1ex>[r]^-{p_1} \ar@<-1ex>[r]_-{p_2}
 &
-P(c_i \times_c c_j)
+\prod\limits_{i,j \in I \times I} P(c_i \times_c c_j)
 }
 \end{displaymath}
 \noindent The morphism $e$ refers to $e(x) = \{ x \cdot f_i \}_i$, $p_1$ refers to $p_1(\{ x_i \})_{i,j} = x_i \cdot \pi_{ij}^1$, and $p_2$ refers to $p_2(\{x_i\})_{i,j} = x_j \cdot \pi_{ij}^{2}$.
@@ -512,7 +528,7 @@ P(c_i \times_c c_j)
 \end{definition}
 }
 
-We now have the necessary machinery in place to explain how covering sieves on $\mathcal{L}_0$ defined in terms of epimorphic families of morphisms in $\mathcal{L}_1$ provides a Grothendieck topology on $\mathcal{L}_0$, which induces a site and sheaves on $\mathcal{L}_0$, which can be shown to precisely encode the category $\mathcal{L}_1$.
+We now have the necessary machinery in place to explain how covering sieves on $\mathcal{L}_0$ defined in terms of epimorphic families of morphisms in $\mathcal{L}_1$ provides a Grothendieck topology on $\mathcal{L}_0$, thereby inducing a site and sheaves on $\mathcal{L}_0$, which can be shown to precisely encode the category $\mathcal{L}_1$.
 
 \section{Coherence constraints on emerging transitions in hierarchical organization of biological systems}
 
