@@ -164,47 +164,51 @@ Morphisms that are associated with each other according to the bijections of an 
 \end{frame}
 
 \begin{frame}
-\iftoggle{thmsty}{
-\begin{definition}
-\label{definition-opposite}
-}{}
+\begin{block}{opposite category}
+%\iftoggle{thmsty}{
+%\begin{definition}
+%\label{definition-opposite}
+%}{}
 Given a category $\mathcal{C}$ the {\it opposite category}
 $\mathcal{C}^{opp}$ is the category with the same objects
 as $\mathcal{C}$ but all morphisms reversed.
-\iftoggle{thmsty}{
-\end{definition}
-}
-\end{frame}
+%\iftoggle{thmsty}{
+%\end{definition}
+%}
+\end{block}
 
-\begin{frame}
-\iftoggle{thmsty}{
-\begin{definition}
-\label{definition-contravariant}
-}{}
+\begin{block}{contravariant functor}
+%\iftoggle{thmsty}{
+%\begin{definition}
+%\label{definition-contravariant}
+%}{}
 Let $\mathcal{C}$, $\mathcal{S}$ be categories.
 A {\it contravariant} functor $F$
 from $\mathcal{C}$ to $\mathcal{S}$
 is a functor $\mathcal{C}^{opp}\to \mathcal{S}$.
-\iftoggle{thmsty}{
-\end{definition}
-}
+%\iftoggle{thmsty}{
+%\end{definition}
+%}
+\end{block}
 \end{frame}
 
 \begin{frame}
-\iftoggle{thmsty}{
-\begin{definition}
-\label{definition-presheaf}
-}{}
+%\iftoggle{thmsty}{
+%\begin{definition}
+%\label{definition-presheaf}
+%}{}
+\begin{block}{presheaves}
 Let $\mathcal{C}$ be a category.
 \begin{enumerate}
 \item A {\it presheaf of sets on $\mathcal{C}$}
 or simply a {\it presheaf} is a contravariant functor
-$F$ from $\mathcal{C}$ to $\textit{Sets}$. When $F$ is a covariant functor $F : \mathcal{C}^{opp} \rightarrow \textit{Sets}$.
+$P$ from $\mathcal{C}$ to $\textit{Sets}$. When $P$ is a covariant functor $P : \mathcal{C}^{opp} \rightarrow \textit{Sets}$.
 \item The category of presheaves is denoted $\textit{PSh}(\mathcal{C})$.
 \end{enumerate}
-\iftoggle{thmsty}{
-\end{definition}
-}
+\end{block}
+%\iftoggle{thmsty}{
+%\end{definition}
+%}
 \end{frame}
 
 \subsection{bifunctors and homs}
@@ -277,36 +281,4 @@ Functors that are isomorphic to $h^c$ or $h_c$ are referred to as {\it coreprese
 \caption{The presheaf represented by $c' \in \Ob(\cC)$ is $h_{c'} : \cC^{opp} \rightarrow \textit{Sets}$. It sends objects to the set of morphisms in which they are the domain object with codomain $c'$ and morphisms $f:d \rightarrow c \in \Mor{\cC}$ to set functions $h_{c'} \circ f: \Mor_{\cC}(c,c') \rightarrow \Mor_{\cC}(d,c')$ via pre-composition.}
 \label{fig:hom}
 \end{figure}
-\end{frame}
-
-%\begin{frame}
-%The concrete action of $h_{c'}$ on objects and morphisms in $\cC$ is summarized in figure \ref{fig:hom}. The preceding definitions are standard category theoretic constructions. Ellerman has proposed an interpretation of adjoint functors, that demonstrates their relevance to the concept of information encoding and decoding (or sending and receiving) in the context of biological systems \cite{Ellerman2005}.
-%\end{frame}
-
-\begin{frame}
-\iftoggle{thmsty}{
-\begin{definition}
-\label{definition-birepresentable}
-}{}
-A bifunctor $bif (-,-): \cC^{opp} \times \mcD \rightarrow \textit{Sets}$ is said to be {\it birepresentable} if there exists a pair of functors $F:\cC^{opp} \rightleftarrows \mcD:G$ where $c \in \Ob(\cC^{opp})$ and $d \in \Ob(\mcD)$ gives
-\begin{eqnarray*}
-b^{c} \equiv bif(c,-) &:& \mathcal{D} \rightarrow \textit{Sets},\\
-b_{d} \equiv bif(-,d) &:& \mathcal{C}^{opp} \rightarrow \textit{Sets}.
-\end{eqnarray*}
-natural in $c$ and $d$ such that $F \dashv G$. The functors $b^{c}$ and $b_{d}$ are defined on
-\begin{enumerate}
-\item objects for all $c_i \in \Ob(\cC^{opp})$ and for all $d_i \in \Ob(\mcD)$
-\begin{eqnarray*}
-b^{c} (d_i) &=& \Mor_{\mcD}(Fc,d_i),\\
-b_{d} (c_i) &=& \Mor_{\cC^{opp}}(c_i,Gd).
-\end{eqnarray*}
-\item morphisms for all $f_{ij}:c_j \rightarrow c_i \in \Mor(\cC^{opp})$ and for all $g_{ij}:d_i \rightarrow d_j \in \Mor(\mcD)$ as
-\begin{eqnarray*}
-b^{c} (g_{ij}) &:& \Mor_{\mcD}(Fc,d_i) \rightarrow \Mor_{\mcD}(Fc,d_j),\\
-b_{d} (f_{ij}) &:& \Mor_{\cC^{opp}}(c_i,Gd) \rightarrow \Mor_{\cC^{opp}}(c_j,Gd).
-\end{eqnarray*}
-\end{enumerate}
-\iftoggle{thmsty}{
-\end{definition}
-}{}
 \end{frame}

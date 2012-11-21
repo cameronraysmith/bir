@@ -637,3 +637,13 @@ b_{d} (f_{ij}) &:& \Mor_{\cC^{opp}}(c_i,Gd) \rightarrow \Mor_{\cC^{opp}}(c_j,Gd)
 \iftoggle{thmsty}{
 \end{definition}
 }{}
+
+The composite encoding inspection functor 
+$$
+b_{(-)} \circ G(-): \cD \rightarrow \cC^{opp} \rightarrow \textit{Sets}
+$$
+that specifies a set of morphisms in $\cD$ from the perspective of $\cC^{opp}$ is represented by the pair $(F,\eta)$. Likewise, the composite decoding inspection functor 
+$$
+b^{(-)} \circ F(-): \cC^{opp} \rightarrow \cD \rightarrow \textit{Sets}
+$$
+that specifies a set of morphisms in $\cC^{opp}$ from the perspective of $\cD$ is represented by the pair $(G,\epsilon)$. Figure \ref{fig:adjunction} summarizes features of the information encoding-decoding adjunction between $F$ and $G$. $F \dashv G$ is thus equivalent to the statement $\phi_{-,-}:b^{(-)} \cong b_{(-)}$ (see Appendix \ref{app:CatTh}).

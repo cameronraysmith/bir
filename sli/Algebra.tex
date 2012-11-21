@@ -117,6 +117,8 @@ $$
 	can be used to indicate that $t$ is a morphism (a natural transformation in particular) between functors $F$ and $G$.
 \end{frame}
 
+\iftoggle{longpres}{
+
 \subsection{co products}
 
 \begin{frame}
@@ -232,7 +234,35 @@ exists for any $x, y \in \Ob(\mathcal{C})$.
 }
 \end{frame}
 
+}{}
+
+
 \subsection{co equalizers}
+
+\begin{frame}
+\iftoggle{thmsty}{
+\begin{definition}
+\label{definition-initial-final}
+}{}
+Let $\mathcal{C}$ be a category.
+\begin{enumerate}
+\item An object $x$ of the category $\mathcal{C}$ is called
+an {\it initial} object if for every object $y$ of $\mathcal{C}$
+there is exactly one morphism $x \to y$.
+\item An object $x$ of the category $\mathcal{C}$ is called
+a {\it final} object if for every object $y$ of $\mathcal{C}$
+there is exactly one morphism $y \to x$.
+\end{enumerate}
+\iftoggle{thmsty}{
+\end{definition}
+}
+\end{frame}
+
+\begin{frame}
+\noindent For example, in \textit{Sets} the empty set $\emptyset$ is the unique
+initial object and any {\it singleton} set, a set with one element,
+is a final object.
+\end{frame}
 
 \begin{frame}
 \iftoggle{thmsty}{
@@ -264,6 +294,14 @@ Z \ar@{-->}[d]^-{s}\\
 \end{frame}
 
 \begin{frame}
+\begin{figure}
+\noindent\includegraphics[width=0.8\framewidth]{fig/equalizer.pdf}
+\caption{Examples of equalizers in the category of finite sets.}
+\label{fig:equalizer}
+\end{figure}
+\end{frame}
+
+\begin{frame}
 \iftoggle{thmsty}{
 \begin{definition}
 \label{definition-coequalizers}
@@ -292,29 +330,14 @@ W \ar@{-->}[u]^-{s} \ar[ur]_-{t} & &
 \end{frame}
 
 \begin{frame}
-\iftoggle{thmsty}{
-\begin{definition}
-\label{definition-initial-final}
-}{}
-Let $\mathcal{C}$ be a category.
-\begin{enumerate}
-\item An object $x$ of the category $\mathcal{C}$ is called
-an {\it initial} object if for every object $y$ of $\mathcal{C}$
-there is exactly one morphism $x \to y$.
-\item An object $x$ of the category $\mathcal{C}$ is called
-a {\it final} object if for every object $y$ of $\mathcal{C}$
-there is exactly one morphism $y \to x$.
-\end{enumerate}
-\iftoggle{thmsty}{
-\end{definition}
-}
+\begin{figure}
+\noindent\includegraphics[width=0.8\framewidth]{fig/coequalizer.pdf}
+\caption{Examples of coequalizers in the category of finite sets.}
+\label{fig:coequalizer}
+\end{figure}
 \end{frame}
 
-\begin{frame}
-\noindent For example, in \textit{Sets} the empty set $\emptyset$ is the unique
-initial object and any {\it singleton} set, a set with one element,
-is a final object.
-\end{frame}
+\iftoggle{longpres}{
 
 \subsection{pullbacks and pushouts}
 
@@ -449,3 +472,5 @@ commute.
 \begin{frame}
 In the category $\textit{Sets}$ a pullback is a subset of the cartesian product of two sets. In the category $\textit{Sets}$ a pushout is a quotient of the disjoint union of two sets.
 \end{frame}
+
+}{}

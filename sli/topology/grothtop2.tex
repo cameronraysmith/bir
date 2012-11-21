@@ -1,0 +1,15 @@
+\begin{frame}
+\iftoggle{thmsty}{
+\begin{definition}
+\label{definition-basis}
+}{}
+A {\it basis} for a topology on a category $\cC$ that has pullbacks is a function $B$ that assigns to each object $c \in \Ob(\cC)$ a collection of families $\{c_i \rightarrow c \}$ of morphisms referred to as {\it covering families} in $B(c)$ such that
+\begin{enumerate}
+\item every family consisting of a single isomorphism $\{ d \cong c \}$ is a covering family in $B(c)$
+\item if $\{f_i:c_i \rightarrow c \}$ is a covering family and $g:d \rightarrow c$ is any morphism in $\Mor(\cC)$ then $\{g^* c_i \rightarrow d \}$ is a covering family in $B(d)$ of $d$, which means that the collection of covering families is stable under pullbacks
+\item if $\{f_i : c_i \rightarrow c \}_{i \in I}$ is a covering family and $\{ g_{i,j} : c_{i,j} \rightarrow c_i \}_{j \in J_i}$ then the family of composites $\{ f_i \circ g_{i,j} : c_{i,j} \rightarrow c_i \rightarrow c \}_{i \in I, j \in J_i}$ is a covering family in $B(c)$
+\end{enumerate}
+\iftoggle{thmsty}{
+\end{definition}
+}
+\end{frame}

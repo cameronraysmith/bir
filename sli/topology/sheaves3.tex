@@ -1,0 +1,15 @@
+\begin{frame}
+A sieve $S$ on an object $c$ is a subfunctor of the functor represented by $c$ under the Yoneda embedding. This is to say that $S \subseteq h^c = hom(-,c)$. In this case, $P$ is a sheaf if and only if for every covering sieve $S$ on $c$ the inclusion $S \hookrightarrow P$ induces an isomorphism $hom(S,P) \cong hom(h^c,P)$. This can also be expressed as the equalizer
+\begin{displaymath}
+\xymatrix{
+P(c) \ar[r]
+&
+\prod\limits_{f \in S}
+P(dom \, f)
+\ar@<1ex>[r]^-{p} \ar@<-1ex>[r]_-{a}
+&
+\prod\limits_{\substack{f,g \,\,\, f \in S \\ dom \, f=cod \, g}}
+P(dom \, g)
+}
+\end{displaymath}
+\end{frame}

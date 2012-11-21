@@ -1,0 +1,18 @@
+\begin{frame}
+\iftoggle{thmsty}{
+\begin{definition}
+\label{definition-sieve}
+}{}
+For any category $\cC$ and $c \in \Ob(\cC)$ a {\it sieve} $S$ on $c$ is a collection in $\Mor(\cC)$ with codomain $c$ such that for $f,g \in \Mor(\cC)$
+$$
+f \in S \Rightarrow f \circ g \in S
+$$
+whenever there is a $g \in \Mor(\cC)$ such that $cod(g)=dom(f)$. Any sieve can be restricted to a sieve on the domain of a map whose codomain is the object of the sieve. If $S$ is a sieve on $c$ and $h:d \rightarrow c \in \Mor(\cC)$ with $cod(h)=c$ then
+$$
+h^* (S) \equiv \{ g \, | \, cod(g)=d, h \circ g \in S \}
+$$
+is a sieve on $d$.
+\iftoggle{thmsty}{
+\end{definition}
+}
+\end{frame}

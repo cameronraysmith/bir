@@ -1,0 +1,15 @@
+\begin{frame}
+\begin{displaymath}
+\xymatrix{
+P(c) \ar[r]
+&
+\prod\limits_{f \in S}
+P(dom \, f)
+\ar@<1ex>[r]^-{p} \ar@<-1ex>[r]_-{a}
+&
+\prod\limits_{\substack{f,g \,\,\, f \in S \\ dom \, f=cod \, g}}
+P(dom \, g)
+}
+\end{displaymath}
+\noindent for each $c \in \Ob(\cC)$ and each cover $S \in J(c)$. $e$ refers to $e(x)=\{x \cdot f\}_f = \{P(f)(x)\}_f$, $p$ refers to $p( \mathbf{x} )_{f,g} = x_{fg}$, and $a$ refers to $a( \mathbf{x} )_{f,g} = x_f \cdot g$ for $\mathbf{x} = \{ x_f \}_{f \in S}$. Given that the equalizer condition, $p \circ e = a \circ e \Leftrightarrow p=a$, is satisfied for a cover $S$ then $P$ is a sheaf with respect to the cover $S$.
+\end{frame}

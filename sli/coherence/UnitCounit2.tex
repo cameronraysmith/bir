@@ -1,0 +1,24 @@
+\begin{frame}
+For each $L_1 \in \Ob(\mathcal{L}_1)$, the counit natural transformation
+\begin{eqnarray*}
+\epsilon_{L_1} &:& L \circ R(L_1) \rightarrow L_1\\
+&:& R(L_1) \otimes_{\mathcal{L}_0} A \rightarrow L_1\\
+&:& \Mor_{\mathcal{L}_1}(A(-),L_1) \otimes_{\mathcal{L}_0} A \rightarrow L_1
+\end{eqnarray*}
+can be defined in the coequalizer diagram
+\begin{displaymath}
+\xymatrix{
+\coprod\limits_{\substack{u : L'_0 \rightarrow L_0 \\ r:A(L_0) \rightarrow L_1}}
+A(L'_0)
+\ar@<1ex>[r]^-{\theta} \ar@<-1ex>[r]_-{\tau}
+&
+\coprod\limits_{\substack{L_0 \in \Ob(\mathcal{L}_0) \\ r:A(L_0) \rightarrow L_1}}
+A(L_0)
+\ar[r]^-{\pi} \ar[dr]_-{b_{A(L_0),r}}
+&
+L_A R_A(L_1) \ar[d]^-{\epsilon_{L_1}}\\
+& & L_1
+}
+\end{displaymath}
+where the functor $R_A$ sends objects $L_1 \in \Ob(\mathcal{L}_1)$ to $J$-sheaves on $\mathcal{L}_0$. 
+\end{frame}
