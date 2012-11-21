@@ -3,6 +3,7 @@
 \begin{definition}
 \label{definition-category-of-elements}
 }{}
+\begin{block}{presheaves as colimits}
 For any category $\mathcal{C}$, index category $J$, and functor $A:J \rightarrow \cC$, every $P \in \Ob(\textit{Sets}^{\cC^{opp}})$ is a colimit of $\cC$-representable functors
 $$
 \lim\limits_{\overrightarrow{j \in J}} PSh D_j \cong P.
@@ -11,8 +12,11 @@ There is a canonical choice for $J$ and $D$ such that
 $$
 \lim\limits_{\rightarrow{J}} PSh \circ D \cong P.
 $$
+\end{block}
+\begin{block}{indexing diagrams under which presheaves are colimits} 
 The unique index category $J$ is called the {\it category of elements} of the presheaf $P$ and is denoted
 $$
 \int_{\cC} P.
 $$
+\end{block}
 \end{frame}

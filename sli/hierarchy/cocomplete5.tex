@@ -1,13 +1,7 @@
 \begin{frame}
-The functor $L$ is unique for a given $A$ and all functors $A$ from a small category $\mathcal{L}_0$ to a cocomplete category $\mathcal{L}_1$ factor through the Yoneda embedding $PSh$. The Yoneda embedding is thus the universal method of appending colimits to a small category as suggested by the diagram
+There is thus a bijection
 $$
-\xymatrix{
-& \mathcal{L}_1 & \\
-\mathcal{L}_0 \ar[ru]^{A} \ar[rr]_{PSh} & & \textit{Sets}^{\mathcal{L}_0^{opp}} \ar@{-->}[lu]_{L}
-}
+Nat(P,R(L_1)) \cong Mor_{L_1}(LP,L_1),
 $$
-which commutes uniquely in $L$ for a given $A$.
-\iftoggle{thmsty}{
-\end{proof}
-}
+which is natural in both $P$ and $L_1$ demonstrating the adjoint relationship $L \dashv R$.
 \end{frame}

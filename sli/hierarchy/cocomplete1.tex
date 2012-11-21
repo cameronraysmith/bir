@@ -1,14 +1,12 @@
 \begin{frame}
-\iftoggle{thmsty}{
-\begin{theorem}
-\label{theorem-cocompletion-adjunction}
-}{}
-Consider $\mathcal{L}_0$ a small category, $\mathcal{L}_1$ is a cocomplete category, and a functor $A : \mathcal{L}_0 \rightarrow \mathcal{L}_1$. Then we can construct a pair of adjoint functors $L \dashv R$ between $\mathcal{L}_1$ and $\textit{Sets}^{\mathcal{L}_0^{opp}}$ such that $L: \textit{Sets}^{\mathcal{L}_0^{opp}} \leftrightarrows \mathcal{L}_1 :R$ where $L$ and $R$ are defined componentwise as
-\begin{eqnarray}
+\begin{block}{assumptions}
+Consider $\mathcal{L}_0$ a small category, $\mathcal{L}_1$ is a (finitely) cocomplete category, and a functor $A : \mathcal{L}_0 \rightarrow \mathcal{L}_1$. Then we can construct a pair of adjoint functors $L \dashv R$ between $\mathcal{L}_1$ and $\textit{Sets}^{\mathcal{L}_0^{opp}}$.
+\end{block}
+\begin{block}{$L: \textit{Sets}^{\mathcal{L}_0^{opp}} \leftrightarrows \mathcal{L}_1 :R$}
+$L$ and $R$ are defined componentwise as
+\begin{eqnarray*}
 R(L_1) &:& L_0 \mapsto Mor_{\mathcal{L}_1}(A(L_0),L_1),\\
-L(P) &=& \lim\limits_{\longrightarrow} \left( \int P \xrightarrow{\pi_P} \mathcal{L}_0 \xrightarrow{A} \mathcal{L}_1 \right) .
-\end{eqnarray}
-\iftoggle{thmsty}{
-\end{theorem}
-}
+L(P) &=& \lim\limits_{\longrightarrow} \left( \int_{\mathcal{L}_0} P \xrightarrow{\pi_P} \mathcal{L}_0 \xrightarrow{A} \mathcal{L}_1 \right) .
+\end{eqnarray*}
+\end{block}
 \end{frame}

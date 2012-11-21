@@ -1,13 +1,18 @@
 \begin{frame}
-which is natural in $C$ according to the commutativity of the diagram
-$$
-\xymatrix{
-P(L_0) \ar[r]^-{\tau_{L_0}} \ar[d]_{P(u)} & Mor_{\mathcal{L}_1}(A(L_0),L_1) \ar[d]^{A(u)^*} \\
-P(L'_0) \ar[r]^-{\tau_{L'_0}} & Mor_{\mathcal{L}_1}(A(L'_0),L_1) }
-$$
-for all $u:L'_0 \rightarrow L_0 \in \Mor(\mathcal{L}_0)$. $\tau$ is also determined by a family of morphisms in $\Mor(\mathcal{L}_1)$ by
+$\tau$ is also determined by a family of morphisms in $\Mor(\mathcal{L}_1)$ by
 $$
 \{ \tau_{L_0}(x):A(L_0) \rightarrow L_1 \}_{(L_0,x)}
 $$
-indexed by objects $(L_0,x)$ of the category of elements $\int P$. This construction is natural in objects $(L_0,x)$ in the sense that the diagram
+indexed by objects $(L_0,x)$ of the category of elements $\int_{\mathcal{L}_0} P$.
+\begin{block}{}
+This construction is natural in objects $(L_0,x)$ in the sense that the diagram
+$$
+\xymatrix{
+A(L_0) \ar@{=}[r] \ar[dd]_{A(u)} & A\pi(L_0,x) \ar[rd]^{\tau_{L_0}(x)} \ar[dd]^{u_*} & \\
+& & L_1 \\
+A(L'_0) \ar@{=}[r] & A\pi(L'_0,x') \ar[ru]_{\tau_{L'_0}(x')} &
+}
+$$
+commutes for each morphism $u$.
+\end{block}
 \end{frame}
