@@ -1,16 +1,13 @@
 \begin{frame}
-\iftoggle{thmsty}{
-\begin{definition}
-\label{definition-grothendieck-topology}
-}{}
+\begin{block}{definition of {\it Grothendieck topology}}
 A {\it Grothendieck topology} on a category $\cC$ is a function $J$ that assigns a collection $J(c)$ of sieves on $c$ to each $c \in \Ob(\cC)$ such that conditions of maximality, stability and transitivity are satisfied respectively
+\end{block}
 \begin{enumerate}
 \item the maximal sieve $M_c = \{f \, | \, cod(f) = c\} \in J(c)$,
 \item for $S \in J(c)$, $f^*(S) \in J(d)$ for any $f:d \rightarrow c \in \Mor(\cC)$,
 \item for $S \in J(c)$, $R \in J(c)$ for any sieve $R$ on $c$ with $f^* (R) \in J(d)$ for all $f:d \rightarrow c \in S$.
 \end{enumerate}
+\begin{block}{}
 Sieves $S$ in $J(c)$ for an object $c \in \Ob(\cC)$ are referred to as $J-covering$ sieves.
-\iftoggle{thmsty}{
-\end{definition}
-}
+\end{block}
 \end{frame}

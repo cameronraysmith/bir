@@ -1,0 +1,18 @@
+\begin{frame}
+Keeping in mind that $A \cong L \circ PSh$, the functor $R$ can be constructed directly as
+\begin{block}{}
+\setlength\abovedisplayskip{0pt}
+\begin{eqnarray*}
+R(L_1)(L_0) & \cong & Mor_{\textit{Sets}^{\mathcal{L}_0^{opp}}}(PSh( L_0),R(L_1)),\\
+		    & \cong & Mor_{\mathcal{L}_1}(L(PSh(L_0)),L_1),\\
+   		    & \cong & Mor_{\mathcal{L}_1}(A(L_0),L_1).
+\end{eqnarray*}
+\end{block}
+So we can simply define $R$ according to
+\begin{block}{definition of $R$}
+$$
+R(L_1)(L_0) = Mor_{\mathcal{L}_1}(A(L_0),L_1),
+$$
+\end{block}
+giving presheaves on $\mathcal{L}_0$ when taken to be parametric in $L_0$.
+\end{frame}

@@ -1,11 +1,10 @@
 \begin{frame}
-\iftoggle{thmsty}{
-\begin{definition}
-\label{definition-sheaves}
-}{}
-Given a basis for, $B$, or an explicit Grothendieck topology, $J$, on a category $\cC$ we can define necessary conditions in order for presheaves $P$ in the presheaf category $\textit{Sets}^{\cC^{opp}}$ to be sheaves on the site $(\cC,J)$. If in addition to $P$ we have the sieve $S$ that is a cover of an object $c \in \Ob(\cC)$, then we can define a {\it matching family} for $S$ from elements of $P$ as a function assigning to each $f:d \rightarrow c \in S$ an element $x_f \in P(d)$ such that
+Given a basis for, $B$, or an explicit Grothendieck topology, $J$, on a category $\cC$ we can define necessary conditions in order for presheaves $P$ in the presheaf category $\textit{Sets}^{\cC^{opp}}$ to be sheaves on the site $(\cC,J)$. 
+\begin{block}{definition of {\it matching family}}
+If in addition to $P$ we have the sieve $S$ that is a cover of an object $c \in \Ob(\cC)$, then we can define a {\it matching family} for $S$ from elements of $P$ as a function assigning to each $f:d \rightarrow c \in S$ an element $x_f \in P(d)$ such that
 $$
 \forall g:e \rightarrow d \in \Mor(\cC), \,\,\, x_f \cdot g = x_{fg},
 $$
 where $x_f \cdot g \equiv P(g)(x_f)$ and $fg \in S$. 
+\end{block}
 \end{frame}

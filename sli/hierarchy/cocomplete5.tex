@@ -1,7 +1,9 @@
 \begin{frame}
-There is thus a bijection
-$$
-Nat(P,R(L_1)) \cong Mor_{L_1}(LP,L_1),
-$$
-which is natural in both $P$ and $L_1$ demonstrating the adjoint relationship $L \dashv R$.
+\begin{block}{terminal object in category of elements}
+When $P = Mor(-,L_0) = PSh(L_0)$, the corresponding category of elements $\int_{\mathcal{L}_0} P$ has a terminal object $1_{L_0} : L_0 \rightarrow L_0 \in P(L_0)$.
+\end{block}
+\begin{block}{verification of Yoneda extension}
+In this case the colimit of $A \circ \pi_P$ is its value on $1_{L_0}$, $L \circ PSh(L_0) \cong A \pi_P (L_0,1_{L_0}) = A(L_0)$ demonstrating the commutativity of the diagram.
+\end{block}
+This construction is referred to as Yoneda extension \cite{Lane1998,MacLane1992}.
 \end{frame}

@@ -1,0 +1,11 @@
+\begin{frame}
+We can now demonstrate that $L$ and $R$ are indeed adjoint functors
+\begin{eqnarray*}
+Nat(P,R(L_1)) & \cong &  Mor_{\textit{Sets}^{\mathcal{L}_0^{opp}}} \left( \lim\limits_{\overrightarrow{j \in \int_{\mathcal{L}_0} P}} PSh (L_{0j}),R(L_1) \right) ,\\	
+			  & \cong &  \lim\limits_{\overleftarrow{j \in \int_{\mathcal{L}_0} P}} Mor_{\textit{Sets}^{\mathcal{L}_0^{opp}}} \left( PSh (L_{0j}),R(L_1) \right) ,\\
+			  & \cong &  \lim\limits_{\overleftarrow{j \in \int_{\mathcal{L}_0} P}} \left( R(L_1)(L_{0j}) \right) ,\\
+  			  & \cong &  \lim\limits_{\overleftarrow{j \in \int_{\mathcal{L}_0} P}} Mor_{\mathcal{L}_1} \left( A (L_{0j}),L_1 \right) ,\\
+  			  & \cong &  Mor_{\mathcal{L}_1} \left( \lim\limits_{\overrightarrow{j \in \int_{\mathcal{L}_0} P}} A (L_{0j}),L_1 \right) ,\\
+  			  & \cong &  Mor_{L_1}(L(P),L_1).
+\end{eqnarray*}
+\end{frame}
