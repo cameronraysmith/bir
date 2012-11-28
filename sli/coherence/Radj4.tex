@@ -1,5 +1,6 @@
 \begin{frame}
-Now we can apply the functor $R(L_1): \mathcal{L}_0^{opp} \rightarrow Sets$ to the previous coequalizer to obtain
+\begin{block}{apply $R$ to give an equalizer}
+Applying the functor $R(L_1): \mathcal{L}_0^{opp} \rightarrow Sets$ to the previous coequalizer yields
 \begin{displaymath}
 \xymatrix{
 R(L_1)(L_0) \ar[r]
@@ -11,4 +12,11 @@ R(L_1)(L_0) \ar[r]
 }
 \end{displaymath}
 where the arrows are reversed and coproducts exchanged with products producing an equalizer due to the contravariance of the functor $R(L_1)$. 
+\end{block}
+\begin{displaymath}
+\xymatrix{
+R(L_1)(N_0^{ij}) & R(L_1)(M_0^i) \ar[l]_-{R(L_1)(h)} \\
+R(L_1)(M_0^{'i}) \ar[u]^-{R(L_1)(k)} & R(L_1)(L_0) \ar[u]_-{R(L_1)(g_i)} \ar[l]^-{R(L_1)(g'_i)}
+}
+\end{displaymath}
 \end{frame}

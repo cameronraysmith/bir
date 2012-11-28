@@ -4,9 +4,13 @@ Given these different views on the sheaf concept, we have the necessary concepts
 \end{block}
 \begin{block}{}
 \begin{displaymath}
+%\xymatrix{
+%& \mathcal{L}_1 \ar@<0.5ex>[rd]^-{R} & \\
+%\mathcal{L}_0 \ar[ru]^{A} \ar[rr]_{PSh} & & \textit{Sets}^{\mathcal{L}_0^{opp}} \ar@<0.5ex>[lu]^-{L}
+%}
 \xymatrix{
-& \mathcal{L}_1 \ar[rd]^{R} & \\
-\mathcal{L}_0 \ar[ru]^{A} \ar[rr]_{PSh} & & \textit{Sets}^{\mathcal{L}_0^{opp}} \ar[lu]^{L}
+& \mathcal{L}_1 \ar@<0.5ex>[rd]^-{R} \ar@<0.5ex>[rr]^{R} & & Sh(\mathcal{L}_0,J) \ar@<0.5ex>[ll]^{L} \ar@{^{(}->}@<0.5ex>[dl]^{} \\
+\mathcal{L}_0 \ar[ru]^{A} \ar@{^{(}->}[rr]_{PSh} & & \hat{\mathcal{L}_0} \ar@<0.5ex>[lu]^-{L} \ar@<0.5ex>[ur]^{}&
 }
 \end{displaymath}
 \end{block}

@@ -1,6 +1,20 @@
 \begin{frame}
+\begin{block}{equivalence of categories}
 We thus have an equivalence of categories between the category of local representations of biological information and that of global representations
 $$
 Sh(\mathcal{L}_0,J) \cong \mathcal{L}_1.
 $$
+\end{block}
+\begin{block}{}
+\begin{displaymath}
+%\xymatrix{
+%& \mathcal{L}_1 \ar@<0.5ex>[rd]^-{R} & \\
+%\mathcal{L}_0 \ar[ru]^{A} \ar[rr]_{PSh} & & \textit{Sets}^{\mathcal{L}_0^{opp}} \ar@<0.5ex>[lu]^-{L}
+%}
+\xymatrix{
+& \mathcal{L}_1 \ar@<0.5ex>[rd]^-{R} \ar@<0.5ex>[rr]^{R} & & Sh(\mathcal{L}_0,J) \ar@<0.5ex>[ll]^{L} \ar@{^{(}->}@<0.5ex>[dl]^{} \\
+\mathcal{L}_0 \ar[ru]^{A} \ar@{^{(}->}[rr]_{PSh} & & \hat{\mathcal{L}_0} \ar@<0.5ex>[lu]^-{L} \ar@<0.5ex>[ur]^{}&
+}
+\end{displaymath}
+\end{block}
 \end{frame}

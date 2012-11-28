@@ -1,7 +1,15 @@
 \begin{frame}
-We can describe the adjoint pair parameterized by a presheaf $P \in \textit{Sets}^{\mathcal{L}_0^{opp}}$, an object $L_1 \in \Ob(\mathcal{L}_1)$ and and object $L_0 \in \Ob(\mathcal{L}_0)$ as
+We can describe the adjoint pair
+\begin{block}{}
+$$
+L_A: \textit{Sets}^{\mathcal{L}_0^{opp}} \leftrightarrows \mathcal{L}_1 :R_A.
+$$
+\end{block}
+parameterized by a presheaf $P \in \textit{Sets}^{\mathcal{L}_0^{opp}}$, an object $L_1 \in \Ob(\mathcal{L}_1)$ and an object $L_0 \in \Ob(\mathcal{L}_0)$ as
+\begin{block}{$L \dashv R$ in terms of components}
 \begin{eqnarray*}
 L_A(P) &=& \lim\limits_{\longrightarrow} \left( \int P \xrightarrow{\pi_P} \mathcal{L}_0 \xrightarrow{A} \mathcal{L}_1 \right),\\
 R_A(L_1)(L_0) &=& Mor_{\mathcal{L}_1}(A(L_0),L_1).
 \end{eqnarray*}
+\end{block}
 \end{frame}
