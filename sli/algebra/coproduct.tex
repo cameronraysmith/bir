@@ -1,0 +1,30 @@
+\begin{frame}
+\iftoggle{thmsty}{
+\begin{definition}
+\label{definition-coproducts}
+}{}
+Let $x, y \in \Ob(\mathcal{C})$,
+A {\it coproduct}, or {\it amalgamated sum} of $x$ and $y$ is
+an object $x \amalg y \in \Ob(\mathcal{C})$
+together with morphisms
+$i \in \Mor_{\mathcal C}(x, x \amalg y)$ and
+$j \in \Mor_{\mathcal C}(y, x \amalg y)$ such
+that the following universal property holds: for
+any $w \in \Ob(\mathcal{C})$ and morphisms
+$\alpha \in \Mor_{\mathcal C}(x, w)$ and
+$\beta \in \Mor_\mathcal{C}(y, w)$
+there is a unique
+$\gamma \in \Mor_{\mathcal C}(x \amalg y, w)$ making
+the diagram
+$$
+\xymatrix{
+& y \ar[d]^j \ar[rrdd]^\beta \\
+x \ar[r]^i \ar[rrrd]_\alpha & x \amalg y \ar@{-->}[rrd]^\gamma \\
+& & & w
+}
+$$
+commute.
+\iftoggle{thmsty}{
+\end{definition}
+}
+\end{frame}

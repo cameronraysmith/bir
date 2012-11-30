@@ -1,0 +1,29 @@
+\begin{frame}
+\noindent
+The dual notion to pullbacks is that of pushouts.
+
+\iftoggle{thmsty}{
+\begin{definition}
+\label{definition-pushouts}
+}{}
+Let $x, y, z\in \Ob(\mathcal{C})$,
+$f\in \Mor_\mathcal{C}(y, x)$
+and $g\in \Mor_{\mathcal C}(y, z)$.
+A {\it pushout} of $f$ and $g$ is
+an object $x\amalg_y z\in \Ob(\mathcal{C})$
+together with morphisms
+$p\in \Mor_{\mathcal C}(x, x\amalg_y z)$ and
+$q\in\Mor_{\mathcal C}(z, x\amalg_y z)$ making the diagram
+$$
+\xymatrix{
+y \ar[r]^{g} \ar[d]_f
+&
+z \ar[d]^{q}
+\\
+x \ar[r]^{p}
+&
+x\amalg_y z
+}
+$$
+commute
+\end{frame}

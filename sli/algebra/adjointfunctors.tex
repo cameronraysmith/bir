@@ -1,0 +1,21 @@
+\begin{frame}
+\iftoggle{thmsty}{
+\begin{definition}
+\label{definition-adjoint}
+}{}
+Let $\mathcal{C}$, $\mathcal{D}$ be categories.
+Let $u : \mathcal{C} \to \mathcal{D}$ and
+$v : \mathcal{D} \to \mathcal{C}$ be functors.
+We say that $u$ is a {\it left adjoint} of $v$ or that
+$v$ is a {\it right adjoint} to $u$, written $u \dashv v$, if there are bijections
+$$
+\phi_{X,Y}:\Mor_\mathcal{D}(u(X), Y)
+\simeq
+\Mor_\mathcal{C}(X, v(Y))
+$$
+functorial in $X \in \Ob(\mathcal{C})$, and
+$Y \in \Ob(\mathcal{D})$.
+\iftoggle{thmsty}{
+\end{definition}
+}
+\end{frame}

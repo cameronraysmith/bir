@@ -1,0 +1,18 @@
+\begin{frame}
+The hom-functor maps
+\begin{enumerate}
+\item objects $(c,c') \in \mathcal{C}^{opp} \times \mathcal{C}$ to the hom-set $\Mor_{\mathcal{C}} (c,c')$, which is the set of morphisms in $\mathcal{C}$ with domain $c$ and codomain $c'$.
+\item morphisms 
+$$
+(f,g):(c,c') \rightarrow (d,d') \in \Mor(\mathcal{C}^{opp} \times \mathcal{C}),
+$$
+where $f:d \rightarrow c \in \Mor(\mathcal{C})$ and $g:c' \rightarrow d' \in \Mor(\mathcal{C})$, to the set function
+\begin{eqnarray*}
+\Mor_{\mathcal{C}}(c,c') &\rightarrow& \Mor_{\mathcal{C}}(d,d')\\
+(c \rightarrow c') &\mapsto& (d \rightarrow c \rightarrow c' \rightarrow d')
+\end{eqnarray*}
+\end{enumerate}
+\iftoggle{thmsty}{
+\end{definition}
+}
+\end{frame}

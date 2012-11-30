@@ -1,0 +1,16 @@
+\begin{frame}
+Let $F, G : \mathcal{A} \to \mathcal{B}$ be functors.
+A {\it natural transformation}, or a {\it morphism of functors}
+$t : F \to G$, is a collection $\{t_x\}_{x\in \Ob(\mathcal{A})}$
+such that
+\begin{enumerate}
+\item $t_x : F(x) \to G(x)$ is a morphism in the category $\mathcal{B}$, and
+\item for every morphism $\phi : x \to y$ of $\mathcal{A}$ the following
+diagram is commutative
+$$
+\xymatrix{
+F(x) \ar[r]^{t_x} \ar[d]_{F(\phi)} & G(x) \ar[d]^{G(\phi)} \\
+F(y) \ar[r]^{t_y} & G(y) }
+$$
+\end{enumerate}
+\end{frame}

@@ -1,0 +1,27 @@
+\begin{frame}
+\iftoggle{thmsty}{
+\begin{definition}
+\label{definition-coequalizers}
+}{}
+Suppose that $X$, $Y$ are objects of a category $\mathcal{C}$
+and that $a, b : X \to Y$ are morphisms. We say a morphism
+$c : Y \to Z$ is a {\it coequalizer} for the pair $(a, b)$ if
+$c \circ a = c \circ b$ and if $(Z, c)$ satisfies the following
+universal property: For every morphism $t : Y \to W$
+in $\mathcal{C}$ such that $t \circ a = t \circ b$ there exists
+a unique morphism $s : Z \to W$ such that $t = s \circ c$.
+\iftoggle{thmsty}{
+\end{definition}
+}
+
+\begin{displaymath}
+\xymatrix{
+Z \ar[r]^-{c}
+&
+X \ar@<1ex>[r]^-{a} \ar@<-1ex>[r]_-{b}
+&
+Y\\
+W \ar@{-->}[u]^-{s} \ar[ur]_-{t} & &
+}
+\end{displaymath}
+\end{frame}

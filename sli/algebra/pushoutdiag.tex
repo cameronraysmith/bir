@@ -1,0 +1,31 @@
+\begin{frame}
+such that the following universal property holds:
+For any $w\in \Ob(\mathcal{C})$ and morphisms
+$\alpha \in \Mor_{\mathcal C}(x, w)$ and
+$\beta \in \Mor_\mathcal{C}(z, w)$ with
+$\alpha \circ f = \beta \circ g$ there is a unique
+$\gamma\in \Mor_{\mathcal C}(x\amalg_z y, w)$ making
+the diagram
+$$
+\xymatrix{
+y \ar[r]^{g} \ar[d]_f
+&
+z \ar[d]^{q} \ar[rrdd]^\beta
+&
+&
+\\
+x \ar[r]^{p} \ar[rrrd]^\alpha
+&
+x\amalg_y z  \ar@{-->}[rrd]^\gamma
+&
+&
+\\
+&&&
+w
+}
+$$
+commute.
+\iftoggle{thmsty}{
+\end{definition}
+}
+\end{frame}

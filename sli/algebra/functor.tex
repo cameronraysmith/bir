@@ -1,0 +1,14 @@
+\begin{frame}
+A {\it functor} $F : \mathcal{A} \to \mathcal{B}$
+between two categories $\mathcal{A}, \mathcal{B}$ is:
+\begin{enumerate}
+\item A map $F : \Ob(\mathcal{A}) \to \Ob(\mathcal{B})$.
+\item For every $x, y \in \Ob(\mathcal{A})$ a map
+$F : \Mor_\mathcal{A}(x, y) \to \Mor_\mathcal{B}(F(x), F(y))$,
+denoted $\phi \mapsto F(\phi)$.
+\end{enumerate}
+These data should be compatible with composition and identity morphisms
+in the following manner: $F(\phi \circ \psi) =
+F(\phi) \circ F(\psi)$ for a composable pair $(\phi, \psi)$ of
+morphisms of $\mathcal{A}$ and $F(\text{id}_x) = \text{id}_{F(x)}$.
+\end{frame}

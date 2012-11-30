@@ -1,0 +1,20 @@
+\begin{frame}
+A {\it category} $\mathcal{C}$ is:
+\begin{enumerate}
+\item A set of objects $\Ob(\mathcal{C})$.
+\item For each pair $x, y \in \Ob(\mathcal{C})$ a set of morphisms
+$\Mor_\mathcal{C}(x, y)$.
+\item For each triple $x, y, z\in \Ob(\mathcal{C})$ a composition
+map $ \Mor_\mathcal{C}(y, z) \times \Mor_\mathcal{C}(x, y)
+\to \Mor_\mathcal{C}(x, z) $, denoted $(\phi, \psi) \mapsto
+\phi \circ \psi$.
+\end{enumerate}
+Such that these constraints are satisfied:
+\begin{enumerate}
+\item For every element $x\in \Ob(\mathcal{C})$ there exists a
+morphism $\text{id}_x\in \Mor_\mathcal{C}(x, x)$ such that
+$\text{id}_x \circ \phi = \phi$ and $\psi \circ \text{id}_x = \psi $.
+\item Composition is associative, i.e., $(\phi \circ \psi) \circ \chi =
+\phi \circ ( \psi \circ \chi)$.
+\end{enumerate}
+\end{frame}
