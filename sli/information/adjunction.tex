@@ -1,0 +1,16 @@
+\begin{frame}
+Let $\mathcal{C}$, $\mathcal{D}$ be categories.
+Let $F : \mathcal{C} \to \mathcal{D}$ and
+$G : \mathcal{D} \to \mathcal{C}$ be functors.
+We say that $F$ is a {\it left adjoint} of $G$ or that
+$G$ is a {\it right adjoint} to $F$, written $F \dashv G$, if there are bijections
+\begin{block}{Hom-set formulation of adjunction}
+$$
+\phi_{c,d}:\Mor_\mathcal{D}(Fc, d)
+\simeq
+\Mor_\mathcal{C}(c, Gd)
+$$
+\end{block}
+functorial in $c \in \Ob(\mathcal{C})$, and
+$d \in \Ob(\mathcal{D})$.
+\end{frame}

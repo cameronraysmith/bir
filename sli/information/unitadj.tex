@@ -1,0 +1,28 @@
+\begin{frame}[t]
+We can then give an alternative definition of adjoint functors in terms of the unit natural transformation (dually the counit natural transformation) as
+\begin{align*}
+F & \colon \mathcal{C} \rightleftarrows \mathcal{D} \colon G\\
+\eta & \colon 1_{\mathcal{C}} \rightarrow GF
+\end{align*}
+where for any $c \in \Ob (\mathcal{C})$, $d \in \Ob (\mathcal{D})$, and $f \colon c \rightarrow Gd \in \Mor(\mathcal{C})$ there exists a unique $g \colon Fc \rightarrow d \in \Mor(\mathcal{D})$ such that $f = Gg \circ \eta_c$				
+\begin{columns}[t]
+    \begin{column}{0.5\textwidth}
+     \begin{block}{unit conditions for $F \dashv G$}
+		\abovedisplayskip=0pt
+		$$
+					\xymatrix{
+					c \ar[r]^{\eta_c} \ar[dr]_{f} & G F c \ar[d]^{G g} & F c \ar@{.>}[d]^{g}\\
+					& G d & d}
+		$$
+		\end{block}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+		     \begin{block}{adjoint correspondence}
+		\abovedisplayskip=0pt
+		$$
+			\frac{c \longrightarrow Gd}{Fc \longrightarrow d}
+		$$
+		\end{block}
+    \end{column}
+\end{columns}
+\end{frame}
