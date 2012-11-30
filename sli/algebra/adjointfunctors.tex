@@ -1,21 +1,28 @@
 \begin{frame}
-\iftoggle{thmsty}{
-\begin{definition}
-\label{definition-adjoint}
-}{}
+\begin{block}{adjoint functors}
 Let $\mathcal{C}$, $\mathcal{D}$ be categories.
-Let $u : \mathcal{C} \to \mathcal{D}$ and
-$v : \mathcal{D} \to \mathcal{C}$ be functors.
-We say that $u$ is a {\it left adjoint} of $v$ or that
-$v$ is a {\it right adjoint} to $u$, written $u \dashv v$, if there are bijections
+Let $F : \mathcal{C} \to \mathcal{D}$ and
+$G : \mathcal{D} \to \mathcal{C}$ be functors.
+We say that $F$ is a {\it left adjoint} of $G$ or that
+$G$ is a {\it right adjoint} to $F$, written $F \dashv G$, if there are bijections
 $$
-\phi_{X,Y}:\Mor_\mathcal{D}(u(X), Y)
+\phi_{c,d}:\Mor_\mathcal{D}(Fc, d)
 \simeq
-\Mor_\mathcal{C}(X, v(Y))
+\Mor_\mathcal{C}(c, Gd)
 $$
-functorial in $X \in \Ob(\mathcal{C})$, and
-$Y \in \Ob(\mathcal{D})$.
-\iftoggle{thmsty}{
-\end{definition}
-}
+functorial in $c \in \Ob(\mathcal{C})$, and
+$d \in \Ob(\mathcal{D})$.
+%Let $\mathcal{C}$, $\mathcal{D}$ be categories.
+%Let $u : \mathcal{C} \to \mathcal{D}$ and
+%$v : \mathcal{D} \to \mathcal{C}$ be functors.
+%We say that $u$ is a {\it left adjoint} of $v$ or that
+%$v$ is a {\it right adjoint} to $u$, written $u \dashv v$, if there are bijections
+%$$
+%\phi_{X,Y}:\Mor_\mathcal{D}(u(X), Y)
+%\simeq
+%\Mor_\mathcal{C}(X, v(Y))
+%$$
+%functorial in $X \in \Ob(\mathcal{C})$, and
+%$Y \in \Ob(\mathcal{D})$.
+\end{block}
 \end{frame}

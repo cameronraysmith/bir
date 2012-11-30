@@ -1,12 +1,16 @@
 \begin{frame}
-\noindent These conditions are expressed in the commutativity of the diagram
-
+%\noindent These conditions are expressed in the commutativity of the diagram
+\begin{block}{colimit conditions expressed as a commutative diagram}
 \begin{displaymath}
 \xymatrix{
-i \ar[rr]^{\phi} & & i' \\
+i \ar[rr]_{\phi} & & i' \\
 M_i \ar[rd]^{s_i} \ar[rdd]_{t_i} \ar[rr]^{M(\phi)} & & M_{i'} \ar[ldd]^{t_{i'}} \ar[ld]_{s_{i'}}\\
 & \lim\limits_{\longrightarrow \mathcal{I}} M \ar@{-->}[d]^{t}& \\
 & W &
 }
 \end{displaymath}
+\end{block}
+\begin{block}{}
+Colimits $(\colim_I M, (s_i)_{i\in \Ob(\mathcal{I})})$ are unique up to unique isomorphism. Coproducts of pairs and coequalizers are examples of colimits. The colimit over an empty diagram is an initial object of $\mathcal{C}$. All colimits exist in the category of sets.
+\end{block}
 \end{frame}

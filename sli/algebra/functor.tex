@@ -1,4 +1,5 @@
 \begin{frame}
+\begin{block}{definition of functor}
 A {\it functor} $F : \mathcal{A} \to \mathcal{B}$
 between two categories $\mathcal{A}, \mathcal{B}$ is:
 \begin{enumerate}
@@ -7,8 +8,8 @@ between two categories $\mathcal{A}, \mathcal{B}$ is:
 $F : \Mor_\mathcal{A}(x, y) \to \Mor_\mathcal{B}(F(x), F(y))$,
 denoted $\phi \mapsto F(\phi)$.
 \end{enumerate}
-These data should be compatible with composition and identity morphisms
-in the following manner: $F(\phi \circ \psi) =
+These data should be compatible with composition and identity morphisms in the following manner: $F(\phi \circ \psi) =
 F(\phi) \circ F(\psi)$ for a composable pair $(\phi, \psi)$ of
 morphisms of $\mathcal{A}$ and $F(\text{id}_x) = \text{id}_{F(x)}$.
+\end{block}
 \end{frame}

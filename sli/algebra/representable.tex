@@ -1,15 +1,13 @@
 \begin{frame}
-\iftoggle{thmsty}{
-\begin{definition}
-\label{definition-representable-functor}
-}{}
+\begin{block}{covariant and contravariant hom-functors}
 For a hom-functor $hom(-,-): \mathcal{C}^{opp} \times \mathcal{C} \rightarrow \textit{Sets}$ for $c \in \Ob(\mathcal{C})$ a covariant and contravariant functor can be derived by specializing the hom-functor to morphisms out of or into the object $c$ as
 \begin{eqnarray*}
 h^c \equiv hom(c,-) &:& \mathcal{C} \rightarrow \textit{Sets},\\
 h_c \equiv hom(-,c) &:& \mathcal{C}^{opp} \rightarrow \textit{Sets}.
 \end{eqnarray*}
-Functors that are isomorphic to $h^c$ or $h_c$ are referred to as {\it corepresentable or representable functors} respectively and $c$ is their {\it representing object}. Note that $h_c \in \Ob(\textit{PSh}(\mathcal{C}))$ and the Yoneda embedding states that $h_c$ extends to a functor $PSh : \mathcal{C} \rightarrow \textit{Sets}^{\mathcal{C}^{opp}}$ that is guaranteed to be full and faithful thereby having $\mathcal{C}$ as a full subcategory of the functor category $\textit{Sets}^{\mathcal{C}^{opp}}$ by the Yoneda lemma.
-\iftoggle{thmsty}{
-\end{definition}
-}
+\end{block}
+\begin{block}{representable functors}
+Functors that are isomorphic to $h^c$ or $h_c$ are referred to as {\it corepresentable or representable functors} respectively and $c$ is their {\it representing object}.
+\end{block}
+%$h_c \in \Ob(\textit{PSh}(\mathcal{C}))$ and the Yoneda embedding states that $h_c$ extends to a functor $PSh : \mathcal{C} \rightarrow \textit{Sets}^{\mathcal{C}^{opp}}$ that is guaranteed to be full and faithful thereby having $\mathcal{C}$ as a full subcategory of the functor category $\textit{Sets}^{\mathcal{C}^{opp}}$ by the Yoneda lemma.
 \end{frame}

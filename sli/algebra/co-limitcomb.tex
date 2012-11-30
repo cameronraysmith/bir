@@ -1,3 +1,25 @@
 \begin{frame}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\begin{block}{cones and cocones}
 Combining the diagrams for limit and colimit (in general the objects W refer to different objects in each diagram) demonstrates the reason that limits are often referred to as {\it cones over} a diagram and colimits are referred to as {\it cocones under} a diagram
+\end{block}
+\end{column}
+\begin{column}{0.5\textwidth}
+\begin{block}{}
+\abovedisplayskip=0pt
+\begin{displaymath}
+\xymatrix@=17pt{
+&\ar[ldd]_{q_i} W \ar@{-->}[d]^{q} \ar[rdd]^{q_{i'}} & \\
+& \ar[ld]^{p_i} \lim\limits_{\longleftarrow \mathcal{I}} M \ar[rd]_{p_{i'}} &\\
+M_i  \ar[rr]_{M(\phi)} & & M_{i'} \\
+i \ar[rr]^{\phi} & & i' \\
+M_i \ar[rd]^{s_i} \ar[rdd]_{t_i} \ar[rr]^{M(\phi)} & & M_{i'} \ar[ldd]^{t_{i'}} \ar[ld]_{s_{i'}}\\
+& \lim\limits_{\longrightarrow \mathcal{I}} M \ar@{-->}[d]^{t}& \\
+& W &
+}
+\end{displaymath}
+\end{block}
+\end{column}
+\end{columns}
 \end{frame}
