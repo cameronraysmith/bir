@@ -1,10 +1,20 @@
 % outline 
+%\AtBeginSection[]
+%{
+% \begin{frame}
+%  \frametitle{Outline}
+%  \small
+%  \tableofcontents[currentsection,hideothersubsections]
+%  \normalsize
+% \end{frame}
+%}
 \AtBeginSection[]
 {
- \begin{frame}
-  \frametitle{Outline}
-  \small
-  \tableofcontents[currentsection,hideothersubsections]
-  \normalsize
- \end{frame}
+  \begin{frame}
+   \begin{multicols}{2}
+   	 \small
+     \tableofcontents[currentsection,hideothersubsections]
+     \normalsize
+   \end{multicols}
+  \end{frame}
 }
