@@ -14,7 +14,7 @@
    id="svg25920"
    version="1.1"
    inkscape:version="0.48.3.1 r9886"
-   sodipodi:docname="Ravasz2002.svg">
+   sodipodi:docname="Ravasz2002F1.svg">
   <defs
      id="defs25922">
     <clipPath
@@ -143,11 +143,11 @@
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="960"
-     inkscape:window-height="1148"
-     inkscape:window-x="1"
+     inkscape:window-width="1920"
+     inkscape:window-height="1176"
+     inkscape:window-x="1920"
      inkscape:window-y="24"
-     inkscape:window-maximized="0" />
+     inkscape:window-maximized="1" />
   <metadata
      id="metadata25925">
     <rdf:RDF>
@@ -156,7 +156,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -165,22 +165,6 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(-231.96344,-290.7025)">
-    <text
-       style="font-size:15px"
-       y="300.04907"
-       x="233.50943"
-       id="text3656">
-      <tspan
-         style="font-size:11.25px;font-variant:normal;font-weight:bold;writing-mode:lr-tb;fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold"
-         x="233.50943"
-         y="300.04907"
-         id="tspan3658">A</tspan>
-      <tspan
-         style="font-size:11.25px;font-variant:normal;font-weight:bold;writing-mode:lr-tb;fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold"
-         x="232.35519"
-         y="455.22369"
-         id="tspan3660">B</tspan>
-    </text>
     <g
        id="g3662"
        transform="matrix(1.25,0,0,-1.25,303.32344,370.17406)">
@@ -190,17 +174,6 @@
          style="fill:none;stroke:#231f20;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
          id="path3664" />
     </g>
-    <text
-       style="font-size:15px"
-       y="618.52783"
-       x="232.8838"
-       id="text3666">
-      <tspan
-         style="font-size:11.25px;font-variant:normal;font-weight:bold;writing-mode:lr-tb;fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold"
-         x="232.8838"
-         y="618.52783"
-         id="tspan3668">C</tspan>
-    </text>
     <g
        id="g3670"
        transform="matrix(1.25,0,0,-1.25,303.31844,368.12906)">
