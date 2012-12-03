@@ -2,11 +2,14 @@
 \usepackage{etex}
 \usepackage{etoolbox}
 \usepackage{multicol}
+
 %------------------
 % singapore - dove
 %------------------
 \usetheme{Singapore}
 \usecolortheme{dove}
+\usefonttheme[onlymath]{serif}
+\setbeamertemplate{bibliography item}[text]
 
 %------------------
 % Leinster minimal
@@ -29,8 +32,9 @@
 \usepackage{verbatim}
 \usepackage{ifpdf}
 \ifpdf
-%	\usepackage[backref]{hyperref}
+	%\usepackage[backref=page]{hyperref}
 	\usepackage{hyperref}
+	\hypersetup{backref=page}
 \else
 \fi
 
