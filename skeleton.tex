@@ -37,7 +37,7 @@
 
 \date{\today}
 \begin{abstract}
-Hierarchy is a fundamental organizing concept in biology. The existence of a number of apparently {\it discrete} levels of organization including molecules, cells, organisms, populations, communities, ecosystems, and more fine-grained levels below, above and in between these are taken for granted. Theoretical constructs capable of integrating information about such levels of organization and of explaining the emergence of such levels in the evolutionary process have not been adapted to a biological context. Here we make use of existing theory to characterize coherence constraints that must ostensibly be satisfied in any evolutionary process in which two levels of organization become coupled such that one serves as a base supporting the existence of and providing potential for interactions among higher-level entities in another. In this way, what may be considered as two distinct levels may come to be viewed as part of a unified system. This process of unification of distinct levels may serve as a basis for induction in the consideration of arbitrarily complex compositions of multilevel biological systems. The language we use to express these constraints is sufficiently general that it applies equally to several different concrete formalisms for representing biological systems, for example those that have become commonplace in the context of network science, in terms of algebraic graphs, hypergraphs, or (cell) complexes. This constraint on the relationship between levels of organization in static representations of {\it biological networks} may be able to be used to provide boundary conditions for dynamical models---for example those defined in terms of transformations on graphs---that seek to take into account transitions in hierarchical organization that occur in some types of evolutionary processes.
+Hierarchy is a fundamental organizing concept in biology. The existence of a number of apparently {\it discrete} levels of organization including molecules, cells, organisms, populations, communities, ecosystems, and more fine-grained levels below, above and in between these are taken for granted. Theoretical constructs capable of integrating information about such levels of organization and of explaining the emergence of such levels in the evolutionary process have not been adapted to a biological context. Admitting the kinds of representations of biological systems that have entered biology via network science, we make use of existing theory to characterize coherence constraints that must ostensibly be satisfied in any evolutionary process in which levels of organization become coupled such that one serves as a base supporting the existence of and providing potential for interactions among higher-level entities in another. In this way, what may be considered for some purposes as two distinct levels may also be required to be viewed as a unified system for others. This process of maintaining the capacity to unite and deconstruct distinct levels may serve as a basis for induction in the consideration of arbitrarily complex compositions of multilevel biological systems. The language we use to express these constraints is sufficiently general that it applies equally to several different concrete formalisms for representing biological systems, for example those that have become commonplace in the context of network science, in terms of algebraic graphs, hypergraphs, or (cell) complexes. This constraint on the relationship between levels of organization in static representations of {\it biological networks} may be able to be used to provide boundary conditions for dynamical models---for example those defined in terms of transformations on graphs---that seek to take into account transitions in hierarchical organization that occur in some formulations of evolutionary processes.
 \end{abstract}
 
 \maketitle
@@ -58,18 +58,20 @@ Here we explain concepts from category theory necessary to understand the way in
 
 \section{Information representation and transformation in biological systems}
 
-\begin{quotation}
-{\it One [...] idea, which underlies everything in this book, is the concept
-of genomically encoded information processing. [...],
-this is like the geological basis of the landscape. In my view, cis-regulatory information processing, and information processing at the gene regulatory network circuit level, are the real secret of animal development. Probably the appearance of genomic regulatory systems capable of information processing is what made animal evolution possible.} -Eric H. Davidson~\cite{Davidson2006a}
-\end{quotation}
+%\begin{quotation}
+%{\it One [...] idea, which underlies everything in this book, is the concept
+%of genomically encoded information processing. [...],
+%this is like the geological basis of the landscape. In my view, cis-regulatory information processing, and information processing at the gene regulatory network circuit level, are the real secret of animal development. Probably the appearance of genomic regulatory systems capable of information processing is what made animal evolution possible.} -Eric H. Davidson~\cite{Davidson2006a}
+%\end{quotation}
 
 %\subsection{System-environment duality}
 Distinction between biological systems or some components thereof and the environments within which they are embedded is implied in models of such systems. This distinction is useful in many contexts, but the boundary between a biological system and its environment is dependent upon the level of resolution taken by any particular \emph{model} and \emph{modeler} independent of its relationship to properties of biological systems themselves~\cite{Fontana1996}. In this light, it is desirable to develop a modeling framework for biological systems that supports variation of this boundary without requiring the development of structurally independent models. Constructing a framework for such models requires the determination, unification, and incorporation of abstract features of biological systems that are invariant across levels of organization from molecules to cells, organisms, populations, communities, ecosystems and more fine-grained levels of resolution that likely lie between these broadly and imprecisely defined perspectives one can take with regard to representing biological systems. This capacity already exists within and is the primary potential utility of so-called network representations of biological systems; however, what needs to be imported into this context is the use of algebraic methods to enable reasoning and subsequent hypothesis development about such network representations for the purpose of coupling such modeling methods into feedback loops with empirical ones.
 
+For example, the BioPAX ontology~\cite{Demir2010} provides an integrated representation of data collected about molecular biological systems. This representation could be, at least approximately, interpreted in terms of a labelled directed graph (figure \ref{fig:biograph}a). It may be the case that such interpretation should be generalized to a richer structure such as a hypergraph or a cell complex. Nevertheless, such representations and the relationships between them can be collected into a \emph{category} (to be defined) in which there is a typing distinction, reflected in the BioPAX ontology between \emph{objects} and transformations between objects called \emph{morphisms} (figure \ref{fig:biograph}b and \ref{fig:biograph}c). Permitting this abstraction has at least two concrete advantages. Firstly, it allows for the importation into network science as applied to biology of the powerful reasoning tools that have been developed in category theory. Secondly, much of the reasoning supported by category theory is agnostic to the specific details of the structure one uses to model concrete data. For example of the latter, many of the concepts that will be introduced here are independent of whether one uses a directed graph, hypergraph, or cell complex to model the data and so the details of defining an appealing semantics for the BioPAX ontology can, to some significant degree, be treated independently from the process of reasoning about the representation that results from assigning such a semantics.
+
 \begin{figure*}
 \noindent\includegraphics[width=2\columnwidth]{fig/Fig1Composite.pdf}
-\caption{Particular motifs within interaction networks underlying biological systems can be abstracted as algebraic structures of some type exhibiting internal structure associated to that type and external structure, which may reflect aspects of the internal structure, represented by morphisms translating structure between them. (a) We provide an example of a simple categorical semantics (left) for the BioPAX ontology~\cite{Demir2010} (right) of some of the interactions involved in the Akt pathway. (b) A representation (left) of the integrated metabolic-gene regulatory glycolytic network of E. coli K12 MG1655 derived from the EcoCyc database~\cite{Keseler2011} in terms of the BioPAX ontology a conceptual picture (right) of the way in which the relationships between substructural motifs of a particular network can be represented algebraically in terms of algebraic structures that can be referred to as objects and methods of transforming or mapping between these structures referred to as morphisms. (c) The broadest distinctions in the BioPAX ontology between {\it physical entities} and {\it interactions} corresponds to the typing distinction in category theory between {\it objects} and {\it morphisms}. Panels (a, right) and (c) are reproduced from~\cite{Demir2010}.}
+\caption{Particular motifs within interaction networks underlying biological systems can be abstracted as algebraic structures of some type exhibiting internal structure associated to that type and external structure, which may reflect aspects of the internal structure, represented by morphisms translating between them. (a) We provide an example of a simple semantics (left) for the BioPAX ontology~\cite{Demir2010} (right) in terms of a labelled directed graph of some of the interactions involved in the Akt pathway. (b) (left) representation of the integrated metabolic-gene regulatory glycolytic network of E. coli K12 MG1655 derived from the EcoCyc database~\cite{Keseler2011} in terms of the BioPAX ontology (right) schematic of the way in which the relationships between substructural motifs of a particular network can be represented in terms of algebraic structures that can be referred to as objects and methods of transforming or mapping between these structures referred to as morphisms. (c) The broadest distinctions in the BioPAX ontology between {\it physical entities} and {\it interactions} corresponds to the typing distinction in category theory between {\it objects} and {\it morphisms}. Panels (a, right) and (c) are reproduced from~\cite{Demir2010}.}
 \label{fig:biograph}
 \end{figure*}
 
@@ -245,7 +247,7 @@ The approach outlined above can, in principle, be iterated over multiple local-g
 
 \begin{figure}
 \noindent\includegraphics[width=0.9\columnwidth]{fig/infopres.pdf}
-\caption{From bottom to top and on the left we imagine an information non-preserving interaction resulting from the inability of $a$ to distinguish in subsequent or {\it downstream} interactions the interaction of $d$  with $c$ from that of $e$ with $c$, whereas on the right we imagine an information preserving interaction wherein $b$ is capable of distinguishing in downstream interactions the interaction of $d$  with $c$ from that of $e$ with $c$.}
+\caption{From bottom to top and on the left an information non-preserving interaction resulting from the inability of $a$ to distinguish in subsequent or {\it downstream} interactions the path leading to it from $d$ from that leading to it from $e$, whereas on the right we imagine an information preserving interaction wherein $b$ is capable of distinguishing in downstream interactions the path leading to it from $d$ from that leading to it from $e$. This is simply one example of reasoning about information conservation in a category. This concept can be compared to the formalized coequalizer (see appendix \ref{app:CatTh}) if $d$ and $e$ are the same object, we consider the paths leading to $a$ and a particular universal property is satisfied by $g_2$.}
 \label{fig:infopres}
 \end{figure}
 
@@ -406,7 +408,7 @@ is a sieve on $d$.
 
 \begin{figure}
 \noindent\includegraphics[width=1.0\columnwidth]{fig/sieveHasseNoNum.pdf}
-\caption{Sieves conceptualized on {\it Hasse diagrams} of an algebraic lattice. All edges are directed from bottom to top. Red edges are part of a sieve on an object represented by a node in the lattice. Black edges are part of the lattice but not part of the sieve under consideration. (a) shows the maximal sieve on the lattice, which is equivalent to a sieve on the object marked with a white dot. (b), (c), and (d) show maximal sieves on the respective objects marked with white dots.}
+\caption{Sieves conceptualized on {\it Hasse diagrams} of an algebraic lattice. All edges are directed from bottom to top. Green edges are part of a sieve on an object represented by a node in the lattice. Black edges are part of the lattice but not part of the sieve under consideration. (a) shows the maximal sieve on the lattice, which is equivalent to a sieve on the object marked with a white dot. (b), (c), and (d) show maximal sieves on the respective objects marked with white dots.}
 \label{fig:sieve}
 \end{figure}
 
@@ -709,11 +711,6 @@ We have demonstrated the counit, $\epsilon$, and the unit $\eta$, to both be iso
 \eta &:& 1_{Sh(\mathcal{L}_0,J)} \cong R_A \circ L_A,\\
 \epsilon &:& L_A \circ R_A \cong 1_{\mathcal{L}_1}.
 \end{eqnarray*}
-We thus have an equivalence of categories between the category of local representations of biological information and that of global representations (summarized in figure \ref{fig:equivalence})
-$$
-Sh(\mathcal{L}_0,J) \cong \mathcal{L}_1.
-$$
-In this light, we can view a process in which interactions among local entities generate higher-level properties that themselves also become entities that may participate in still higher-level processes as requiring the type of coherence precisely specified by the sheaf condition. As biological systems are comprised of structurally nested and functional hierarchies, this constraint, as applied to models of particular biological systems in a category, not limited to but including the graphs which are often produced from network data, may be able to be used to constrain models that are capable of incorporating multiple levels of organization.
 
 \begin{figure}
 \noindent\includegraphics[width=0.9\columnwidth]{fig/equivalence.pdf}
@@ -721,17 +718,28 @@ In this light, we can view a process in which interactions among local entities 
 \dashv L$ are actually natural isomorphisms.}
 \label{fig:equivalence}
 \end{figure}
- 
+
+We thus have an equivalence of categories between the category of local representations of biological information and that of global representations (summarized in figure \ref{fig:equivalence})
+$$
+Sh(\mathcal{L}_0,J) \cong \mathcal{L}_1.
+$$
+In this light, we can view a process in which interactions among local entities generate higher-level properties that themselves also become entities that may participate in still higher-level processes as requiring the type of coherence precisely specified by the sheaf condition. A high-level perspective on the logic of the preceding argument is provided in figure \ref{fig:arglog}. As biological systems are comprised of structurally nested and functional hierarchies, this constraint, as applied to models of particular biological systems in a category, not limited to but including the graphs which are often produced from network data, may be able to be used to constrain models that are capable of incorporating multiple levels of organization.
+
 \section{Conclusion}
 
 The goal of organizing knowledge about biological systems will ultimately require the development of languages that can be tailored specifically for that task. The purpose of developing such a language is to provide a precise framework for a qualitative phenomenology of biological systems such that, any piece of data that can be collected, can be integrated and used to deduce apparent consequences that in some sense attempt to optimize the production of new or classification of old hypotheses that may be distinguished on that basis. Despite the fact that abstract concepts from pure mathematics have had little explicit coupling to the study of biological systems so far, we find that certain concepts can be adapted to serve as a basis for the development of such a domain-specific language for reasoning about biological systems. In order to realize such a goal, this language will need to be implemented in computational form rather than simply stated in abstract notation; however, clarification of the relationship between purely abstract concepts and concepts abstracted from the study of biological systems can help to make the costly choice of a framework to be implemented for the purposes of knowledge representation.
+
+\begin{figure}
+\noindent\includegraphics[width=1\columnwidth]{fig/arglog.pdf}
+\caption{$L$ is constructed from $A$ via Yoneda extension. $L$ is found to have a right adjoint $R$. $A$ can be constructed from $R$ via the dual from of Yoneda extension. The adjoint functors $L dashv R$ restricts to an equivalence of categories when the presheaf category is restricted to the sheaf category for a suitable definition of topology on the domain category of $A$ in terms of the codomain category of $A$.}
+\label{fig:arglog}
+\end{figure}
 
 %------bibliography---%
 \bibliographystyle{unsrt}
 %\bibliographystyle{natbib} 
 \bibliography{bib/books,bib/papers}
 %---------------------%
-
 
 %-----------------------------------------------%
 %                   appendix
