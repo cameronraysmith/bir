@@ -27,7 +27,7 @@
 \fi
 \makeatother
 
-\begin{document} 
+\begin{document}
 
 \title{\bf Potential coherence constraints on hierarchical transitions in evolutionary processes}
 
@@ -48,7 +48,7 @@ Hierarchy is a fundamental organizing concept in biology. The {\it existence} of
 
 The development of a formal language for modeling and reasoning about biological systems was suggested by Joseph Woodger in collaboration with the developmental biologist Conrad Waddington and the logician Alfred Tarski as early as 1937~\cite{Woodger1937,Woodger1951,Woodger1952,Woodger1952a}. At that time it was perhaps difficult to understand how such a language could be put to use. Today we have tools that could enable the use of such a language: namely 1) computational machines to automate the details of routine transformations within the language and 2) accessible, growing repositories of biological data. Though we have access to necessary infrastructure, we lack such a language suggested by Woodger and others throughout the course of the 20th century as we have continued to rely on natural language heuristics to communicate and reason about biological systems.
 
-Category theory~\cite{Lane1985,Lane1998,MacLane1992,Lawvere1997,Lawvere2003,Awodey2006} has been suggested to provide a framework for representing and reasoning about biological systems~\cite{Rashevsky1954,Rosen1958,Rosen1958a,Rosen1978,GOGUEN1979,Rosen1985,Rosen1991}. This is unlikely to be true in any direct sense. Category theory itself is likely far too general to be useful for the purpose of explicit scientific modeling, but its panoramic organization of mathematical structure may be useful in communicating about and prioritizing or triaging more explicit mathematical frameworks that are. Since bridging the gap between theory and experiment is arguably the most important goal of contemporary biology and {\it model selection} is one of the most difficult components of this process, it is worth considering some examples of what category theory may have to offer. This may be useful even if it were to do nothing more than generate a reference point to support more serious conversations between mathematicians, computer scientists, and biologists. What immediately appears to be useful about category theory from the perspective of biology and its underlying chemistry is that it presents as primitive the notion of process or transformation. In fact, from this point of view, a defining characteristic of any representation of an entity or object (in this case e.g. a nucleic acid molecule, protein, cell, organism, or population) is a potentially structured collection of relationships between representations of other entities in terms of its intrinsic structure. Intrinsic properties are taken into account implicitly in this framework since the possible set of relationships between any object and any other is constrained by the nature of the intrinsic properties of each. 
+Category theory~\cite{Lane1985,Lane1998,MacLane1992,Lawvere1997,Lawvere2003,Awodey2006} has been suggested to provide a framework for representing and reasoning about biological systems~\cite{Rashevsky1954,Rosen1958,Rosen1958a,Rosen1978,GOGUEN1979,Rosen1985,Rosen1991}. This is unlikely to be true in any direct sense. Category theory itself is likely far too general to be useful for the purpose of explicit scientific modeling, but its panoramic organization of mathematical structure may be useful in communicating about and prioritizing or triaging more explicit mathematical frameworks that are. Since bridging the gap between theory and experiment is arguably the most important goal of contemporary biology and {\it model selection} is one of the most difficult components of this process, it is worth considering some examples of what category theory may have to offer. This may be useful even if it were to do nothing more than generate a reference point to support more serious conversations between mathematicians, computer scientists, and biologists. What immediately appears to be useful about category theory from the perspective of biology and its underlying chemistry is that it presents as primitive the notion of process or transformation. In fact, from this point of view, a defining characteristic of any representation of an entity or object (in this case e.g. a nucleic acid molecule, protein, cell, organism, or population) is a potentially structured collection of relationships between representations of other entities in terms of its intrinsic structure. Intrinsic properties are taken into account implicitly in this framework since the possible set of relationships between any object and any other is constrained by the nature of the intrinsic properties of each.
 
 Concepts from category theory, especially with regard to its interface with geometry and logic~\cite{MacLane1992,Jacobs1998}, enable the formulation of what might be viewed as a framework for explaining the nature and development of so-called \emph{emergent properties} of systems that are able to represent information in molecular terms~\cite{Harmer2010}, to consider an arbitrary {\it base} level, but build upon this to generate the capacity to process information at higher levels of organization, such as the cellular or multicellular, as well. The existence of biological {\it levels of organization} that may have come into existence during the evolutionary process thus far, although commonly assumed for example in various formal and informal taxonomic systems used in biology, is a hypothesis that should be able to be tested in the long term through the introduction of a language capable of making predictions that could help distinguish a case in which there is from that in which there is no justification to reify the conceptual levels of organization that have been introduced to organize biological knowledge.
 
@@ -246,7 +246,7 @@ Collections of interacting biological entities can be viewed as performing measu
 The approach outlined above can, in principle, be iterated over multiple local-global transitions where in ascending from bottom to top global objects and the associated measurements they are capable of performing in terms of one another become local objects when the perspective is shifted to the next level of organization. It is thus helpful to consider a method for representing the way in which collections of interactions can be woven together to produce higher-order structures that are also capable of interacting with one another. This capacity will be taken advantage of to define a structural condition abstractly characterizing a coherence constraint that must be satisfied by systems that can be considered to be comprised of two or more hierarchically related levels of organization. Such a representation is likely relevant to understanding and constructing models of so-called major transition in evolution~\cite{MaynardSmith1995,Okasha2006,Calcott2011}, but depending upon the way in which hierarchy is to be represented and understood, it may be relevant to much more fine-grained evolutionary changes \cite{Ravasz2002,Guimera2005,Bhardwaj2010}. For now, in order to describe the generic relationship between one collection of local entities and another collection of global entities that are composite constructions upon modules or {\it diagrams} defined on the collection of local entities, we first construct a category for each of the local and global levels of interaction, $\mathcal{L}_0$ and $\mathcal{L}_1$, respectively. It may be intuitive to consider that all the structure in $\mathcal{L}_0$ may be recapitulated in $\mathcal{L}_1$ and not conversely, but this is not explicitly imposed.
 
 \begin{figure}
-\noindent\includegraphics[width=0.9\columnwidth]{fig/infopres.pdf}
+\noindent\includegraphics[width=0.9\columnwidth]{fig/infopres.png}
 \caption{From bottom to top and on the left an information non-preserving interaction resulting from the inability of $a$ to distinguish in subsequent or {\it downstream} interactions the path leading to it from $d$ from that leading to it from $e$, whereas on the right we imagine an information preserving interaction wherein $b$ is capable of distinguishing in downstream interactions the path leading to it from $d$ from that leading to it from $e$. This is simply one example of reasoning about information conservation in a category. This concept can be compared to the formalized coequalizer (see appendix \ref{app:CatTh}) if $d$ and $e$ are the same object, we consider the paths leading to $a$ and a particular universal property is satisfied by $g_2$. It can also be compared to that in which $c$ is viewed as a \href{http://en.wikipedia.org/wiki/Generator_(category_theory)}{generator} or \href{http://en.wikipedia.org/wiki/Injective_cogenerator}{cogenerator}.}
 \label{fig:infopres}
 \end{figure}
@@ -347,7 +347,7 @@ $$
 \mathcal{L}_0 \ar[ru]^{A} \ar[rr]_{PSh} & & \textit{Sets}^{\mathcal{L}_0^{opp}} \ar@{-->}[lu]_{L}
 }
 $$
-which commutes uniquely in $L$ for a given $A$. When $P = Mor(-,L_0) = PSh(L_0)$, the corresponding category of elements $\int_{\mathcal{L}_0} P$ has a terminal object $1_{L_0} : L_0 \rightarrow L_0 \in P(L_0)$. In this case the colimit of $A \circ \pi_P$ is its value on $1_{L_0}$, $L \circ PSh(L_0) \cong A \pi_P (L_0,1_{L_0}) = A(L_0)$ demonstrating the commutativity of the diagram. This construction is referred to as Yoneda extension~\cite{Lane1998,MacLane1992}. Figure \ref{fig:graphyonedaext} presents an intuitive, but imprecise, picture exemplifying some salient features of this construction in terms of directed graphs, which are commonly used to represent {\it network} data pertaining to various molecular, organismal, and ecological aspects of biological systems. 
+which commutes uniquely in $L$ for a given $A$. When $P = Mor(-,L_0) = PSh(L_0)$, the corresponding category of elements $\int_{\mathcal{L}_0} P$ has a terminal object $1_{L_0} : L_0 \rightarrow L_0 \in P(L_0)$. In this case the colimit of $A \circ \pi_P$ is its value on $1_{L_0}$, $L \circ PSh(L_0) \cong A \pi_P (L_0,1_{L_0}) = A(L_0)$ demonstrating the commutativity of the diagram. This construction is referred to as Yoneda extension~\cite{Lane1998,MacLane1992}. Figure \ref{fig:graphyonedaext} presents an intuitive, but imprecise, picture exemplifying some salient features of this construction in terms of directed graphs, which are commonly used to represent {\it network} data pertaining to various molecular, organismal, and ecological aspects of biological systems.
 
 \iftoggle{thmsty}{
 \end{proof}
@@ -366,7 +366,7 @@ $$
 giving presheaves on $\mathcal{L}_0$ when taken to be parametric in $L_0$.
 We can now demonstrate that $L$ and $R$ are indeed adjoint functors %Awodey 9.6 p.200
 \begin{eqnarray*}
-Nat(P,R(L_1)) & \cong &  Mor_{\textit{Sets}^{\mathcal{L}_0^{opp}}} \left( \lim\limits_{\overrightarrow{j \in \int_{\mathcal{L}_0} P}} PSh (L_{0}^j),R(L_1) \right) ,\\	
+Nat(P,R(L_1)) & \cong &  Mor_{\textit{Sets}^{\mathcal{L}_0^{opp}}} \left( \lim\limits_{\overrightarrow{j \in \int_{\mathcal{L}_0} P}} PSh (L_{0}^j),R(L_1) \right) ,\\
 			  & \cong &  \lim\limits_{\overleftarrow{j \in \int_{\mathcal{L}_0} P}} Mor_{\textit{Sets}^{\mathcal{L}_0^{opp}}} \left( PSh (L_{0}^j),R(L_1) \right) ,\\
 			  & \cong &  \lim\limits_{\overleftarrow{j \in \int_{\mathcal{L}_0} P}} \left( R(L_1)(L_{0}^j) \right) ,\\
   			  & \cong &  \lim\limits_{\overleftarrow{j \in \int_{\mathcal{L}_0} P}} Mor_{\mathcal{L}_1} \left( A (L_{0}^j),L_1 \right) ,\\
@@ -433,10 +433,10 @@ Sieves $S$ in $J(c)$ for an object $c \in \Ob(\cC)$ are referred to as $J-coveri
 \begin{definition}
 \label{definition-basis}
 }{}
-A {\it basis} for a topology on a category $\cC$ is a function $B$ that assigns to each object $c \in \Ob(\cC)$ a collection of families $\{c_i \rightarrow c \}$ of morphisms referred to as {\it covering families} in $B(c)$ such that% %that has pullbacks (see Appendix \ref{app:CatTh}) 
+A {\it basis} for a topology on a category $\cC$ is a function $B$ that assigns to each object $c \in \Ob(\cC)$ a collection of families $\{c_i \rightarrow c \}$ of morphisms referred to as {\it covering families} in $B(c)$ such that% %that has pullbacks (see Appendix \ref{app:CatTh})
 \begin{enumerate}
 \item every family consisting of a single isomorphism $\{ d \cong c \}$ is a covering family in $B(c)$
-\item if $\{f_i:c_i \rightarrow c \}$ is a covering family and $g:d \rightarrow c$ is any morphism in $\Mor(\cC)$ then $\{h_j \colon d_j \rightarrow d \}$ is a covering family in $B(d)$ such that for each $j$, $g \circ h_j$ factors through some $f_i$.% See SGL III.2.2 and exercise 3 and nLab %% $\{g^* c_i \rightarrow d \}$ is a covering family in $B(d)$ of $d$, which means that the collection of covering families is stable under pullbacks 
+\item if $\{f_i:c_i \rightarrow c \}$ is a covering family and $g:d \rightarrow c$ is any morphism in $\Mor(\cC)$ then $\{h_j \colon d_j \rightarrow d \}$ is a covering family in $B(d)$ such that for each $j$, $g \circ h_j$ factors through some $f_i$.% See SGL III.2.2 and exercise 3 and nLab %% $\{g^* c_i \rightarrow d \}$ is a covering family in $B(d)$ of $d$, which means that the collection of covering families is stable under pullbacks
 \item if $\{f_i : c_i \rightarrow c \}_{i \in I}$ is a covering family and $\{ g_{i,j} : c_{i,j} \rightarrow c_i \}_{j \in J_i}$ then the family of composites $\{ f_i \circ g_{i,j} : c_{i,j} \rightarrow c_i \rightarrow c \}_{i \in I, j \in J_i}$ is a covering family in $B(c)$
 \end{enumerate}
 \iftoggle{thmsty}{
@@ -566,7 +566,7 @@ Since this construction is parametric over $L_0 \in \Ob(\mathcal{L}_0)$ and sati
 \end{displaymath}
 where $\tilde{g_i}$ is also an epimorphism. For $\{ g_i : M_0^i \rightarrow L_0 \}_i \in S(L_0)$ there is an epimorphic family of morphisms $\{ N_0^{ij} \rightarrow M_0^i \times_{L_0} L'_0 \}_{ij}$ with each $N_0^{ij} \in \Ob(\mathcal{L}_0)$. Therefore the composites of these morphisms, $N_0^{ij} \rightarrow M_0^i \times_{L_0} L'_0 \rightarrow L'_0$, for all $i$ and $j$ form an epimorphic family on $L'_0$ contained in the sieve given by the preimage of $h$ on the sieve $S(L_0)$, $h^*(S(L_0))$, and thus $h^*(S(L_0))$ is a cover on $L'_0$, which satisfies the definition of stability of $S(L_0)$ under pullback. Transitivity can also be verified, and thus $J$ is shown to be a Grothendieck topology on $\mathcal{L}_0$ defined in terms of a condition---that sieves on $\mathcal{L}_0$ cover objects in $\mathcal{L}_1$---on its relationship to $\mathcal{L}_1$.
 
-Next we explain the way in which the right adjoint functor parametrically applied to an object $L_1 \in \Ob(\mathcal{L}_1)$, $R_A(L_1) = \Mor_{\mathcal{L}_1}(A(-),L_1): \mathcal{L}_0^{opp} \rightarrow Sets$, is interpreted as a sheaf for the topology $J$ on $\mathcal{L}_0$. Assuming that $\mathcal{L}_1$ is an exact category, the epimorphic family $b_{S(L_0)}$ is the coequalizer of the pullback of $b_{S(L_0)}$ along itself. Since coproducts are stable under pullback for the given assumptions on $\mathcal{L}_1$, 
+Next we explain the way in which the right adjoint functor parametrically applied to an object $L_1 \in \Ob(\mathcal{L}_1)$, $R_A(L_1) = \Mor_{\mathcal{L}_1}(A(-),L_1): \mathcal{L}_0^{opp} \rightarrow Sets$, is interpreted as a sheaf for the topology $J$ on $\mathcal{L}_0$. Assuming that $\mathcal{L}_1$ is an exact category, the epimorphic family $b_{S(L_0)}$ is the coequalizer of the pullback of $b_{S(L_0)}$ along itself. Since coproducts are stable under pullback for the given assumptions on $\mathcal{L}_1$,
 $$
 \left( \coprod\limits_{g'_i \in S(L_0)} M_{0}^{'i} \right) \times_{L_0} \left( \coprod\limits_{g_i \in S(L_0)} M_0^i \right) \cong \coprod\limits_{g'_i , g_i \in S(L_0)} M_0^{'i} \times_{L_0} M_0^i
 $$
@@ -692,11 +692,11 @@ This demonstrates that $\epsilon_{L_1}$ is indeed an isomorphism and thus
 \epsilon &:& L \circ R \cong 1_{\mathcal{L}_1}
 \end{eqnarray*}
 
-We can also demonstrate that the unit of the adjunction is an isomorphism. For any presheaf $Q \in Sets^{\mathcal{L}_0^{opp}}$ the unit of the adjunction $L_A \dashv R_A$ is 
+We can also demonstrate that the unit of the adjunction is an isomorphism. For any presheaf $Q \in Sets^{\mathcal{L}_0^{opp}}$ the unit of the adjunction $L_A \dashv R_A$ is
 
 \begin{eqnarray*}
 \eta_{Q} &:& Q \rightarrow R \circ L(Q)\\
-&:& Q \rightarrow \Mor_{\mathcal{L}_1}(A(-),L_A(Q))\\ 
+&:& Q \rightarrow \Mor_{\mathcal{L}_1}(A(-),L_A(Q))\\
 &:& Q \rightarrow \Mor_{\mathcal{L}_1}(A(-), Q \otimes_{\mathcal{L}_0} A)
 \end{eqnarray*}
 
@@ -706,7 +706,7 @@ $$
 $$
 because $PSh(L_0) \cong \Mor_{\mathcal{L}_1}(A(-), A(L_0))$ and $A(L_0) \cong L_A(PSh(L_0))$ in the category $\mathcal{L}_1$. Because the functors $L_A$ and $R_A$ both preserve colimits, any sheaf $Q$ is a colimit of representables, and $\eta_{PSh(L_0)}$ is an isomorphism for representable functors, then $\eta$ is an isomorphism for any sheaf $Q$.
 
-We have demonstrated the counit, $\epsilon$, and the unit $\eta$, to both be isomorphisms for the adjunction $L_A \dashv R_A$ upon restriction from $Sets^{\mathcal{L}_0^{opp}}$ to sheaves on the site defined by $J$ in terms of epimorphic families of morphisms in $\mathcal{L}_1$ for $\mathcal{L}_0$ written as $Sh(\mathcal{L}_0,J)$ 
+We have demonstrated the counit, $\epsilon$, and the unit $\eta$, to both be isomorphisms for the adjunction $L_A \dashv R_A$ upon restriction from $Sets^{\mathcal{L}_0^{opp}}$ to sheaves on the site defined by $J$ in terms of epimorphic families of morphisms in $\mathcal{L}_1$ for $\mathcal{L}_0$ written as $Sh(\mathcal{L}_0,J)$
 \begin{eqnarray*}
 \eta &:& 1_{Sh(\mathcal{L}_0,J)} \cong R_A \circ L_A,\\
 \epsilon &:& L_A \circ R_A \cong 1_{\mathcal{L}_1}.
@@ -714,7 +714,7 @@ We have demonstrated the counit, $\epsilon$, and the unit $\eta$, to both be iso
 
 \begin{figure}
 \noindent\includegraphics[width=0.9\columnwidth]{fig/equivalence.pdf}
-\caption{An extension of the framework for the construction of a mechanism of local-global translation of biological information shown in figure \ref{fig:ascent}.  The functors $R$, and $L$, which were initially defined abstractly have been constructed in terms of $A$ by giving explicit formulas for their action on objects and morphisms. The category of sheaves on the site $(\mathcal{L}_0,J)$, $Sh(\mathcal{L}_0,J)$  has been shown to be equivalent to $\mathcal{L}_1$ via demonstrating that the unit and counit natural transformations of the pair of adjoint functors $R 
+\caption{An extension of the framework for the construction of a mechanism of local-global translation of biological information shown in figure \ref{fig:ascent}.  The functors $R$, and $L$, which were initially defined abstractly have been constructed in terms of $A$ by giving explicit formulas for their action on objects and morphisms. The category of sheaves on the site $(\mathcal{L}_0,J)$, $Sh(\mathcal{L}_0,J)$  has been shown to be equivalent to $\mathcal{L}_1$ via demonstrating that the unit and counit natural transformations of the pair of adjoint functors $R
 \dashv L$ are actually natural isomorphisms.}
 \label{fig:equivalence}
 \end{figure}
@@ -737,7 +737,7 @@ The goal of organizing knowledge about biological systems will ultimately requir
 
 %------bibliography---%
 \bibliographystyle{unsrt}
-%\bibliographystyle{natbib} 
+%\bibliographystyle{natbib}
 \bibliography{bib/books,bib/papers}
 %---------------------%
 
